@@ -3,3 +3,6 @@ dist
 dist-ssr
 *.local
 .DS_Store
+*.CR2
+Public/projects/rover/Z52A9408.png
+Public/projects/rover/Z52A9483.png

@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { ContactPage } from "./pages/ContactPage";
 import { BirdbotCaseStudy } from "./pages/BirdbotCaseStudy";
+import { RoverCaseStudy } from "./pages/RoverCaseStudy";
+import { HavenCaseStudy } from "./pages/HavenCaseStudy";
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -29,6 +31,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/projects/birdbot" element={<BirdbotCaseStudy />} />
+        <Route path="/projects/rover" element={<RoverCaseStudy />} />
+        <Route path="/projects/haven" element={<HavenCaseStudy />} />
       </Routes>
     </BrowserRouter>
   );

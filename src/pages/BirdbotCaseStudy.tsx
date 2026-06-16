@@ -47,7 +47,7 @@ function BeatHeadline({ children }: { children: ReactNode }) {
   );
 }
 
-export function BirdbotCaseStudy() {
+export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean }) {
   return (
     <div className="min-h-screen bg-[#fcfcfc]">
       <section className="relative h-[100svh] w-full overflow-hidden">
@@ -62,13 +62,19 @@ export function BirdbotCaseStudy() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-        <Link
-          to="/#work"
-          className="absolute left-6 top-6 z-10 inline-flex items-center gap-2 rounded-full border border-white/30 bg-black/55 px-4 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-white shadow-lg backdrop-blur-md transition-colors hover:bg-black/75 md:left-16 md:top-8"
-        >
-          <ArrowLeft size={14} strokeWidth={2} />
-          Back to Work
-        </Link>
+        {standalone ? (
+          <p className="absolute left-6 top-6 z-10 font-mono text-[11px] uppercase tracking-[0.2em] text-white/80 md:left-16 md:top-8">
+            {birdbotHero.title} · Fangzhuo Tang
+          </p>
+        ) : (
+          <Link
+            to="/#work"
+            className="absolute left-6 top-6 z-10 inline-flex items-center gap-2 rounded-full border border-white/30 bg-black/55 px-4 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-white shadow-lg backdrop-blur-md transition-colors hover:bg-black/75 md:left-16 md:top-8"
+          >
+            <ArrowLeft size={14} strokeWidth={2} />
+            Back to Work
+          </Link>
+        )}
 
         <div className="absolute bottom-16 left-6 text-white md:left-16">
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] opacity-80">

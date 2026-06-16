@@ -7,7 +7,7 @@
     "dev": "vite",
     "dev:birdbot": "vite --config vite.birdbot.config.ts",
     "build": "tsc --noEmit && vite build",
-    "build:birdbot": "tsc --noEmit && vite build --config vite.birdbot.config.ts && node -e \"require('fs').copyFileSync('vercel.birdbot.json','dist-birdbot/vercel.json')\"",
+    "build:birdbot": "tsc --noEmit && vite build --config vite.birdbot.config.ts && node -e \"const fs=require('fs');fs.copyFileSync('vercel.birdbot.json','dist-birdbot/vercel.json');fs.renameSync('dist-birdbot/birdbot.html','dist-birdbot/index.html')\"",
     "preview": "vite preview"
   },
   "dependencies": {

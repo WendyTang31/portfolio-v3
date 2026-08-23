@@ -1,3 +1,5 @@
+import headImageUrl from "../assets/haven/head-image.png";
+
 export type Work = {
   slug: string;
   title: string;
@@ -41,37 +43,46 @@ export const works: Work[] = [
     href: "/projects/rover",
   },
   {
-    slug: "3d-printer",
-    title: "Future Computer",
+    slug: "bird-feet",
+    title: "Bird Feet",
     subtitle:
-      "Self-driven mechatronics — motion control, hardware systems, software tuning.",
-    tags: ["Mechatronics", "Fabrication"],
-    accent: "#3a3a3a",
-    heroImage: null,
-    isLive: false,
-    href: null,
+      "Bio-inspired landing gear from bird feet — an adaptive mechanism for aircraft and drones on uneven terrain.",
+    tags: ["Biomimicry", "Mechanisms", "UAM", "Prototyping"],
+    accent: "#4a5648",
+    heroImage: "/projects/bird-feet/hero-bird-feet.webp",
+    galleryImages: [
+      "/projects/bird-feet/11-result-still.png",
+      "/projects/bird-feet/08-prototype-assembly.jpg",
+      "/projects/bird-feet/02-nature-reference.png",
+    ],
+    isLive: true,
+    href: "/projects/bird-feet",
   },
   {
     slug: "haven",
     title: "Haven",
-    subtitle:
-      "Industrial design for a privacy-first elder-care device — turning a monitoring camera into a companion a home actually welcomes.",
-    tags: ["Industrial Design", "AI Hardware", "CMF", "Product Identity"],
+    subtitle: "Peace of mind for two generations — felt as care, never as being watched.",
+    tags: ["Industrial Design", "AI Hardware", "Privacy", "Elder Care"],
     accent: "#6e7a64",
-    heroImage: "/projects/ai-camera/hero-ai-camera-assembly.webp",
+    heroImage: headImageUrl,
+    galleryImages: [
+      "/projects/haven/idea-3.png",
+      "/projects/haven/idea-2.png",
+      "/projects/haven/moodboard.png",
+    ],
     isLive: true,
     href: "/projects/haven",
   },
   {
-    slug: "taxidermy-club",
-    title: "Autonomous Car Language",
+    slug: "alias",
+    title: "ALIAS",
     subtitle:
-      "Founded RISD club connecting anatomy, natural history, and hands-on making.",
-    tags: ["Nature", "Community", "Material"],
-    accent: "#e8e8e8",
-    heroImage: null,
-    isLive: false,
-    href: null,
+      "A communication language that lets a car express what a horn never could.",
+    tags: ["eHMI", "Interaction", "Research", "Hardware"],
+    accent: "#D97706",
+    heroImage: "/projects/alias/hero-poster.jpg",
+    isLive: true,
+    href: "/projects/alias",
   },
 ];
 

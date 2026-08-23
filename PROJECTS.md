@@ -47,10 +47,12 @@ Portfolio-site 2/
         │   ├── 07-electronics-layout.webp
         │   ├── 08-iteration-feet-comparison.webp
         │   └── 10-demo-motion.webp           ← or .mp4 for motion demo
-        ├── rover/                            ← placeholder until v2
-        ├── 3d-printer/
-        ├── ai-camera/
-        └── taxidermy-club/
+        ├── bird-feet/                        ← live (replaces 3d-printer / Future Computer)
+        │   ├── hero-bird-feet.webp
+        │   ├── 01–12 images + process/result videos
+        ├── rover/                            ← live
+        ├── haven/                            ← live (assets may still use ai-camera temp paths)
+        └── taxidermy-club/                   ← placeholder until v2
 ```
 
 ### When to upload what
@@ -87,10 +89,10 @@ Portfolio-site 2/
 | Landing (all works) | `/` | Build now | 3 scroll sections; placeholders OK |
 | Work anchor | `/#work` | Build now | Header "Work" scrolls here |
 | Contact | `/contact` | Placeholder | Simple page or mailto link |
-| **Birdbot** case study | `/projects/birdbot` | Build now | Only full case study in v1 |
-| NASA HERC Rover | `/projects/rover` | v2 | Card placeholder only |
-| 3D Printer | `/projects/3d-printer` | v2 | Card placeholder only |
-| AI Privacy Camera | `/projects/ai-camera` | v2 | Card placeholder only |
+| Birdbot | `/projects/birdbot` | Build now | Only full case study in v1 |
+| NASA HERC Rover | `/projects/rover` | Live | Steering case study |
+| Bird Feet | `/projects/bird-feet` | Live | Replaces former 3D Printer / Future Computer slot |
+| Haven | `/projects/haven` | Live | Elder-care AI hardware |
 | Taxidermy Club | `/projects/taxidermy-club` | v2 | Card placeholder only |
 
 **Removed from v1:** `/about` as a separate page (your intro lives in the hero section for now).
@@ -191,7 +193,7 @@ Same card format for all five. Birdbot is largest (slot 1). Each slot has its ow
 |------|---------|------|--------|---------------|--------|
 | 1 | **Birdbot** | `birdbot` | `#1a1a1a` | Yes → `/projects/birdbot` | **Live** (copy ready; media **[ ] upload**) |
 | 2 | NASA HERC Rover | `rover` | `#2a2a2a` | No — "Coming soon" | Placeholder |
-| 3 | 3D Printer | `3d-printer` | `#3a3a3a` | No | Placeholder |
+| 3 | Bird Feet | `bird-feet` | `#4a5648` | Yes → `/projects/bird-feet` | **Live** (from wendytangportfolio.com/bird-feet) |
 | 4 | AI Privacy Camera | `ai-camera` | `#4a4a4a` | No | Placeholder |
 | 5 | Taxidermy Club | `taxidermy-club` | `#e8e8e8` on dark | No | Placeholder |
 
@@ -213,12 +215,14 @@ Rhythm: **Engineering → Human/systems → Fabrication → Research → Nature*
 - **Hero image:** `public/projects/rover/hero.webp` — **[ ] upload** (or gray box in code)
 - **Notes:** Prominent second project after Birdbot (reviewer feedback).
 
-### Slot 3 — 3D Printer (placeholder)
+### Slot 3 — Bird Feet (live)
 
-- **Title:** 3D Printer
-- **Subtitle:** `[FILL IN]` — e.g. Self-driven mechatronics project — motion control, hardware systems, software tuning.
-- **Tags:** Mechatronics · Fabrication
-- **Hero image:** `public/projects/3d-printer/hero.webp` — **[ ] upload**
+- **Title:** Bird Feet
+- **Subtitle:** Bio-inspired landing gear from bird feet — an adaptive mechanism for aircraft and drones on uneven terrain.
+- **Tags:** Biomimicry · Mechanisms · UAM · Prototyping
+- **Hero image:** `Public/projects/bird-feet/hero-bird-feet.webp`
+- **Case study:** `/projects/bird-feet` — narrative migrated from https://wendytangportfolio.com/bird-feet
+- **Assets folder:** `Public/projects/bird-feet/` (images + process videos)
 
 ### Slot 4 — AI Privacy Camera (placeholder)
 

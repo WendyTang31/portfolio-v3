@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PlaceholderImage } from "./PlaceholderImage";
 
 type ProjectImageProps = {
@@ -18,6 +18,10 @@ export function ProjectImage({
 }: ProjectImageProps) {
   const [failed, setFailed] = useState(false);
 
+  useEffect(() => {
+    setFailed(false);
+  }, [src]);
+
   if (!src || failed) {
     return (
       <PlaceholderImage
@@ -30,6 +34,7 @@ export function ProjectImage({
 
   return (
     <img
+      key={src}
       src={src}
       alt={alt}
       className={className}

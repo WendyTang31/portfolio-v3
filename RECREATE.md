@@ -295,7 +295,7 @@ export const SITE = {
 |------|------|--------|------|
 | 1 | birdbot | true | /projects/birdbot |
 | 2 | rover | false | null |
-| 3 | 3d-printer | false | null |
+| 3 | bird-feet | true | /projects/bird-feet |
 | 4 | ai-camera | false | null |
 | 5 | taxidermy-club | false | null |
 

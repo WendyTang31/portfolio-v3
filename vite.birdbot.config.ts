@@ -24,6 +24,9 @@ export default defineConfig({
     port: 5180,
     strictPort: true,
     open: "/",
+    watch: {
+      ignored: ["**/Public/**"],
+    },
   },
   build: {
     outDir: "dist-birdbot",

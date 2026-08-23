@@ -5,17 +5,15 @@ import { ArrowLeft } from "lucide-react";
 import {
   HAVEN_ACCENT,
   HAVEN_ASSET_BASE,
+  havenContext,
+  havenFinalChoice,
   havenHero,
-  havenHook,
+  havenIdeation,
+  havenIteration,
   havenMeta,
-  havenPositioning,
-  havenProblem,
-  havenProcess,
-  havenRenderBeats,
-  havenWhatItIs,
+  havenSolution,
+  havenUsers,
 } from "../data/haven";
-import { ProcessThumbStrip } from "../components/haven/ProcessThumbStrip";
-import { RenderBeatSection } from "../components/haven/RenderBeatSection";
 import { ProjectImage } from "../components/ProjectImage";
 import { Footer } from "../components/Footer";
 
@@ -49,6 +47,30 @@ function BeatHeadline({ children }: { children: ReactNode }) {
   );
 }
 
+function FullBleedImage({
+  src,
+  alt,
+  placeholderLabel,
+  aspect = "aspect-[16/10]",
+}: {
+  src: string;
+  alt: string;
+  placeholderLabel: string;
+  aspect?: string;
+}) {
+  return (
+    <div className={`mt-8 overflow-hidden ${aspect}`}>
+      <ProjectImage
+        src={src}
+        alt={alt}
+        placeholderLabel={placeholderLabel}
+        accent={HAVEN_ACCENT}
+        className="h-full w-full object-cover"
+      />
+    </div>
+  );
+}
+
 export function HavenCaseStudy() {
   return (
     <div className="min-h-screen bg-[#fcfcfc]">
@@ -56,7 +78,7 @@ export function HavenCaseStudy() {
         <ProjectImage
           src={havenHero.render}
           alt={havenHero.title}
-          placeholderLabel="hero-render.webp"
+          placeholderLabel="head-image.png"
           accent={HAVEN_ACCENT}
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -86,80 +108,269 @@ export function HavenCaseStudy() {
       </section>
 
       <article className="mx-auto max-w-5xl px-6 pb-20 md:px-8">
-        <FadeUp className="mt-20">
-          <blockquote className="border-l-2 pl-6 text-xl font-medium italic leading-snug tracking-tight text-[#111] md:text-2xl lg:text-3xl"
-            style={{ borderColor: HAVEN_ACCENT }}
-          >
-            {havenHook}
-          </blockquote>
+        <FadeUp className="mt-16 grid gap-6 border-b border-gray-200 pb-10 sm:grid-cols-2 md:grid-cols-4">
+          {[
+            { label: "Role", value: havenMeta.role },
+            { label: "Team", value: havenMeta.team },
+            { label: "Year", value: havenMeta.year },
+            { label: "Context", value: havenMeta.context },
+          ].map((item) => (
+            <div key={item.label}>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
+                {item.label}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-gray-800">{item.value}</p>
+            </div>
+          ))}
         </FadeUp>
 
+        {/* 01 — Context */}
         <FadeUp className="mt-20">
-          <BeatHeadline>{havenWhatItIs.headline}</BeatHeadline>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
-            {havenWhatItIs.body}
+          <SectionLabel>{havenContext.label}</SectionLabel>
+          <FullBleedImage
+            src={`${HAVEN_ASSET_BASE}/${havenContext.manifesto}`}
+            alt="Haven manifesto"
+            placeholderLabel={havenContext.manifesto}
+            aspect="aspect-[16/10]"
+          />
+          <div className="mt-10">
+            <BeatHeadline>{havenContext.headline}</BeatHeadline>
+          </div>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
+            {havenContext.body}
           </p>
-          <div className="mt-12 grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2">
-            {[
-              { label: "Role", value: havenMeta.role },
-              { label: "Team", value: havenMeta.team },
-              { label: "Year", value: havenMeta.year },
-              { label: "Context", value: havenMeta.context },
-            ].map((item) => (
-              <div key={item.label}>
+          <blockquote
+            className="mt-8 border-l-2 pl-5 text-lg font-medium leading-snug text-[#111] md:text-xl"
+            style={{ borderColor: HAVEN_ACCENT }}
+          >
+            {havenContext.bridge}
+          </blockquote>
+          <ul className="mt-6 space-y-2">
+            {havenContext.taglines.map((line) => (
+              <li key={line} className="text-sm leading-relaxed text-gray-600">
+                {line}
+              </li>
+            ))}
+          </ul>
+          <FullBleedImage
+            src={`${HAVEN_ASSET_BASE}/${havenContext.image}`}
+            alt="Haven context"
+            placeholderLabel={havenContext.image}
+          />
+        </FadeUp>
+
+        {/* 02 — Solution */}
+        <FadeUp className="mt-24">
+          <SectionLabel>{havenSolution.label}</SectionLabel>
+          <BeatHeadline>{havenSolution.headline}</BeatHeadline>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
+            {havenSolution.body}
+          </p>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {havenSolution.pillars.map((pillar) => (
+              <div
+                key={pillar.title}
+                className="border-t-2 pt-4"
+                style={{ borderColor: `${HAVEN_ACCENT}66` }}
+              >
                 <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
-                  {item.label}
+                  {pillar.title}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-gray-800">
-                  {item.value}
+                <p className="mt-2 text-sm leading-relaxed text-gray-700">{pillar.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3 md:items-stretch">
+            <div className="overflow-hidden aspect-[4/3] md:aspect-auto md:min-h-[280px]">
+              <ProjectImage
+                src={`${HAVEN_ASSET_BASE}/${havenSolution.image}`}
+                alt="Haven product presence"
+                placeholderLabel={havenSolution.image}
+                accent={HAVEN_ACCENT}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="overflow-hidden bg-black aspect-[4/3] md:aspect-auto md:min-h-[280px]">
+              <video
+                src={`${HAVEN_ASSET_BASE}/${havenSolution.emojiVideo}`}
+                className="h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label="Haven emoji interaction"
+              />
+            </div>
+            <div className="overflow-hidden bg-black aspect-[4/3] md:aspect-auto md:min-h-[280px]">
+              <video
+                src={`${HAVEN_ASSET_BASE}/${havenSolution.appVideo}`}
+                className="h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label="Haven caregiver app — good morning"
+              />
+            </div>
+          </div>
+        </FadeUp>
+
+        {/* 03 — Users */}
+        <FadeUp className="mt-24">
+          <SectionLabel>{havenUsers.label}</SectionLabel>
+          <BeatHeadline>{havenUsers.headline}</BeatHeadline>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
+            {havenUsers.body}
+          </p>
+          <p
+            className="mt-8 border-l-2 pl-5 text-lg font-medium leading-snug text-[#111] md:text-xl"
+            style={{ borderColor: HAVEN_ACCENT }}
+          >
+            {havenUsers.finding}
+          </p>
+          <blockquote className="mt-8 max-w-2xl text-base italic leading-relaxed text-gray-800">
+            “{havenUsers.quote.text}”
+            <footer className="mt-2 font-mono text-[10px] not-italic uppercase tracking-widest text-gray-500">
+              {havenUsers.quote.attribution}
+            </footer>
+          </blockquote>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {havenUsers.painPoints.map((item) => (
+              <div key={item.title}>
+                <p className="text-sm font-medium text-[#111]">{item.title}</p>
+                <p className="mt-2 text-sm leading-relaxed text-gray-700">{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <FullBleedImage
+            src={`${HAVEN_ASSET_BASE}/${havenUsers.image}`}
+            alt="Research comparison"
+            placeholderLabel={havenUsers.image}
+            aspect="aspect-[16/9]"
+          />
+        </FadeUp>
+
+        {/* 04 — First ideation */}
+        <FadeUp className="mt-24">
+          <SectionLabel>{havenIdeation.label}</SectionLabel>
+          <BeatHeadline>{havenIdeation.headline}</BeatHeadline>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
+            {havenIdeation.body}
+          </p>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {havenIdeation.seeds.map((seed) => (
+              <div
+                key={seed.title}
+                className="border-l-2 pl-4"
+                style={{ borderColor: `${HAVEN_ACCENT}55` }}
+              >
+                <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
+                  {seed.title}
                 </p>
+                <p className="mt-2 text-sm leading-relaxed text-gray-700">{seed.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {havenIdeation.sketches.map((sketch) => (
+              <div key={sketch.file}>
+                <div className="overflow-hidden bg-white">
+                  <ProjectImage
+                    src={`${HAVEN_ASSET_BASE}/${sketch.file}`}
+                    alt={sketch.caption}
+                    placeholderLabel={sketch.file}
+                    accent={HAVEN_ACCENT}
+                    className="aspect-[4/3] w-full object-contain"
+                  />
+                </div>
+                <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-gray-500">
+                  {sketch.caption}
+                </p>
+              </div>
+            ))}
+          </div>
+          <FullBleedImage
+            src={`${HAVEN_ASSET_BASE}/${havenIdeation.moodboard}`}
+            alt="Haven moodboard"
+            placeholderLabel={havenIdeation.moodboard}
+            aspect="aspect-[16/9]"
+          />
+        </FadeUp>
+
+        {/* 05 — Iteration (image-led) */}
+        <FadeUp className="mt-24">
+          <SectionLabel>{havenIteration.label}</SectionLabel>
+          <BeatHeadline>{havenIteration.headline}</BeatHeadline>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
+            {havenIteration.body}
+          </p>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2">
+            {havenIteration.directions.map((direction) => (
+              <div key={direction.n}>
+                <div className="overflow-hidden">
+                  <ProjectImage
+                    src={`${HAVEN_ASSET_BASE}/${direction.image}`}
+                    alt={direction.title}
+                    placeholderLabel={direction.image}
+                    accent={HAVEN_ACCENT}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </div>
+                <div className="mt-3 flex items-baseline gap-3">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
+                    {direction.n}
+                  </span>
+                  <h3 className="text-base font-medium tracking-tight text-[#111]">
+                    {direction.title}
+                  </h3>
+                </div>
+                <p className="mt-1 text-sm leading-relaxed text-gray-600">{direction.body}</p>
               </div>
             ))}
           </div>
         </FadeUp>
 
-        <FadeUp className="mt-20">
-          <SectionLabel>{havenProblem.label}</SectionLabel>
-          <BeatHeadline>{havenProblem.headline}</BeatHeadline>
-          <p className="mt-6 text-base leading-relaxed text-gray-700">
-            {havenProblem.body}
-          </p>
-          <blockquote
-            className="mt-10 border-l-2 pl-6 text-xl font-medium leading-snug tracking-tight text-[#111] md:text-2xl"
-            style={{ borderColor: HAVEN_ACCENT }}
-          >
-            {havenProblem.thesis}
-          </blockquote>
-        </FadeUp>
-
-        <div className="mt-24 space-y-24">
-          {havenRenderBeats.map((beat) => (
-            <FadeUp key={beat.id}>
-              <RenderBeatSection
-                beat={beat}
-                assetBase={HAVEN_ASSET_BASE}
-                accent={HAVEN_ACCENT}
-              />
-            </FadeUp>
-          ))}
-        </div>
-
+        {/* 06 — Final choice */}
         <FadeUp className="mt-24">
-          <ProcessThumbStrip
-            label={havenProcess.label}
-            summaryLabel={havenProcess.summaryLabel}
-            intro={havenProcess.intro}
-            thumbs={havenProcess.thumbs}
-            assetBase={HAVEN_ASSET_BASE}
-            accent={HAVEN_ACCENT}
-          />
-        </FadeUp>
-
-        <FadeUp className="mt-20 border-t border-gray-200 pt-12">
-          <SectionLabel>{havenPositioning.label}</SectionLabel>
-          <BeatHeadline>{havenPositioning.headline}</BeatHeadline>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
-            {havenPositioning.body}
+          <SectionLabel>{havenFinalChoice.label}</SectionLabel>
+          <BeatHeadline>{havenFinalChoice.headline}</BeatHeadline>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
+            {havenFinalChoice.body}
+          </p>
+          <div className="mt-8 space-y-4">
+            {havenFinalChoice.principles.map((item) => (
+              <div
+                key={item.title}
+                className="border-l-2 pl-4"
+                style={{ borderColor: `${HAVEN_ACCENT}55` }}
+              >
+                <p className="text-sm font-medium text-[#111]">{item.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-gray-700">{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {havenFinalChoice.renders.map((render) => (
+              <div key={render.file}>
+                <div className="overflow-hidden">
+                  <ProjectImage
+                    src={`${HAVEN_ASSET_BASE}/${render.file}`}
+                    alt={render.caption ?? render.file}
+                    placeholderLabel={render.caption ?? render.file}
+                    accent={HAVEN_ACCENT}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </div>
+                {render.caption && (
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-gray-500">
+                    {render.caption}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+          <p className="mt-12 border-t border-gray-200 pt-8 text-sm leading-relaxed text-gray-600">
+            {havenFinalChoice.status}
           </p>
         </FadeUp>
       </article>

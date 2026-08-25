@@ -30,16 +30,9 @@ export const havenOpening = {
   ],
 };
 
-/** Stats / research chart */
+/** Stats / research chart — chart carries the copy */
 export const havenStats = {
   label: "The shift",
-  lead: "People are living longer — and choosing to live alone.",
-  bullets: [
-    "About 30% of adults over 65 live alone (mostly women).",
-    "About one-third of U.S. households live alone (~38 million) — a trend since the 1940s.",
-    "About 40% of adults need help with Activities of Daily Living (ADL).",
-    "These adults want to stay connected to friends and family — and family wants to know they are doing well.",
-  ],
   image: "bacground-research.png",
   imageCaption: "Background research — living alone & aging in place",
 };

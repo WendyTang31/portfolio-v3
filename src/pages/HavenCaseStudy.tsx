@@ -159,22 +159,7 @@ export function HavenCaseStudy() {
         {/* Stats */}
         <FadeUp className="mt-24">
           <SectionLabel>{havenStats.label}</SectionLabel>
-          <BeatHeadline>{havenStats.lead}</BeatHeadline>
-          <ul className="mt-8 max-w-2xl space-y-3">
-            {havenStats.bullets.map((line) => (
-              <li
-                key={line}
-                className="border-l-2 pl-4 text-sm leading-relaxed text-gray-700"
-                style={{ borderColor: `${HAVEN_ACCENT}55` }}
-              >
-                {line}
-              </li>
-            ))}
-          </ul>
           <Media file={havenStats.image} alt={havenStats.imageCaption} />
-          <p className="mt-3 font-mono text-[10px] uppercase tracking-wider text-gray-500">
-            {havenStats.imageCaption}
-          </p>
         </FadeUp>
 
         {/* Existing devices */}

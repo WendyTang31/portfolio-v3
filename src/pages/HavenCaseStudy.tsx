@@ -227,13 +227,13 @@ export function HavenCaseStudy() {
                 <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
                   {group.title}
                 </p>
-                <div className="mt-4 overflow-hidden">
+                <div className="mt-4 overflow-hidden rounded-lg border border-gray-200 bg-[#fcfcfc] px-6 py-8">
                   <ProjectImage
                     src={`${HAVEN_ASSET_BASE}/${group.image}`}
                     alt={group.title}
                     placeholderLabel={group.image}
                     accent={HAVEN_ACCENT}
-                    className="aspect-[4/3] w-full object-cover"
+                    className="mx-auto h-auto w-full max-w-[220px] object-contain"
                   />
                 </div>
                 <ul className="mt-6 space-y-4">

@@ -50,7 +50,7 @@ export const havenExisting = {
 export const havenVision = {
   label: "What if",
   body: "Imagine a care-monitoring device that is not surveillance — but a way to bond seniors and caregivers. It gives the senior privacy, and the caregiver a sense of ease.",
-  image: "hero-haven.png",
+  image: "haven.png",
 };
 
 /** Interviews */
@@ -59,7 +59,7 @@ export const havenInterviews = {
   intro: "Through interviews, both sides’ needs became clearer.",
   caregivers: {
     title: "Caregivers",
-    image: "03-persona-michelle.png",
+    image: "caregive-icon.svg",
     quotes: [
       "The cost of an unrecorded event is extremely high.",
       "Wandering is the nightmare scenario — for dementia families, the #1 fear is a parent walking out the front door.",
@@ -68,7 +68,7 @@ export const havenInterviews = {
   },
   seniors: {
     title: "Seniors",
-    image: "comparison.png",
+    image: "senior-icon.svg",
     quotes: [
       "I always forget to take my pills, forget things — I feel less able to take care of myself.",
       "I don’t like to wear sensor alarms, pads, or call buttons. I would unplug the security cameras. I don’t need an aide around all the time.",

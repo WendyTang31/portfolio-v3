@@ -302,22 +302,14 @@ export function HavenCaseStudy() {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700">
             {havenForm.body}
           </p>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {havenForm.images.map((img) => (
-              <div key={img.file}>
-                <div className="overflow-hidden bg-white">
-                  <ProjectImage
-                    src={`${HAVEN_ASSET_BASE}/${img.file}`}
-                    alt={img.caption}
-                    placeholderLabel={img.file}
-                    accent={HAVEN_ACCENT}
-                    className="aspect-[4/3] w-full object-contain"
-                  />
-                </div>
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-gray-500">
-                  {img.caption}
-                </p>
-              </div>
+              <FitGridImage
+                key={img.file}
+                file={img.file}
+                alt={img.caption}
+                caption={img.caption}
+              />
             ))}
           </div>
         </FadeUp>

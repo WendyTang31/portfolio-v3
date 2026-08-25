@@ -103,10 +103,10 @@ export const havenForm = {
   label: "Form / style",
   body: "Sketches across form, physical interaction, CMF, display, and lamp language.",
   images: [
-    { file: "sketch-1.png", caption: "Form studies" },
-    { file: "sketch-2.png", caption: "Physical interaction" },
-    { file: "sketch-3.png", caption: "Display / hub" },
-    { file: "moodboard.png", caption: "CMF & lamp language" },
+    { file: "sk-1.png", caption: "Form studies" },
+    { file: "sk-2.png", caption: "Physical interaction" },
+    { file: "sk-3.png", caption: "Display / hub" },
+    { file: "sk-4.png", caption: "CMF & lamp language" },
   ],
 };
 

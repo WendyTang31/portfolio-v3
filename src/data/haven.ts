@@ -1,5 +1,5 @@
-// Haven assets: Public/projects/haven/ for most media.
-// Hero is imported so Vite always serves newly added files (Public can lag until restart).
+// Haven — simple case-study outline. Media in Public/projects/haven/
+// Hero imported so Vite serves it reliably.
 
 import headImageUrl from "../assets/haven/head-image.png";
 
@@ -9,7 +9,7 @@ export const HAVEN_ASSET_BASE = "/projects/haven";
 export const havenHero = {
   title: "Haven",
   kicker: "AI hardware · elder care · industrial design",
-  tagline: "A peace of mind — felt as care, never as being watched.",
+  tagline: "Care monitoring that bonds two generations — without surveillance.",
   render: headImageUrl,
 };
 
@@ -17,144 +17,148 @@ export const havenMeta = {
   role: "Industrial design — form, interaction & product identity",
   team: "Early-stage venture / Haven",
   year: "2025–2026",
-  context: "Privacy-first home presence for aging in place",
+  context: "Aging in place · privacy-first sensing",
 };
 
-/** Slide 20 · flesh: manifesto slide + context photo + bridge */
-export const havenContext = {
-  label: "01 — Context / problem",
-  headline:
-    "There's a gap in senior health monitoring — between caregivers who want to know they're safe, and seniors who need privacy and dignity.",
-  body: "Seniors need quiet companionship. Caregivers need to know a day went okay — without hovering, and without turning love into a livestream.",
-  bridge:
-    "A device can't replace care. It can carry a simple message across the gap: I'm thinking of you.",
-  taglines: [
-    "Existing camera products on the market are purely functional — but they fail to bring seniors a real sense of safety and care.",
+/** Opening context */
+export const havenOpening = {
+  label: "Context",
+  paragraphs: [
+    "More and more seniors are living alone.",
+    "They face health decline and losing agency in daily care — yet most still want to stay home, not move into a care facility.",
+    "Meanwhile, caregivers worry about their parents and want to check in on their health constantly.",
   ],
-  manifesto: "hero-haven.png",
+};
+
+/** Stats / research chart */
+export const havenStats = {
+  label: "The shift",
+  lead: "People are living longer — and choosing to live alone.",
+  bullets: [
+    "About 30% of adults over 65 live alone (mostly women).",
+    "About one-third of U.S. households live alone (~38 million) — a trend since the 1940s.",
+    "About 40% of adults need help with Activities of Daily Living (ADL).",
+    "These adults want to stay connected to friends and family — and family wants to know they are doing well.",
+  ],
+  image: "bacground-research.png",
+  imageCaption: "Background research — living alone & aging in place",
+};
+
+/** Existing products problem */
+export const havenExisting = {
+  label: "The problem with today",
+  body: "Most elder-care monitors can detect falls, track health data, and send alerts — but they still feel like surveillance. They intrude on daily life.",
+  formNote:
+    "Cold, boxy, hard edges. Security-camera language. White medical plastic. A black lens as an eye, always watching.",
   image: "context.png",
 };
 
-/** Slide 21 · flesh: product presence + emoji personality + caregiver app tone */
-export const havenSolution = {
-  label: "02 — Solution overview",
-  headline: "Peace of mind for both sides — without constant watching.",
-  body: "Haven lets the senior choose when they are seen, while still bonding them with caregivers. Sense what matters; keep the warmth.",
-  pillars: [
+/** Vision */
+export const havenVision = {
+  label: "What if",
+  body: "Imagine a care-monitoring device that is not surveillance — but a way to bond seniors and caregivers. It gives the senior privacy, and the caregiver a sense of ease.",
+  image: "hero-haven.png",
+};
+
+/** Interviews */
+export const havenInterviews = {
+  label: "User interviews",
+  intro: "Through interviews, both sides’ needs became clearer.",
+  caregivers: {
+    title: "Caregivers",
+    image: "03-persona-michelle.png",
+    quotes: [
+      "The cost of an unrecorded event is extremely high.",
+      "Wandering is the nightmare scenario — for dementia families, the #1 fear is a parent walking out the front door.",
+      "Mom didn’t like them at first because she thought I was stalking her.",
+    ],
+  },
+  seniors: {
+    title: "Seniors",
+    image: "comparison.png",
+    quotes: [
+      "I always forget to take my pills, forget things — I feel less able to take care of myself.",
+      "I don’t like to wear sensor alarms, pads, or call buttons. I would unplug the security cameras. I don’t need an aide around all the time.",
+    ],
+  },
+};
+
+/** Underlying needs */
+export const havenNeeds = {
+  label: "Underlying needs",
+  caregiver:
+    "Caregivers need to know about emergencies and falls — without intruding into everyday life.",
+  senior:
+    "Seniors want less anxiety about falling — while keeping a sense of agency most of the time.",
+  thesis:
+    "The device should be a link of life between both sides — not something that only pleases the caregiver.",
+};
+
+/** Tech / features */
+export const havenFeatures = {
+  label: "Technology / features",
+  items: [
     {
       title: "Sense without staring",
       body: "Radar technology — no video being captured.",
+      media: { type: "image" as const, file: "idea-2.png" },
     },
     {
       title: "Agency for the senior",
       body: "A privacy mode seniors can switch on for quiet time during their day.",
+      media: { type: "video" as const, file: "emoji.mp4" },
     },
     {
       title: "Connection, not only alerts",
       body: "Bond both sides with subtle moments of joy and care — instead of redundant health check-ins.",
+      media: { type: "video" as const, file: "good-morning.mp4" },
     },
   ],
-  image: "idea-2.png",
-  emojiVideo: "emoji.mp4",
-  appVideo: "good-morning.mp4",
 };
 
-/** Slide 22 · flesh: research quote + market/pain comparison */
-export const havenUsers = {
-  label: "03 — Understanding users",
-  headline: "Ten conversations. One clear ask.",
-  body: "Builders, caregivers, and seniors: systems fail when it matters — and cameras get unplugged when they feel like watching.",
-  finding:
-    "Peace of mind through daily patterns — and the elder has to want the device enough to keep it on.",
-  quote: {
-    text: "What families often want isn't just safety alerts, it's peace of mind through visibility into daily patterns.",
-    attribution: "Michelle Erskine · primary caregiver",
-  },
-  painPoints: [
-    { title: "Alert overload", body: "Hundreds of pings instead of one calm read of the day." },
-    { title: "Fails when it matters", body: "Pendants miss. Wearables miss falls. Trust collapses." },
-    { title: "Feels like watching", body: "Surveillance form gets rejected — or unplugged." },
-  ],
-  image: "comparison.png",
-};
-
-export type HavenIdeationDirection = {
-  n: string;
-  title: string;
-  body: string;
-  image: string;
-};
-
-/** Slide 23 · flesh: early sketches + mood language */
-export const havenIdeation = {
-  label: "04 — First ideation",
-  headline: "Warmth first. Camera second.",
-  body: "Belonging before optics — furniture language, privacy in the hand.",
-  seeds: [
-    { title: "Press to hide", body: "A clear physical act to pause being watched." },
-    { title: "Furniture language", body: "Softer silhouettes that sit with the room." },
-    { title: "Warm exchange", body: "Glow, emoji, good mornings — care as conversation." },
-  ],
-  sketches: [
+/** Form / style */
+export const havenForm = {
+  label: "Form / style",
+  body: "Sketches across form, physical interaction, CMF, display, and lamp language.",
+  images: [
     { file: "sketch-1.png", caption: "Form studies" },
-    { file: "sketch-2.png", caption: "Clock / hub language" },
-    { file: "sketch-3.png", caption: "Soft disc bodies" },
+    { file: "sketch-2.png", caption: "Physical interaction" },
+    { file: "sketch-3.png", caption: "Display / hub" },
+    { file: "moodboard.png", caption: "CMF & lamp language" },
   ],
-  moodboard: "moodboard.png",
 };
 
-/** Slide 24 · flesh: four exploration directions from slides 8–11 */
-export const havenIteration = {
-  label: "05 — Iteration",
-  headline: "Four directions — richer UI to pure physical privacy.",
-  body: "Evaluated for home fit, clarity of privacy, and emotional tone.",
-  directions: [
-    {
-      n: "01",
-      title: "Toy-like companion",
-      body: "Cute form; lens toggles back; emoji and time on the face.",
-      image: "exploration-1.png",
-    },
-    {
-      n: "02",
-      title: "Press-the-head privacy",
-      body: "Press the head down — haptic, unmistakable privacy.",
-      image: "exploration-2.png",
-    },
-    {
-      n: "03",
-      title: "Donut + ambient glow",
-      body: "Softer silhouette; night glow; head presses for privacy.",
-      image: "exploration-3.png",
-    },
-    {
-      n: "04",
-      title: "Elegant UI-forward",
-      body: "Refined form; privacy via button or the screen itself.",
-      image: "exploration-4.png",
-    },
-  ] satisfies HavenIdeationDirection[],
+/** Direction */
+export const havenDirection = {
+  label: "Direction",
+  body: "Four directions — from richer UI to pure physical privacy.",
+  images: [
+    { file: "exploration-1.png", caption: "01" },
+    { file: "exploration-2.png", caption: "02" },
+    { file: "exploration-3.png", caption: "03" },
+    { file: "exploration-4.png", caption: "04" },
+  ],
 };
 
-/** Slide 25 · flesh: concept photos — direction still open */
-export const havenFinalChoice = {
-  label: "06 — Final choice",
-  headline: "Holding the middle — still in progress.",
-  body: "Enough UI for warmth between generations. Enough bodily action that privacy never hides in a settings menu.",
-  principles: [
-    { title: "Privacy as agency", body: "They turn watching off; sensing still protects when self-rescue isn't possible." },
-    { title: "Calm signal", body: "A simple daily picture of health — video as exception, not default." },
-    { title: "A presence you'd keep", body: "Form and light that belong in a living room." },
-  ],
-  status: "Still in progress — research spine, exploration spectrum, and direction. Not a finished ship.",
-  renders: [
-    { file: "idea-1.png", caption: "Companion character" },
+/** Exploded view */
+export const havenExploded = {
+  label: "Exploded view",
+  body: "Internal layout and packaging — placeholder.",
+  image: "06-product-family.png",
+};
+
+/** Rendering */
+export const havenRendering = {
+  label: "Rendering",
+  images: [
+    { file: "idea-1.png", caption: "Character" },
     { file: "idea-2.png", caption: "Hub family" },
-    { file: "idea-3.png", caption: "In the room" },
+    { file: "idea-3.png", caption: "In context" },
+    { file: "06-new-concept.png", caption: "Concept" },
   ],
 };
 
-/** Kept for shared haven image tooling */
+/** Shared type for optional haven image tooling */
 export type RenderBeat = {
   id: string;
   headline: string;

@@ -61,7 +61,7 @@ export const works: Work[] = [
   {
     slug: "haven",
     title: "Haven",
-    subtitle: "Peace of mind for two generations — felt as care, never as being watched.",
+    subtitle: "Care monitoring that bonds two generations — without surveillance.",
     tags: ["Industrial Design", "AI Hardware", "Privacy", "Elder Care"],
     accent: "#6e7a64",
     heroImage: headImageUrl,

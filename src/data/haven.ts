@@ -114,12 +114,7 @@ export const havenForm = {
 export const havenDirection = {
   label: "Direction",
   body: "Four directions — from richer UI to pure physical privacy.",
-  images: [
-    { file: "exploration-1.png", caption: "01" },
-    { file: "exploration-2.png", caption: "02" },
-    { file: "exploration-3.png", caption: "03" },
-    { file: "exploration-4.png", caption: "04" },
-  ],
+  image: "comparison.png",
 };
 
 /** Exploded view */

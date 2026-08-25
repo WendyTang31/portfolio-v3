@@ -328,16 +328,7 @@ export function HavenCaseStudy() {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700">
             {havenDirection.body}
           </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {havenDirection.images.map((img) => (
-              <FitGridImage
-                key={img.file}
-                file={img.file}
-                alt={img.caption}
-                caption={img.caption}
-              />
-            ))}
-          </div>
+          <Media file={havenDirection.image} alt="Four design directions" fit />
         </FadeUp>
 
         {/* Exploded */}

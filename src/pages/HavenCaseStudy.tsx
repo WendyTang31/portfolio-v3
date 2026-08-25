@@ -44,14 +44,6 @@ function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
-function BeatHeadline({ children }: { children: ReactNode }) {
-  return (
-    <h2 className="text-2xl font-medium tracking-tight text-[#111] md:text-3xl lg:text-4xl">
-      {children}
-    </h2>
-  );
-}
-
 function Media({
   file,
   alt,

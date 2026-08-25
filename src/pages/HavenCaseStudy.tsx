@@ -255,36 +255,17 @@ export function HavenCaseStudy() {
         {/* Features */}
         <FadeUp className="mt-24">
           <SectionLabel>{havenFeatures.label}</SectionLabel>
-          <div className="mt-10 grid gap-10 md:grid-cols-3">
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
             {havenFeatures.items.map((item) => (
               <div key={item.title}>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
                   {item.title}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-gray-700">{item.body}</p>
-                <div className="mt-5 overflow-hidden bg-black aspect-[4/3]">
-                  {item.media.type === "video" ? (
-                    <video
-                      src={`${HAVEN_ASSET_BASE}/${item.media.file}`}
-                      className="h-full w-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    />
-                  ) : (
-                    <ProjectImage
-                      src={`${HAVEN_ASSET_BASE}/${item.media.file}`}
-                      alt={item.title}
-                      placeholderLabel={item.media.file}
-                      accent={HAVEN_ACCENT}
-                      className="h-full w-full object-cover"
-                    />
-                  )}
-                </div>
               </div>
             ))}
           </div>
+          <Media file={havenFeatures.image} alt="Haven technology features" aspect="aspect-[16/9]" object="object-contain" />
         </FadeUp>
 
         {/* Form / style */}

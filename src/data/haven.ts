@@ -90,21 +90,19 @@ export const havenNeeds = {
 /** Tech / features */
 export const havenFeatures = {
   label: "Technology / features",
+  image: "three-feature.png",
   items: [
     {
       title: "Sense without staring",
       body: "Radar technology — no video being captured.",
-      media: { type: "image" as const, file: "idea-2.png" },
     },
     {
       title: "Agency for the senior",
       body: "A privacy mode seniors can switch on for quiet time during their day.",
-      media: { type: "video" as const, file: "emoji.mp4" },
     },
     {
       title: "Connection, not only alerts",
       body: "Bond both sides with subtle moments of joy and care — instead of redundant health check-ins.",
-      media: { type: "video" as const, file: "good-morning.mp4" },
     },
   ],
 };

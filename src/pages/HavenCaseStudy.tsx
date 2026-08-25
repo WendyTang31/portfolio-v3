@@ -284,13 +284,13 @@ export function HavenCaseStudy() {
         <FadeUp className="mt-24">
           <SectionLabel>{havenFeatures.label}</SectionLabel>
           <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {havenFeatures.items.map((item) => (
-              <div key={item.title}>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
-                  {item.title}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-gray-700">{item.body}</p>
-              </div>
+            {havenFeatures.items.map((title) => (
+              <p
+                key={title}
+                className="font-mono text-xs uppercase tracking-widest text-gray-600 md:text-sm"
+              >
+                {title}
+              </p>
             ))}
           </div>
           <Media file={havenFeatures.image} alt="Haven technology features" fit />

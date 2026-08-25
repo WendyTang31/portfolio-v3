@@ -1,7 +1,7 @@
 // Haven — simple case-study outline. Media in Public/projects/haven/
 // Hero imported so Vite serves it reliably.
 
-import headImageUrl from "../assets/haven/head-image.png";
+import environmentImageUrl from "../assets/haven/environment.png";
 
 export const HAVEN_ACCENT = "#6e7a64";
 export const HAVEN_ASSET_BASE = "/projects/haven";
@@ -10,7 +10,7 @@ export const havenHero = {
   title: "Haven",
   kicker: "AI hardware · elder care · industrial design",
   tagline: "Care monitoring that bonds two generations — without surveillance.",
-  render: headImageUrl,
+  render: environmentImageUrl,
 };
 
 export const havenMeta = {
@@ -142,10 +142,8 @@ export const havenExploded = {
 export const havenRendering = {
   label: "Rendering",
   images: [
-    { file: "idea-1.png", caption: "Character" },
-    { file: "idea-2.png", caption: "Hub family" },
-    { file: "idea-3.png", caption: "In context" },
-    { file: "06-new-concept.png", caption: "Concept" },
+    { file: "tilt-render.png", caption: "Tilt view" },
+    { file: "top-render.png", caption: "Top view" },
   ],
 };
 

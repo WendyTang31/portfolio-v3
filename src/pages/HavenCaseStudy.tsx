@@ -48,22 +48,29 @@ function Media({
   file,
   alt,
   type = "image",
+  fit = false,
   aspect = "aspect-[16/10]",
   object = "object-cover",
 }: {
   file: string;
   alt: string;
   type?: "image" | "video";
+  fit?: boolean;
   aspect?: string;
   object?: string;
 }) {
   const src = `${HAVEN_ASSET_BASE}/${file}`;
+  const containerClass = fit
+    ? "mt-8 overflow-hidden rounded-lg border border-gray-200 bg-[#fcfcfc]"
+    : `mt-8 overflow-hidden bg-black ${aspect}`;
+  const mediaClass = fit ? "w-full h-auto object-contain" : `h-full w-full ${object}`;
+
   return (
-    <div className={`mt-8 overflow-hidden bg-black ${aspect}`}>
+    <div className={containerClass}>
       {type === "video" ? (
         <video
           src={src}
-          className={`h-full w-full ${object}`}
+          className={mediaClass}
           autoPlay
           muted
           loop
@@ -76,8 +83,37 @@ function Media({
           alt={alt}
           placeholderLabel={file}
           accent={HAVEN_ACCENT}
-          className={`h-full w-full ${object}`}
+          className={mediaClass}
         />
+      )}
+    </div>
+  );
+}
+
+function FitGridImage({
+  file,
+  alt,
+  caption,
+}: {
+  file: string;
+  alt: string;
+  caption?: string;
+}) {
+  return (
+    <div>
+      <div className="overflow-hidden rounded-lg border border-gray-200 bg-[#fcfcfc]">
+        <ProjectImage
+          src={`${HAVEN_ASSET_BASE}/${file}`}
+          alt={alt}
+          placeholderLabel={file}
+          accent={HAVEN_ACCENT}
+          className="w-full h-auto object-contain"
+        />
+      </div>
+      {caption && (
+        <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-gray-500">
+          {caption}
+        </p>
       )}
     </div>
   );
@@ -90,7 +126,7 @@ export function HavenCaseStudy() {
         <ProjectImage
           src={havenHero.render}
           alt={havenHero.title}
-          placeholderLabel="head-image.png"
+          placeholderLabel="environment.png"
           accent={HAVEN_ACCENT}
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -151,7 +187,7 @@ export function HavenCaseStudy() {
         {/* Stats */}
         <FadeUp className="mt-24">
           <SectionLabel>{havenStats.label}</SectionLabel>
-          <Media file={havenStats.image} alt={havenStats.imageCaption} />
+          <Media file={havenStats.image} alt={havenStats.imageCaption} fit />
         </FadeUp>
 
         {/* Existing devices */}
@@ -163,7 +199,7 @@ export function HavenCaseStudy() {
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-gray-600">
             {havenExisting.formNote}
           </p>
-          <Media file={havenExisting.image} alt="Existing monitoring devices" />
+          <Media file={havenExisting.image} alt="Existing monitoring devices" fit />
         </FadeUp>
 
         {/* Vision */}
@@ -175,7 +211,7 @@ export function HavenCaseStudy() {
           >
             {havenVision.body}
           </p>
-          <Media file={havenVision.image} alt="Haven vision" />
+          <Media file={havenVision.image} alt="Haven vision" fit />
         </FadeUp>
 
         {/* Interviews */}
@@ -257,7 +293,7 @@ export function HavenCaseStudy() {
               </div>
             ))}
           </div>
-          <Media file={havenFeatures.image} alt="Haven technology features" aspect="aspect-[16/9]" object="object-contain" />
+          <Media file={havenFeatures.image} alt="Haven technology features" fit />
         </FadeUp>
 
         {/* Form / style */}
@@ -292,22 +328,14 @@ export function HavenCaseStudy() {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700">
             {havenDirection.body}
           </p>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {havenDirection.images.map((img) => (
-              <div key={img.file}>
-                <div className="overflow-hidden">
-                  <ProjectImage
-                    src={`${HAVEN_ASSET_BASE}/${img.file}`}
-                    alt={img.caption}
-                    placeholderLabel={img.file}
-                    accent={HAVEN_ACCENT}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-gray-500">
-                  {img.caption}
-                </p>
-              </div>
+              <FitGridImage
+                key={img.file}
+                file={img.file}
+                alt={img.caption}
+                caption={img.caption}
+              />
             ))}
           </div>
         </FadeUp>
@@ -318,28 +346,20 @@ export function HavenCaseStudy() {
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-gray-600">
             {havenExploded.body}
           </p>
-          <Media file={havenExploded.image} alt="Exploded view placeholder" />
+          <Media file={havenExploded.image} alt="Exploded view placeholder" fit />
         </FadeUp>
 
         {/* Rendering */}
         <FadeUp className="mt-24">
           <SectionLabel>{havenRendering.label}</SectionLabel>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {havenRendering.images.map((img) => (
-              <div key={img.file}>
-                <div className="overflow-hidden">
-                  <ProjectImage
-                    src={`${HAVEN_ASSET_BASE}/${img.file}`}
-                    alt={img.caption}
-                    placeholderLabel={img.file}
-                    accent={HAVEN_ACCENT}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-gray-500">
-                  {img.caption}
-                </p>
-              </div>
+              <FitGridImage
+                key={img.file}
+                file={img.file}
+                alt={img.caption}
+                caption={img.caption}
+              />
             ))}
           </div>
         </FadeUp>

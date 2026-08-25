@@ -1,4 +1,4 @@
-import headImageUrl from "../assets/haven/head-image.png";
+import environmentImageUrl from "../assets/haven/environment.png";
 
 export type Work = {
   slug: string;
@@ -64,7 +64,7 @@ export const works: Work[] = [
     subtitle: "Care monitoring that bonds two generations — without surveillance.",
     tags: ["Industrial Design", "AI Hardware", "Privacy", "Elder Care"],
     accent: "#6e7a64",
-    heroImage: headImageUrl,
+    heroImage: environmentImageUrl,
     galleryImages: [
       "/projects/haven/idea-3.png",
       "/projects/haven/idea-2.png",

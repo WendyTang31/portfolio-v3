@@ -229,42 +229,51 @@ export function BirdFeetCaseStudy() {
                 <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-700">
                   {stage.body}
                 </p>
-                <div
-                  className={`mt-6 grid gap-4 ${
-                    stage.media.length > 2 ? "sm:grid-cols-2" : "md:grid-cols-2"
-                  }`}
-                >
-                  {stage.media.map((item) => (
-                    <div key={item.file}>
-                      <div className="overflow-hidden rounded-lg border border-gray-200 bg-black">
-                        {item.type === "video" ? (
-                          <video
-                            className="aspect-[4/3] w-full object-cover"
-                            src={`${BIRD_FEET_ASSET_BASE}/${item.file}`}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            controls
-                          />
-                        ) : (
-                          <ProjectImage
-                            src={`${BIRD_FEET_ASSET_BASE}/${item.file}`}
-                            alt={item.caption ?? item.file}
-                            placeholderLabel={item.file}
-                            accent={BIRD_FEET_ACCENT}
-                            className="aspect-[4/3] w-full object-cover"
-                          />
+                {stage.slides && stage.slides.length > 0 ? (
+                  <MediaSlideCarousel
+                    slides={stage.slides}
+                    assetBase={BIRD_FEET_ASSET_BASE}
+                    alt={stage.title}
+                    accent={BIRD_FEET_ACCENT}
+                  />
+                ) : (
+                  <div
+                    className={`mt-6 grid gap-4 ${
+                      (stage.media?.length ?? 0) > 2 ? "sm:grid-cols-2" : "md:grid-cols-2"
+                    }`}
+                  >
+                    {(stage.media ?? []).map((item) => (
+                      <div key={item.file}>
+                        <div className="overflow-hidden rounded-lg border border-gray-200 bg-black">
+                          {item.type === "video" ? (
+                            <video
+                              className="aspect-[4/3] w-full object-cover"
+                              src={`${BIRD_FEET_ASSET_BASE}/${item.file}`}
+                              autoPlay
+                              muted
+                              loop
+                              playsInline
+                              controls
+                            />
+                          ) : (
+                            <ProjectImage
+                              src={`${BIRD_FEET_ASSET_BASE}/${item.file}`}
+                              alt={item.caption ?? item.file}
+                              placeholderLabel={item.file}
+                              accent={BIRD_FEET_ACCENT}
+                              className="aspect-[4/3] w-full object-cover"
+                            />
+                          )}
+                        </div>
+                        {item.caption && (
+                          <p className="mt-2 text-xs leading-relaxed text-gray-600">
+                            {item.caption}
+                          </p>
                         )}
                       </div>
-                      {item.caption && (
-                        <p className="mt-2 text-xs leading-relaxed text-gray-600">
-                          {item.caption}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>

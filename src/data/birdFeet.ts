@@ -95,12 +95,13 @@ export type BirdFeetProcessStage = {
   n: string;
   title: string;
   body: string;
-  media: { type: "image" | "video"; file: string; caption?: string }[];
+  media?: { type: "image" | "video"; file: string; caption?: string }[];
+  slides?: { type: "image"; file: string; caption?: string }[];
 };
 
 export const birdFeetProcess = {
   label: "Prototyping process",
-  headline: "From pull tests to a proof of concept.",
+  headline: "From pull tests to a physical prototype.",
   stages: [
     {
       n: "01",
@@ -123,23 +124,18 @@ export const birdFeetProcess = {
     },
     {
       n: "02",
-      title: "Proof of concept",
-      body: "Rapid prototyping with cardboard, 3D-printed TPU, PLA, resin, and silicone elastic bands to validate the mechanism.",
-      media: [
+      title: "To the physical prototype",
+      body: "From printed parts to a foot that can grip.",
+      slides: [
         {
           type: "image" as const,
-          file: "06-prototype-cardboard.jpg",
-          caption: "Early cardboard articulation study",
+          file: "02-nature-reference.png",
+          caption: "Printed iterations — segments, joints, and grip pads.",
         },
         {
           type: "image" as const,
-          file: "07-prototype-print.jpg",
-          caption: "Printed segments and soft elements",
-        },
-        {
-          type: "image" as const,
-          file: "08-prototype-assembly.jpg",
-          caption: "Assembled multi-finger prototype",
+          file: "12-field-context.png",
+          caption: "Assembled prototype on uneven terrain.",
         },
       ],
     },

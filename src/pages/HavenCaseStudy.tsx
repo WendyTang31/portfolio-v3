@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, HeartHandshake, Radar, ToggleRight } from "lucide-react";
 import {
   HAVEN_ACCENT,
   HAVEN_ASSET_BASE,
@@ -41,6 +41,20 @@ function SectionLabel({ children }: { children: ReactNode }) {
     <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-500">
       {children}
     </p>
+  );
+}
+
+function FeatureIcon({ type }: { type: "radar" | "toggle" | "heart" }) {
+  const Icon =
+    type === "radar" ? Radar : type === "toggle" ? ToggleRight : HeartHandshake;
+  return (
+    <div
+      className="flex h-11 w-11 items-center justify-center rounded-full"
+      style={{ backgroundColor: "#c17a5a" }}
+      aria-hidden
+    >
+      <Icon className="h-5 w-5 text-white" strokeWidth={1.75} />
+    </div>
   );
 }
 
@@ -283,17 +297,30 @@ export function HavenCaseStudy() {
         {/* Features */}
         <FadeUp className="mt-24">
           <SectionLabel>{havenFeatures.label}</SectionLabel>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {havenFeatures.items.map((title) => (
-              <p
-                key={title}
-                className="font-mono text-xs uppercase tracking-widest text-gray-600 md:text-sm"
-              >
-                {title}
-              </p>
+          <div className="mt-10 grid gap-10 md:grid-cols-3">
+            {havenFeatures.items.map((item) => (
+              <div key={item.title} className="flex flex-col">
+                <FeatureIcon type={item.icon} />
+                <h3 className="mt-5 text-lg font-semibold tracking-tight text-[#111]">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                  {item.body}
+                </p>
+                <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-black">
+                  <video
+                    src={`${HAVEN_ASSET_BASE}/${item.video}`}
+                    className="aspect-[9/16] w-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-label={item.title}
+                  />
+                </div>
+              </div>
             ))}
           </div>
-          <Media file={havenFeatures.image} alt="Haven technology features" fit />
         </FadeUp>
 
         {/* Form / style */}

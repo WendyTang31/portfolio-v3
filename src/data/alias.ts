@@ -1,5 +1,5 @@
 export const ALIAS_ACCENT = "#D97706";
-export const ALIAS_ASSET_BASE = "/projects/alias";
+export const ALIAS_ASSET_BASE = "/projects/ALIAS";
 
 export const aliasMetaDoc = {
   title: "ALIAS — Unmasking the Driver",
@@ -48,32 +48,9 @@ export const aliasStatement = {
 export const aliasNature = {
   h2: "Communication is a survival skill",
   body: "Every social animal, humans included, communicates through more than one channel at once — color, rhythm, motion, sound. Nature does it to survive and to bond; humans layered abstract symbols and language on top. I looked to that multi-channel logic — the way cuttlefish skin grows a pattern rather than switching it on — as the model for a light that behaves like a living surface.",
-  moodboard: [
-    {
-      file: "nature-moodboard-1.jpg",
-      alt: "Cuttlefish skin growing a pattern.",
-    },
-    {
-      file: "nature-moodboard-2.jpg",
-      alt: "Warning coloration in nature — peacock or similar signal.",
-    },
-    {
-      file: "nature-moodboard-3.jpg",
-      alt: "Warning signals and display in animals.",
-    },
-    {
-      file: "nature-moodboard-4.jpg",
-      alt: "Human icons and pictograms.",
-    },
-    {
-      file: "nature-moodboard-5.jpg",
-      alt: "Pictogram language reference.",
-    },
-    {
-      file: "nature-moodboard-6.jpg",
-      alt: "Multi-channel communication moodboard still.",
-    },
-  ],
+  image: "Final Presentation (3).png",
+  imageAlt:
+    "Three-panel nature reference: cuttlefish camouflage, social grooming, and human cave symbols.",
 };
 
 export const aliasPrior = {
@@ -116,7 +93,8 @@ export const aliasResearch = {
     quote:
       '"When carmakers put technology into vehicles, runners and cyclists need to be part of that conversation." — interviewee',
     summary:
-      "Test 1 found the strongest need in urban cross-vehicle moments: driver to pedestrian, cyclist, and biker. Exact vote counts are pending.",
+      "Test 1 graphics test: eight messages with abstract symbol sketches — sorry, going, thank you, stressed, happy, yield, frustration, emergency.",
+    image: "Final Presentation.png",
     bars: [
       { scenario: "Driver ↔ pedestrian", highlight: true },
       { scenario: "Driver ↔ cyclist", highlight: true },
@@ -144,7 +122,8 @@ export const aliasResearch = {
       "I see you",
     ],
     summary:
-      "Test 2: representative imagery (emoji/pictogram) scored highest for clarity and also highest for stimulation. Faces won for emotion; traffic-sign convention won for intention. Exact cell scores are pending.",
+      "Test 2: representative imagery (emoji/pictogram) scored highest for clarity and also highest for stimulation. Faces won for emotion; traffic-sign convention won for intention.",
+    image: "Final Presentation (1).png",
   },
   test3: {
     title: "Test 3 — Concept evaluation",

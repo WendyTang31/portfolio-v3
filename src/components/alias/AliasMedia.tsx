@@ -9,6 +9,7 @@ type AliasMediaProps = {
   dark?: boolean;
   aspect?: string;
   poster?: string;
+  fit?: "cover" | "contain";
 };
 
 function SlotFallback({
@@ -44,10 +45,12 @@ export function AliasMedia({
   dark = false,
   aspect = "aspect-[16/10]",
   poster,
+  fit = "cover",
 }: AliasMediaProps) {
   const [failed, setFailed] = useState(false);
-  const src = `${ALIAS_ASSET_BASE}/${file}`;
-  const posterSrc = poster ? `${ALIAS_ASSET_BASE}/${poster}` : undefined;
+  const src = `${ALIAS_ASSET_BASE}/${encodeURIComponent(file)}`;
+  const posterSrc = poster ? `${ALIAS_ASSET_BASE}/${encodeURIComponent(poster)}` : undefined;
+  const objectFit = fit === "contain" ? "object-contain bg-white" : "object-cover";
 
   useEffect(() => {
     setFailed(false);
@@ -63,7 +66,7 @@ export function AliasMedia({
         src={src}
         poster={posterSrc}
         aria-label={alt}
-        className={`${aspect} w-full object-cover ${dark ? "alias-band" : ""}`}
+        className={`${aspect} w-full ${objectFit} ${dark ? "alias-band" : ""}`}
         autoPlay={kind !== "film"}
         muted
         loop={kind !== "film"}
@@ -78,7 +81,7 @@ export function AliasMedia({
     <img
       src={src}
       alt={alt}
-      className={`${aspect} w-full object-cover`}
+      className={`${aspect} w-full ${objectFit}`}
       onError={() => setFailed(true)}
       style={{ backgroundColor: `${ALIAS_ACCENT}12` }}
     />

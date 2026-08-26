@@ -5,12 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import "../alias.css";
 import { Footer } from "../components/Footer";
 import { AliasMedia } from "../components/alias/AliasMedia";
-import {
-  Test1Chart,
-  Test2Heatmaps,
-  Test3Chart,
-  SystemsMap,
-} from "../components/alias/AliasCharts";
+import { Test3Chart, SystemsMap } from "../components/alias/AliasCharts";
 import { LiquidTriptych, LiquidPrinciple } from "../components/alias/LiquidPixel";
 import {
   aliasMetaDoc,
@@ -179,23 +174,19 @@ export function AliasCaseStudy() {
       </section>
 
       <section className="alias-section">
-        <div className="alias-wrap grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_1.1fr]">
+        <div className="alias-wrap">
           <FadeUp>
             <h2 className="alias-h2">{aliasNature.h2}</h2>
             <p className="alias-body mt-6 text-[var(--ink-soft)]">{aliasNature.body}</p>
           </FadeUp>
-          <FadeUp>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {aliasNature.moodboard.map((item) => (
-                <AliasMedia
-                  key={item.file}
-                  file={item.file}
-                  caption={item.alt}
-                  alt={item.alt}
-                  aspect="aspect-square"
-                />
-              ))}
-            </div>
+          <FadeUp className="mt-10">
+            <AliasMedia
+              file={aliasNature.image}
+              caption={aliasNature.imageAlt}
+              alt={aliasNature.imageAlt}
+              aspect="w-full"
+              fit="contain"
+            />
           </FadeUp>
         </div>
       </section>
@@ -237,7 +228,13 @@ export function AliasCaseStudy() {
             </p>
             <p className="alias-body mt-4 text-[var(--ink-soft)]">{aliasResearch.test1.body}</p>
             <div className="mt-8">
-              <Test1Chart />
+              <AliasMedia
+                file={aliasResearch.test1.image}
+                caption={aliasResearch.test1.summary}
+                alt={aliasResearch.test1.summary}
+                aspect="w-full"
+                fit="contain"
+              />
             </div>
             <p className="alias-mono mt-6 text-sm leading-relaxed text-[var(--ink-soft)]">
               {aliasResearch.test1.quote}
@@ -250,7 +247,13 @@ export function AliasCaseStudy() {
             </p>
             <p className="alias-body mt-4 text-[var(--ink-soft)]">{aliasResearch.test2.body}</p>
             <div className="mt-8">
-              <Test2Heatmaps />
+              <AliasMedia
+                file={aliasResearch.test2.image}
+                caption={aliasResearch.test2.summary}
+                alt={aliasResearch.test2.summary}
+                aspect="w-full"
+                fit="contain"
+              />
             </div>
             <p className="mt-8 text-lg font-semibold leading-snug">{aliasResearch.test2.finding}</p>
             <blockquote className="mt-6 border-l-2 border-[var(--accent)] pl-5 text-sm leading-relaxed text-[var(--ink-soft)]">

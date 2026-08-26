@@ -94,9 +94,9 @@ export type Skill = {
 
 export const SITE = {
   name: "FANGZHUO TANG",
-  heroHeadline: "NATURE . DESIGN .TECHNOLOGY",
+  heroHeadline: "Infuse humanity into technology by design.",
   heroDescription:
-    "I design embodied intelligence that feels alive and expresses intention and emotion",
+    "My design practice communicates empathy, stories, and future vision across the physical and digital.",
   ctaBlurb:
     "Industrial designer building robots and future AI hardware — from HRI to physical prototypes.",
   skills: [
@@ -112,13 +112,13 @@ export const SITE = {
     },
     {
       num: "03",
-      label: "Vision",
-      detail: "Technology & society",
+      label: "Prototyping",
+      detail: "Physical making & iteration",
     },
     {
       num: "04",
-      label: "Drive",
-      detail: "Curiousity & constant learning",
+      label: "System",
+      detail: "How parts work as a whole",
     },
   ] as Skill[],
   linkedin: "https://linkedin.com/in/wendyid",

@@ -8,7 +8,7 @@ export const birdFeetHero = {
   kicker: "Case Study · Biomimicry · Mechanisms",
   tagline:
     "Bio-inspired landing gear from bird feet — adaptive grip for uneven terrain.",
-  image: `${BIRD_FEET_ASSET_BASE}/hero-bird-feet.webp`,
+  image: `${BIRD_FEET_ASSET_BASE}/ps-scene.png`,
 };
 
 export const birdFeetMeta = {
@@ -181,5 +181,9 @@ export const birdFeetResult = {
       poster: "11-result-still.png",
     },
   ],
-  still: "11-result-still.png",
+  renders: [
+    { type: "image" as const, file: "render1.png" },
+    { type: "image" as const, file: "render2.png" },
+    { type: "image" as const, file: "render3.png" },
+  ],
 };

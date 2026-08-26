@@ -16,6 +16,7 @@ import {
   birdFeetWhatItIs,
 } from "../data/birdFeet";
 import { ProjectImage } from "../components/ProjectImage";
+import { MediaSlideCarousel } from "../components/rover/MediaSlideCarousel";
 import { Footer } from "../components/Footer";
 
 function FadeUp({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -55,7 +56,7 @@ export function BirdFeetCaseStudy() {
         <ProjectImage
           src={birdFeetHero.image}
           alt={birdFeetHero.title}
-          placeholderLabel="hero-bird-feet.webp"
+          placeholderLabel="ps-scene.png"
           accent={BIRD_FEET_ACCENT}
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -281,15 +282,12 @@ export function BirdFeetCaseStudy() {
           <SectionLabel>{birdFeetResult.label}</SectionLabel>
           <BeatHeadline>{birdFeetResult.headline}</BeatHeadline>
           <p className="mt-6 text-base leading-relaxed text-gray-700">{birdFeetResult.body}</p>
-          <div className="mt-8 overflow-hidden rounded-lg border border-gray-200">
-            <ProjectImage
-              src={`${BIRD_FEET_ASSET_BASE}/${birdFeetResult.still}`}
-              alt="Bird Feet result"
-              placeholderLabel={birdFeetResult.still}
-              accent={BIRD_FEET_ACCENT}
-              className="aspect-[16/10] w-full object-cover"
-            />
-          </div>
+          <MediaSlideCarousel
+            slides={birdFeetResult.renders}
+            assetBase={BIRD_FEET_ASSET_BASE}
+            alt="Bird Feet result render"
+            accent={BIRD_FEET_ACCENT}
+          />
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {birdFeetResult.demos.map((demo) => (
               <div key={demo.file}>

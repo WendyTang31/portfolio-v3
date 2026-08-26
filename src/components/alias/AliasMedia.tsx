@@ -71,6 +71,7 @@ export function AliasMedia({
         muted
         loop={kind !== "film"}
         playsInline
+        preload={kind === "film" ? "metadata" : "auto"}
         controls={kind === "film"}
         onError={() => setFailed(true)}
       />

@@ -7,3 +7,5 @@ dist-ssr
 *.CR2
 Public/projects/rover/Z52A9408.png
 Public/projects/rover/Z52A9483.png
+# Original ALIAS hero film (~84MB). Site uses hero-short.mp4.
+Public/projects/ALIAS/hero.mp4

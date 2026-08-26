@@ -80,7 +80,7 @@ export const works: Work[] = [
       "A communication language that lets a car express what a horn never could.",
     tags: ["eHMI", "Interaction", "Research", "Hardware"],
     accent: "#D97706",
-    heroImage: "/projects/alias/hero-poster.jpg",
+    heroImage: "/projects/ALIAS/hero1.png",
     isLive: true,
     href: "/projects/alias",
   },

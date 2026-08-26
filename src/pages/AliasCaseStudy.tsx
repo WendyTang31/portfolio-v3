@@ -60,12 +60,11 @@ export function AliasCaseStudy() {
     <div className="alias-page min-h-screen">
       <section className="relative h-[100svh] w-full overflow-hidden bg-[var(--dark)]">
         <AliasMedia
-          file="hero-film-loop.mp4"
+          file="hero-short.mp4"
           caption={aliasHero.videoCaption}
           alt={aliasHero.videoCaption}
           kind="video"
           dark
-          poster="hero-poster.jpg"
           aspect="absolute inset-0 h-full w-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/20" />

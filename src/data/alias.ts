@@ -12,9 +12,9 @@ export const aliasHero = {
   h1: "Unmasking the Driver",
   subline: "A communication language that lets a car express what a horn never could.",
   meta: "ALIAS  ·  Design research + interaction + hardware  ·  Fangzhuo Tang with Ryan Lee",
-  video: `${ALIAS_ASSET_BASE}/hero-film-loop.mp4`,
-  poster: `${ALIAS_ASSET_BASE}/hero-poster.jpg`,
-  videoLabel: "hero-film-loop.mp4 / hero-poster.jpg",
+  video: `${ALIAS_ASSET_BASE}/hero-short.mp4`,
+  poster: `${ALIAS_ASSET_BASE}/hero1.png`,
+  videoLabel: "hero-short.mp4",
   videoCaption:
     "Concept short-film loop, or the works-like car light band in motion — muted autoplay.",
 };

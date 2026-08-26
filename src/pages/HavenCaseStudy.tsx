@@ -227,25 +227,25 @@ export function HavenCaseStudy() {
                 <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
                   {group.title}
                 </p>
-                <div className="mt-4 overflow-hidden rounded-lg border border-gray-200 bg-[#fcfcfc] px-6 py-8">
+                <div className="relative mt-4 overflow-hidden rounded-lg border border-gray-200 bg-[#fcfcfc] px-6 py-8 min-h-[280px]">
                   <ProjectImage
                     src={`${HAVEN_ASSET_BASE}/${group.image}`}
-                    alt={group.title}
+                    alt=""
                     placeholderLabel={group.image}
                     accent={HAVEN_ACCENT}
-                    className="mx-auto h-auto w-full max-w-[220px] object-contain"
+                    className="pointer-events-none absolute inset-0 m-auto h-auto w-full max-w-[220px] object-contain opacity-20"
                   />
+                  <ul className="relative z-10 space-y-4">
+                    {group.quotes.map((quote) => (
+                      <li
+                        key={quote}
+                        className="text-sm italic leading-relaxed text-gray-800"
+                      >
+                        “{quote}”
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="mt-6 space-y-4">
-                  {group.quotes.map((quote) => (
-                    <li
-                      key={quote}
-                      className="text-sm italic leading-relaxed text-gray-800"
-                    >
-                      “{quote}”
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>

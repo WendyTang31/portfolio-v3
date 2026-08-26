@@ -120,20 +120,16 @@ export function BirdFeetCaseStudy() {
               </div>
             ))}
           </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="mt-10 overflow-hidden rounded-lg border border-gray-200">
             {birdFeetFieldChallenges.images.map((file) => (
-              <div
+              <ProjectImage
                 key={file}
-                className="overflow-hidden rounded-lg border border-gray-200"
-              >
-                <ProjectImage
-                  src={`${BIRD_FEET_ASSET_BASE}/${file}`}
-                  alt={birdFeetFieldChallenges.imageCaption}
-                  placeholderLabel={file}
-                  accent={BIRD_FEET_ACCENT}
-                  className="aspect-[4/3] w-full object-cover"
-                />
-              </div>
+                src={`${BIRD_FEET_ASSET_BASE}/${file}`}
+                alt={birdFeetFieldChallenges.imageCaption}
+                placeholderLabel={file}
+                accent={BIRD_FEET_ACCENT}
+                className="aspect-[16/10] w-full object-cover"
+              />
             ))}
           </div>
           <p className="mt-3 text-xs leading-relaxed text-gray-600">

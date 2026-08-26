@@ -31,7 +31,7 @@ export const birdFeetFieldChallenges = {
       body: "Limited landing locations place users far from their final destination, reducing convenience and preventing UAM from functioning as true public mobility.",
     },
   ],
-  images: ["hero-bird-feet.webp", "ps-scene.png"],
+  images: ["hero-bird-feet.webp"],
   imageCaption: "Uneven, unprepared landing conditions in real urban and field contexts.",
 };
 
@@ -58,7 +58,7 @@ export const birdFeetNature = {
   label: "Answer from nature",
   headline: "Predatory birds already land and grip anywhere while carrying precious load.",
   body: "Nature has already provided answers on how to fly and land efficiently almost anywhere while carrying precious load. Predatory birds are our reference. The question is how to adapt that mechanism within the limits of material and manufacturability.",
-  image: "02-nature-reference.png",
+  image: "owl.png",
   imageCaption: "Biological reference — multi-joint feet that adapt and lock onto irregular surfaces.",
 };
 

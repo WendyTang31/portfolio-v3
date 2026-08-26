@@ -141,11 +141,6 @@ export const birdFeetProcess = {
           file: "08-prototype-assembly.jpg",
           caption: "Assembled multi-finger prototype",
         },
-        {
-          type: "image" as const,
-          file: "09-prototype-detail.jpg",
-          caption: "Joint and tendon routing detail",
-        },
       ],
     },
   ] satisfies BirdFeetProcessStage[],

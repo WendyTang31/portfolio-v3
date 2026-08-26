@@ -297,20 +297,20 @@ export function HavenCaseStudy() {
         {/* Features */}
         <FadeUp className="mt-24">
           <SectionLabel>{havenFeatures.label}</SectionLabel>
-          <div className="mt-10 grid gap-10 md:grid-cols-3">
+          <div className="mt-10 grid items-stretch gap-10 md:grid-cols-3">
             {havenFeatures.items.map((item) => (
-              <div key={item.title} className="flex flex-col">
+              <div key={item.title} className="flex h-full flex-col">
                 <FeatureIcon type={item.icon} />
                 <h3 className="mt-5 text-lg font-semibold tracking-tight text-[#111]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
                   {item.body}
                 </p>
-                <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-black">
+                <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-[#f4f4f2]">
                   <video
                     src={`${HAVEN_ASSET_BASE}/${item.video}`}
-                    className="aspect-[9/16] w-full object-cover"
+                    className="aspect-[9/19] w-full object-cover object-top"
                     autoPlay
                     muted
                     loop
@@ -371,6 +371,13 @@ export function HavenCaseStudy() {
                 caption={img.caption}
               />
             ))}
+          </div>
+          <div className="mt-6">
+            <FitGridImage
+              file={havenRendering.fullWidth.file}
+              alt={havenRendering.fullWidth.caption}
+              caption={havenRendering.fullWidth.caption}
+            />
           </div>
         </FadeUp>
       </article>

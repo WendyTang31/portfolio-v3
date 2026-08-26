@@ -142,9 +142,10 @@ export const havenExploded = {
 export const havenRendering = {
   label: "Rendering",
   images: [
-    { file: "tilt-render.png", caption: "Tilt view" },
+    { file: "tilt-render-x.png", caption: "Tilt view" },
     { file: "top-render.png", caption: "Top view" },
   ],
+  fullWidth: { file: "cmf-render.png", caption: "CMF" },
 };
 
 /** Shared type for optional haven image tooling */

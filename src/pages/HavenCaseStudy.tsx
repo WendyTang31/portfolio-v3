@@ -86,9 +86,9 @@ function DirectionChart() {
       <div className="pointer-events-none absolute inset-y-0 left-1/2 z-10 w-px -translate-x-1/2 bg-gray-800" />
       <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 h-px -translate-y-1/2 bg-gray-800" />
 
-      {/* Chosen-direction mark near center, in the complex / physical quadrant */}
+      {/* Chosen-direction mark — complex / physical quadrant */}
       <div
-        className="pointer-events-none absolute left-[calc(50%+10px)] top-[calc(50%-10px)] z-20 h-3.5 w-3.5 rounded-full md:h-4 md:w-4"
+        className="pointer-events-none absolute left-[calc(50%+28px)] top-[calc(50%-32px)] z-20 h-5 w-5 rounded-full md:h-6 md:w-6"
         style={{ backgroundColor: "#c17a5a" }}
         aria-hidden
       />

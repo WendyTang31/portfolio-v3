@@ -58,6 +58,67 @@ function FeatureIcon({ type }: { type: "radar" | "toggle" | "heart" }) {
   );
 }
 
+function DirectionChart() {
+  const quadrants = [
+    "top-left",
+    "top-right",
+    "bottom-left",
+    "bottom-right",
+  ] as const;
+
+  return (
+    <div className="relative mt-10 overflow-hidden rounded-lg border border-gray-200 bg-[#fcfcfc]">
+      {/* Axis labels — even inset from the cross */}
+      <p className="pointer-events-none absolute left-[calc(50%+14px)] top-4 z-20 font-mono text-[10px] uppercase tracking-[0.16em] text-gray-600 md:text-[11px]">
+        {havenDirection.axes.yTop}
+      </p>
+      <p className="pointer-events-none absolute bottom-4 left-[calc(50%+14px)] z-20 font-mono text-[10px] uppercase tracking-[0.16em] text-gray-600 md:text-[11px]">
+        {havenDirection.axes.yBottom}
+      </p>
+      <p className="pointer-events-none absolute left-4 top-[calc(50%-22px)] z-20 font-mono text-[10px] uppercase tracking-[0.16em] text-gray-600 md:text-[11px]">
+        {havenDirection.axes.xLeft}
+      </p>
+      <p className="pointer-events-none absolute right-4 top-[calc(50%-22px)] z-20 text-right font-mono text-[10px] uppercase tracking-[0.16em] text-gray-600 md:text-[11px]">
+        {havenDirection.axes.xRight}
+      </p>
+
+      {/* Crosshair */}
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 z-10 w-px -translate-x-1/2 bg-gray-800" />
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 h-px -translate-y-1/2 bg-gray-800" />
+
+      {/* Chosen-direction mark near center, in the complex / physical quadrant */}
+      <div
+        className="pointer-events-none absolute left-[calc(50%+10px)] top-[calc(50%-10px)] z-20 h-3.5 w-3.5 rounded-full md:h-4 md:w-4"
+        style={{ backgroundColor: "#c17a5a" }}
+        aria-hidden
+      />
+
+      <div className="relative grid aspect-[5/4] grid-cols-2 grid-rows-2 md:aspect-[16/11]">
+        {quadrants.map((quadrant) => (
+          <div key={quadrant} className="relative min-h-0 p-3 md:p-5">
+            {havenDirection.items
+              .filter((item) => item.quadrant === quadrant)
+              .map((item) => (
+                <div
+                  key={item.file}
+                  className={`absolute overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm ${item.className}`}
+                >
+                  <ProjectImage
+                    src={`${HAVEN_ASSET_BASE}/${item.file}`}
+                    alt={item.alt}
+                    placeholderLabel={item.file}
+                    accent={HAVEN_ACCENT}
+                    className="h-auto w-full object-contain"
+                  />
+                </div>
+              ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Media({
   file,
   alt,
@@ -307,10 +368,10 @@ export function HavenCaseStudy() {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
                   {item.body}
                 </p>
-                <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-[#f4f4f2]">
+                <div className="mt-6 aspect-[9/19] overflow-hidden rounded-2xl border border-gray-200 bg-[#1a1a1a]">
                   <video
                     src={`${HAVEN_ASSET_BASE}/${item.video}`}
-                    className="aspect-[9/19] w-full object-cover object-top"
+                    className={item.videoClass}
                     autoPlay
                     muted
                     loop
@@ -347,7 +408,7 @@ export function HavenCaseStudy() {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-700">
             {havenDirection.body}
           </p>
-          <Media file={havenDirection.image} alt="Four design directions" fit />
+          <DirectionChart />
         </FadeUp>
 
         {/* Exploded */}

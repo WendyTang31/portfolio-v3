@@ -96,18 +96,23 @@ export const havenFeatures = {
       body: "Radar-based sensing — no video is ever captured.",
       video: "device-page.mp4",
       icon: "radar" as const,
+      // Full UI visible — inset like the quiet-mode frame
+      videoClass: "h-full w-full object-contain object-center scale-[0.88]",
     },
     {
       title: "Agency for the senior",
       body: "A privacy mode seniors can switch on for quiet time during their day.",
       video: "quiet-mode.mp4",
       icon: "toggle" as const,
+      videoClass: "h-full w-full object-cover object-center",
     },
     {
       title: "Connection, not only alerts",
       body: "Bonds both sides with subtle moments of joy and care — instead of redundant health check-ins.",
       video: "good-morning.mp4",
       icon: "heart" as const,
+      // Zoom past yellow/beige export margins
+      videoClass: "h-full w-full object-cover object-center scale-[1.22]",
     },
   ],
 };
@@ -128,7 +133,45 @@ export const havenForm = {
 export const havenDirection = {
   label: "Direction",
   body: "Four directions — from richer UI to pure physical privacy.",
-  image: "comparison.png",
+  axes: {
+    yTop: "Complex / unique",
+    yBottom: "Simple / average",
+    xLeft: "UIUX",
+    xRight: "Physical Interaction",
+  },
+  /** Relative placement inside each quadrant, matching the original matrix */
+  items: [
+    {
+      file: "exploration-4.png",
+      alt: "Exploration 4 — richer UI direction",
+      quadrant: "top-left" as const,
+      className: "left-[6%] top-[8%] w-[78%]",
+    },
+    {
+      file: "exploration-1.png",
+      alt: "Exploration 1 — physical interaction direction",
+      quadrant: "top-right" as const,
+      className: "right-[6%] top-[10%] w-[72%]",
+    },
+    {
+      file: "exploration-5.png",
+      alt: "Exploration 5 — new concept",
+      quadrant: "bottom-left" as const,
+      className: "left-[6%] top-[6%] w-[58%]",
+    },
+    {
+      file: "exploration-2.png",
+      alt: "Exploration 2 — simple UI direction",
+      quadrant: "bottom-left" as const,
+      className: "right-[4%] bottom-[6%] w-[62%]",
+    },
+    {
+      file: "exploration-3.png",
+      alt: "Exploration 3 — simple physical direction",
+      quadrant: "bottom-right" as const,
+      className: "left-[8%] top-[10%] w-[74%]",
+    },
+  ],
 };
 
 /** Exploded view */

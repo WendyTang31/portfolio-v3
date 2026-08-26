@@ -18,13 +18,6 @@ export const birdFeetMeta = {
   context: "Urban air mobility · adaptive landing systems",
 };
 
-export const birdFeetWhatItIs = {
-  headline: "Bio-inspired landing gear from bird feet",
-  body: "As future aircraft move toward urban air mobility (UAM), landing will increasingly occur on uneven and unpredictable terrain rather than flat runways. Most existing landing gear systems are not designed for this condition, creating risks during touchdown. My team designed an adaptive landing mechanism inspired by bird feet. The system can passively conform to irregular ground surfaces while actively stabilizing and gripping the surface during landing.",
-  question:
-    "How might we design a mechanism that enables aircraft and drones to land on uneven terrain?",
-};
-
 export const birdFeetFieldChallenges = {
   label: "Field challenges",
   headline: "UAM needs to land where cities actually are — not only on prepared pads.",
@@ -38,7 +31,7 @@ export const birdFeetFieldChallenges = {
       body: "Limited landing locations place users far from their final destination, reducing convenience and preventing UAM from functioning as true public mobility.",
     },
   ],
-  image: "01-context.png",
+  images: ["hero-bird-feet.webp", "ps-scene.png"],
   imageCaption: "Uneven, unprepared landing conditions in real urban and field contexts.",
 };
 
@@ -75,20 +68,25 @@ export const birdFeetBiomech = {
   body: "Their feet combine multi-joint articulation, compliant soft tissue, and tendon-based locking mechanisms to adapt to terrain and generate strong gripping forces — enabling both stable perching and effective prey capture.",
   studies: [
     {
-      file: "03-microscope-joint.png",
-      caption: "Joint of chicken feet under the microscope.",
+      file: "feet-movement.png",
+      caption: "Grip and wrap motion of the foot.",
       type: "image" as const,
     },
     {
-      file: "04-grip-analysis.png",
-      caption: "Analysis of feet gripping movement.",
+      file: "brainstorm.jpg",
+      caption: "Mechanism brainstorm — tendon, scale, and terrain.",
       type: "image" as const,
     },
     {
       file: "chicken-feet-study.mp4",
       caption: "Physical tendon pull study on chicken feet.",
       type: "video" as const,
-      poster: "03-microscope-joint.png",
+      poster: "microscope.png",
+    },
+    {
+      file: "microscope.png",
+      caption: "Joint of chicken feet under the microscope.",
+      type: "image" as const,
     },
   ],
 };
@@ -102,7 +100,7 @@ export type BirdFeetProcessStage = {
 
 export const birdFeetProcess = {
   label: "Prototyping process",
-  headline: "From pull tests to a proof of concept — with expert critique along the way.",
+  headline: "From pull tests to a proof of concept.",
   stages: [
     {
       n: "01",
@@ -115,6 +113,11 @@ export const birdFeetProcess = {
           type: "video" as const,
           file: "individual-movement.mp4",
           caption: "Individual joint movement",
+        },
+        {
+          type: "video" as const,
+          file: "edited-video.mp4",
+          caption: "Coordinated movement test",
         },
       ],
     },
@@ -142,23 +145,6 @@ export const birdFeetProcess = {
           type: "image" as const,
           file: "09-prototype-detail.jpg",
           caption: "Joint and tendon routing detail",
-        },
-      ],
-    },
-    {
-      n: "03",
-      title: "Expert feedback",
-      body: "We reached out to professionals in biology, mechanical engineering, and mobility design to ensure accurate biological translation and mechanical feasibility.",
-      media: [
-        {
-          type: "image" as const,
-          file: "05-biomech-diagram.png",
-          caption: "Biomechanics and motion diagram",
-        },
-        {
-          type: "image" as const,
-          file: "10-cad-or-process.png",
-          caption: "Process and packaging studies",
         },
       ],
     },

@@ -13,7 +13,6 @@ import {
   birdFeetNature,
   birdFeetProcess,
   birdFeetResult,
-  birdFeetWhatItIs,
 } from "../data/birdFeet";
 import { ProjectImage } from "../components/ProjectImage";
 import { MediaSlideCarousel } from "../components/rover/MediaSlideCarousel";
@@ -87,17 +86,7 @@ export function BirdFeetCaseStudy() {
 
       <article className="mx-auto max-w-4xl px-6 pb-20 md:px-8">
         <FadeUp className="mt-20">
-          <BeatHeadline>{birdFeetWhatItIs.headline}</BeatHeadline>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
-            {birdFeetWhatItIs.body}
-          </p>
-          <blockquote
-            className="mt-10 border-l-2 pl-6 text-xl font-medium leading-snug tracking-tight text-[#111] md:text-2xl"
-            style={{ borderColor: BIRD_FEET_ACCENT }}
-          >
-            {birdFeetWhatItIs.question}
-          </blockquote>
-          <div className="mt-12 grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2 md:grid-cols-4">
             {[
               { label: "Role", value: birdFeetMeta.role },
               { label: "When", value: birdFeetMeta.when },
@@ -131,14 +120,21 @@ export function BirdFeetCaseStudy() {
               </div>
             ))}
           </div>
-          <div className="mt-10 overflow-hidden rounded-lg border border-gray-200">
-            <ProjectImage
-              src={`${BIRD_FEET_ASSET_BASE}/${birdFeetFieldChallenges.image}`}
-              alt={birdFeetFieldChallenges.imageCaption}
-              placeholderLabel={birdFeetFieldChallenges.image}
-              accent={BIRD_FEET_ACCENT}
-              className="aspect-[16/10] w-full object-cover"
-            />
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {birdFeetFieldChallenges.images.map((file) => (
+              <div
+                key={file}
+                className="overflow-hidden rounded-lg border border-gray-200"
+              >
+                <ProjectImage
+                  src={`${BIRD_FEET_ASSET_BASE}/${file}`}
+                  alt={birdFeetFieldChallenges.imageCaption}
+                  placeholderLabel={file}
+                  accent={BIRD_FEET_ACCENT}
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </div>
+            ))}
           </div>
           <p className="mt-3 text-xs leading-relaxed text-gray-600">
             {birdFeetFieldChallenges.imageCaption}

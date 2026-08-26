@@ -1,4 +1,4 @@
-import environmentImageUrl from "../assets/haven/environment.png";
+import upscaledRenderUrl from "../assets/haven/upscaled-render.png";
 
 export type Work = {
   slug: string;
@@ -64,7 +64,7 @@ export const works: Work[] = [
     subtitle: "Care monitoring that bonds two generations — without surveillance.",
     tags: ["Industrial Design", "AI Hardware", "Privacy", "Elder Care"],
     accent: "#6e7a64",
-    heroImage: environmentImageUrl,
+    heroImage: upscaledRenderUrl,
     galleryImages: [
       "/projects/haven/idea-3.png",
       "/projects/haven/idea-2.png",

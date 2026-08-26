@@ -140,7 +140,7 @@ export function HavenCaseStudy() {
         <ProjectImage
           src={havenHero.render}
           alt={havenHero.title}
-          placeholderLabel="environment.png"
+          placeholderLabel="upscaled-render.png"
           accent={HAVEN_ACCENT}
           className="absolute inset-0 h-full w-full object-cover"
         />

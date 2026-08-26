@@ -174,44 +174,10 @@ export const havenDirection = {
   ],
 };
 
-/** Exploded view — annotated internals */
+/** Exploded view */
 export const havenExploded = {
   label: "Exploded view",
-  body: "Internal layout — sensing, compute, and I/O stacked inside the shell.",
-  image: "internal-part.png",
-  /** Percent positions relative to the image frame (0–100). */
-  callouts: [
-    {
-      id: "radar",
-      label: "mmwave radar",
-      target: { x: 38, y: 32 },
-      text: { x: 70, y: 24 },
-    },
-    {
-      id: "optical",
-      label: "optical sensor",
-      target: { x: 49, y: 37 },
-      text: { x: 70, y: 35 },
-    },
-    {
-      id: "audio",
-      label: "audio / IO board",
-      target: { x: 55, y: 43 },
-      text: { x: 70, y: 46 },
-    },
-    {
-      id: "mcu",
-      label: "microcontroller",
-      target: { x: 57, y: 51 },
-      text: { x: 70, y: 56 },
-    },
-    {
-      id: "pi",
-      label: "raspberry Pi 4 model B",
-      target: { x: 60, y: 59 },
-      text: { x: 70, y: 68 },
-    },
-  ],
+  image: "internal-labeled.png",
 };
 
 /** Rendering */

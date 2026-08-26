@@ -119,49 +119,6 @@ function DirectionChart() {
   );
 }
 
-function ExplodedCalloutDiagram() {
-  return (
-    <div className="relative mt-8 overflow-hidden rounded-lg border border-gray-200 bg-white pr-[min(32%,12rem)] md:pr-0">
-      <div className="relative w-full" style={{ aspectRatio: "1247 / 1163" }}>
-        <ProjectImage
-          src={`${HAVEN_ASSET_BASE}/${havenExploded.image}`}
-          alt="Haven internal components"
-          placeholderLabel={havenExploded.image}
-          accent={HAVEN_ACCENT}
-          className="absolute inset-0 h-full w-full object-contain"
-        />
-
-        <svg
-          className="pointer-events-none absolute inset-0 h-full w-full"
-          aria-hidden
-        >
-          {havenExploded.callouts.map((c) => (
-            <line
-              key={c.id}
-              x1={`${c.text.x}%`}
-              y1={`${c.text.y}%`}
-              x2={`${c.target.x}%`}
-              y2={`${c.target.y}%`}
-              stroke="#111111"
-              strokeWidth="1.25"
-            />
-          ))}
-        </svg>
-
-        {havenExploded.callouts.map((c) => (
-          <p
-            key={c.id}
-            className="absolute z-10 -translate-y-1/2 whitespace-nowrap font-sans text-xs font-medium tracking-tight text-[#111] md:text-sm"
-            style={{ left: `${c.text.x}%`, top: `${c.text.y}%` }}
-          >
-            {c.label}
-          </p>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function Media({
   file,
   alt,
@@ -457,10 +414,7 @@ export function HavenCaseStudy() {
         {/* Exploded */}
         <FadeUp className="mt-24">
           <SectionLabel>{havenExploded.label}</SectionLabel>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-gray-600">
-            {havenExploded.body}
-          </p>
-          <ExplodedCalloutDiagram />
+          <Media file={havenExploded.image} alt="Haven internal components" fit />
         </FadeUp>
 
         {/* Rendering */}

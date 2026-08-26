@@ -96,8 +96,8 @@ export const havenFeatures = {
       body: "Radar-based sensing — no video is ever captured.",
       video: "device-page.mp4",
       icon: "radar" as const,
-      // Full UI visible — inset like the quiet-mode frame
-      videoClass: "h-full w-full object-contain object-center scale-[0.88]",
+      // Crop black tablet bezel; fill the phone frame with the UI
+      videoClass: "h-full w-full object-cover object-center scale-[1.12]",
     },
     {
       title: "Agency for the senior",

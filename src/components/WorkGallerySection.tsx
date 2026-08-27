@@ -4,9 +4,10 @@ import { works, type Work } from "../data/works";
 import { ProjectImage } from "./ProjectImage";
 
 function workGridClass(index: number) {
-  // Laptop+: 3 wide cards on top, 2 wider cards below
+  // Laptop+: 3 wide cards on top, 2 centered cards below
   if (index < 3) return "md:col-span-1 lg:col-span-2";
-  return "md:col-span-1 lg:col-span-3";
+  if (index === 3) return "md:col-span-1 lg:col-span-2 lg:col-start-2";
+  return "md:col-span-1 lg:col-span-2 lg:col-start-4";
 }
 
 function WorkCard({ work, index }: { work: Work; index: number }) {
@@ -61,19 +62,19 @@ export function WorkGallerySection() {
   return (
     <section
       id="work"
-      className="relative z-20 flex min-h-[100svh] w-full flex-col bg-[#fcfcfc] px-5 py-8 md:px-10 md:py-10 lg:px-12"
+      className="relative z-20 flex min-h-[100svh] w-full flex-col items-center bg-[#fcfcfc] px-5 py-8 md:px-10 md:py-10 lg:px-12"
     >
       <motion.p
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
-        className="mb-4 w-full max-w-[1600px] font-mono text-[10px] uppercase tracking-[0.2em] md:mb-5"
+        className="mb-4 w-full max-w-[1600px] mx-auto font-mono text-[10px] uppercase tracking-[0.2em] md:mb-5"
       >
         <span className="text-gray-500">[ 02 ]</span>{" "}
         <span className="font-bold text-gray-900">Selected Work</span>
       </motion.p>
 
-      <div className="grid w-full max-w-[1600px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6 lg:gap-5">
+      <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6 lg:gap-5">
         {works.map((work, index) => {
           const card = <WorkCard work={work} index={index} />;
 
@@ -97,7 +98,7 @@ export function WorkGallerySection() {
         })}
       </div>
 
-      <div className="pointer-events-none mt-4 hidden w-full max-w-[1600px] justify-between font-mono text-[9px] uppercase tracking-widest text-gray-500 md:flex">
+      <div className="pointer-events-none mx-auto mt-4 hidden w-full max-w-[1600px] justify-between font-mono text-[9px] uppercase tracking-widest text-gray-500 md:flex">
         <span>I DESIGN FROM STRUCTURE TO MOTION.</span>
         <span>FANGZHUO TANG © 2026</span>
       </div>

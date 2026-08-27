@@ -97,11 +97,6 @@ export function WorkGallerySection() {
           );
         })}
       </div>
-
-      <div className="pointer-events-none mx-auto mt-4 hidden w-full max-w-[1600px] justify-between font-mono text-[9px] uppercase tracking-widest text-gray-500 md:flex">
-        <span>I DESIGN FROM STRUCTURE TO MOTION.</span>
-        <span>FANGZHUO TANG © 2026</span>
-      </div>
     </section>
   );
 }

@@ -44,12 +44,12 @@ export const works: Work[] = [
   },
   {
     slug: "bird-feet",
-    title: "Bird Feet",
+    title: "Landing Gripper",
     subtitle:
       "Bio-inspired landing gear from bird feet — an adaptive mechanism for aircraft and drones on uneven terrain.",
     tags: ["Biomimicry", "Mechanisms", "UAM", "Prototyping"],
     accent: "#4a5648",
-    heroImage: "/projects/bird-feet/hero-bird-feet.webp",
+    heroImage: "/projects/bird-feet/cover.png",
     galleryImages: [
       "/projects/bird-feet/11-result-still.png",
       "/projects/bird-feet/08-prototype-assembly.jpg",

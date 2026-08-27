@@ -188,7 +188,7 @@ export function AliasCaseStudy() {
       </section>
 
       <section className="alias-dark px-[var(--gutter)]">
-        <FadeUp className="alias-wrap">
+        <FadeUp>
           <figure className="alias-whatif">
             <img
               src={`${ALIAS_ASSET_BASE}/${encodeURIComponent(aliasNature.whatIfImage)}`}

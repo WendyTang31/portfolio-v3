@@ -17,14 +17,14 @@ type ConceptCompareProps = {
 function CompareColumn({ side }: { side: CompareSide }) {
   return (
     <div className="flex flex-col">
-      <div className="overflow-hidden rounded-lg border border-gray-200">
+      <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-[#ececec]">
         {side.video ? (
           <CaseStudyVideo
             src={side.video}
             poster={side.image}
             label={`${side.name} — upload test video`}
             accent={ROVER_ACCENT}
-            className="aspect-[4/3] w-full object-cover md:aspect-[16/10]"
+            className="h-full w-full object-contain"
           />
         ) : (
           <ProjectImage
@@ -32,7 +32,7 @@ function CompareColumn({ side }: { side: CompareSide }) {
             alt={side.name}
             placeholderLabel={`${side.name} — upload image`}
             accent={ROVER_ACCENT}
-            className="aspect-[4/3] w-full object-cover md:aspect-[16/10]"
+            className="h-full w-full object-contain"
           />
         )}
       </div>

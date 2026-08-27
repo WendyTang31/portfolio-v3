@@ -132,18 +132,13 @@ export const roverFabrication = {
       slides: [
         {
           type: "image" as const,
-          file: "carbon-layup.jpg",
+          file: "mold.JPG",
+          caption: "Mold ready for carbon-fiber layup.",
+        },
+        {
+          type: "image" as const,
+          file: "carbon2.JPG",
           caption: "Carbon-fiber layup of the crank arm.",
-        },
-        {
-          type: "image" as const,
-          file: "crank-arm-iteration.jpg",
-          caption: "Crank-arm shape across strength-test iterations.",
-        },
-        {
-          type: "image" as const,
-          file: "strength-test.jpg",
-          caption: "Destructive testing — breaking each layup to find its limit.",
         },
       ],
     },

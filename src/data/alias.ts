@@ -292,10 +292,20 @@ export const aliasMaking = {
     video: "proto-lookslike.mp4",
     alt: "Looks-like quarter-scale model with arcade-button pedestal.",
   },
-  tooling: {
-    body: "To design the animations pixel-for-pixel I built my own browser-based tool — metaball rendering, a full object model, state-machine sequencing, and export at the exact LED resolution — so what I drew is exactly what the hardware shows.",
-    file: "tool-ui.png",
-    alt: "Screenshot of the custom ALIAS LED animation tool.",
+  process: {
+    h2: "Building process",
+    pair: [
+      { file: "proto-1.jpg", alt: "Plywood works-like prototype on the bench, with the LED panel and wiring exposed." },
+      { file: "proto-2.jpg", alt: "Quarter-scale looks-like model during the build." },
+    ],
+    slides: [
+      { type: "image" as const, file: "Mid-Fellowship Presentation.png" },
+      { type: "image" as const, file: "b1.jpg" },
+      { type: "image" as const, file: "b2.jpg" },
+      { type: "image" as const, file: "b3.jpg" },
+      { type: "image" as const, file: "b4.jpg" },
+      { type: "image" as const, file: "b5.png" },
+    ],
   },
 };
 

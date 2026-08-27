@@ -6,7 +6,9 @@ import "../alias.css";
 import { Footer } from "../components/Footer";
 import { AliasMedia } from "../components/alias/AliasMedia";
 import { LiquidStudio } from "../components/alias/LiquidPixel";
+import { MediaSlideCarousel } from "../components/rover/MediaSlideCarousel";
 import {
+  ALIAS_ACCENT,
   ALIAS_ASSET_BASE,
   aliasMetaDoc,
   aliasHero,
@@ -318,15 +320,17 @@ export function AliasCaseStudy() {
             <h2 className="alias-h2 text-[var(--glow)]">{aliasLiquid.h2}</h2>
             <p className="alias-body mt-6 text-[var(--dark-ink)]/80">{aliasLiquid.intro}</p>
           </FadeUp>
-          <FadeUp className="mt-12">
-            <AliasMedia
-              file={aliasLiquid.file}
-              caption={aliasLiquid.alt}
-              alt={aliasLiquid.alt}
-              kind="video"
-              dark
-              aspect="w-full"
-            />
+          <FadeUp className="mt-12 flex justify-center">
+            <div className="w-full max-w-[34rem]">
+              <AliasMedia
+                file={aliasLiquid.file}
+                caption={aliasLiquid.alt}
+                alt={aliasLiquid.alt}
+                kind="video"
+                dark
+                aspect="w-full"
+              />
+            </div>
           </FadeUp>
           <FadeUp>
             <LiquidStudio />
@@ -404,15 +408,24 @@ export function AliasCaseStudy() {
                 </article>
               ))}
             </div>
-            <p className="alias-body mt-12 text-[var(--ink-soft)]">{aliasMaking.tooling.body}</p>
-            <div className="mt-6">
-              <AliasMedia
-                file={aliasMaking.tooling.file}
-                caption={aliasMaking.tooling.alt}
-                alt={aliasMaking.tooling.alt}
-                aspect="aspect-[16/10]"
-              />
+            <h2 className="alias-h2 mt-16">{aliasMaking.process.h2}</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {aliasMaking.process.pair.map((shot) => (
+                <AliasMedia
+                  key={shot.file}
+                  file={shot.file}
+                  caption={shot.alt}
+                  alt={shot.alt}
+                  aspect="w-full"
+                />
+              ))}
             </div>
+            <MediaSlideCarousel
+              slides={aliasMaking.process.slides}
+              assetBase={ALIAS_ASSET_BASE}
+              alt={aliasMaking.process.h2}
+              accent={ALIAS_ACCENT}
+            />
           </FadeUp>
         </div>
       </section>

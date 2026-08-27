@@ -1,9 +1,10 @@
 import { useEffect, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import "../alias.css";
 import { Footer } from "../components/Footer";
+import { ProjectNav } from "../components/case-study/ProjectNav";
 import { AliasMedia } from "../components/alias/AliasMedia";
 import { LiquidStudio } from "../components/alias/LiquidPixel";
 import { MediaSlideCarousel } from "../components/rover/MediaSlideCarousel";
@@ -22,7 +23,6 @@ import {
   aliasMaking,
   aliasClose,
   aliasCredits,
-  aliasNeighbors,
 } from "../data/alias";
 
 function FadeUp({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -449,22 +449,7 @@ export function AliasCaseStudy() {
           </div>
         </FadeUp>
 
-        <div className="alias-wrap mt-16 flex flex-col items-start justify-between gap-6 border-t border-black/10 pt-10 sm:flex-row sm:items-center">
-          <Link
-            to={aliasNeighbors.prev.href}
-            className="alias-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[var(--ink-soft)] hover:text-[var(--ink)]"
-          >
-            <ArrowLeft size={14} />
-            {aliasNeighbors.prev.label}
-          </Link>
-          <Link
-            to={aliasNeighbors.next.href}
-            className="alias-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[var(--ink-soft)] hover:text-[var(--ink)]"
-          >
-            Next Project
-            <ArrowRight size={14} /> {aliasNeighbors.next.label}
-          </Link>
-        </div>
+        <ProjectNav slug="alias" variant="alias" className="alias-wrap mt-16" />
       </section>
 
       <Footer />

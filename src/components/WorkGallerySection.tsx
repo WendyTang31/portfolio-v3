@@ -3,14 +3,37 @@ import { motion } from "motion/react";
 import { works, type Work } from "../data/works";
 import { ProjectImage } from "./ProjectImage";
 
-function workGridClass(index: number) {
-  // Laptop+: 3 wide cards on top, 2 centered cards below
-  if (index < 3) return "md:col-span-1 lg:col-span-2";
-  if (index === 3) return "md:col-span-1 lg:col-span-2 lg:col-start-2";
-  return "md:col-span-1 lg:col-span-2 lg:col-start-4";
+const [featuredWork, ...otherWorks] = works;
+
+function WorkCardLink({
+  work,
+  children,
+  className = "",
+}: {
+  work: Work;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  if (work.isLive && work.href) {
+    return (
+      <Link to={work.href} className={`block h-full ${className}`}>
+        {children}
+      </Link>
+    );
+  }
+
+  return <div className={`h-full ${className}`}>{children}</div>;
 }
 
-function WorkCard({ work, index }: { work: Work; index: number }) {
+function WorkCard({
+  work,
+  index,
+  featured = false,
+}: {
+  work: Work;
+  index: number;
+  featured?: boolean;
+}) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -19,7 +42,11 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
       transition={{ delay: index * 0.05 }}
       className="group flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-[3px_3px_0px_rgba(17,17,17,0.12)]"
     >
-      <div className="aspect-[3/2] w-full overflow-hidden bg-[#f3f3f3]">
+      <div
+        className={`w-full overflow-hidden bg-[#f3f3f3] ${
+          featured ? "aspect-[21/9] md:aspect-[2.4/1]" : "aspect-[3/2]"
+        }`}
+      >
         <ProjectImage
           src={work.heroImage}
           alt={work.title}
@@ -29,9 +56,17 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
         />
       </div>
 
-      <div className="flex flex-1 flex-col px-4 py-3.5 md:px-6 md:py-5">
+      <div
+        className={`flex flex-1 flex-col ${
+          featured ? "px-5 py-4 md:px-8 md:py-6" : "px-4 py-3.5 md:px-6 md:py-5"
+        }`}
+      >
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-lg font-medium tracking-tight text-[#111] md:text-xl">
+          <h3
+            className={`font-medium tracking-tight text-[#111] ${
+              featured ? "text-2xl md:text-3xl" : "text-lg md:text-xl"
+            }`}
+          >
             {work.title}
           </h3>
           {!work.isLive && (
@@ -40,11 +75,17 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
             </span>
           )}
         </div>
-        <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-gray-600 md:text-[15px]">
+        <p
+          className={`mt-1.5 leading-relaxed text-gray-600 ${
+            featured
+              ? "max-w-3xl text-base md:mt-2 md:text-lg"
+              : "line-clamp-2 text-sm md:text-[15px]"
+          }`}
+        >
           {work.subtitle}
         </p>
-        <div className="mt-2 flex flex-wrap gap-1.5">
-          {work.tags.slice(0, 3).map((tag) => (
+        <div className={`flex flex-wrap gap-1.5 ${featured ? "mt-3" : "mt-2"}`}>
+          {work.tags.slice(0, featured ? 4 : 3).map((tag) => (
             <span
               key={tag}
               className="font-mono text-[8px] uppercase tracking-wider text-gray-500"
@@ -68,34 +109,24 @@ export function WorkGallerySection() {
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
-        className="mb-4 w-full max-w-[min(96vw,1760px)] mx-auto font-mono text-[10px] uppercase tracking-[0.2em] md:mb-5"
+        className="mx-auto mb-4 w-full max-w-[min(96vw,1760px)] font-mono text-[10px] uppercase tracking-[0.2em] md:mb-5"
       >
         <span className="text-gray-500">[ 02 ]</span>{" "}
         <span className="font-bold text-gray-900">Selected Work</span>
       </motion.p>
 
-      <div className="mx-auto grid w-full max-w-[min(96vw,1760px)] grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-6 lg:gap-6">
-        {works.map((work, index) => {
-          const card = <WorkCard work={work} index={index} />;
+      <div className="mx-auto flex w-full max-w-[min(96vw,1760px)] flex-col gap-4 md:gap-5 lg:gap-6">
+        <WorkCardLink work={featuredWork}>
+          <WorkCard work={featuredWork} index={0} featured />
+        </WorkCardLink>
 
-          if (work.isLive && work.href) {
-            return (
-              <Link
-                key={work.slug}
-                to={work.href}
-                className={`block h-full ${workGridClass(index)}`}
-              >
-                {card}
-              </Link>
-            );
-          }
-
-          return (
-            <div key={work.slug} className={`h-full ${workGridClass(index)}`}>
-              {card}
-            </div>
-          );
-        })}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-5 lg:gap-6">
+          {otherWorks.map((work, index) => (
+            <WorkCardLink key={work.slug} work={work}>
+              <WorkCard work={work} index={index + 1} />
+            </WorkCardLink>
+          ))}
+        </div>
       </div>
     </section>
   );

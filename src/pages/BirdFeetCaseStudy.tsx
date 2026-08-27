@@ -17,6 +17,7 @@ import {
 import { ProjectImage } from "../components/ProjectImage";
 import { MediaSlideCarousel } from "../components/rover/MediaSlideCarousel";
 import { Footer } from "../components/Footer";
+import { ProjectNav } from "../components/case-study/ProjectNav";
 
 function FadeUp({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
@@ -311,6 +312,8 @@ export function BirdFeetCaseStudy() {
             ))}
           </div>
         </FadeUp>
+
+        <ProjectNav slug="bird-feet" />
       </article>
 
       <Footer />

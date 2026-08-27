@@ -19,6 +19,7 @@ import { ConceptCompare } from "../components/rover/ConceptCompare";
 import { RoverProcessStages } from "../components/rover/RoverProcessStages";
 import { ProjectImage } from "../components/ProjectImage";
 import { Footer } from "../components/Footer";
+import { ProjectNav } from "../components/case-study/ProjectNav";
 
 function FadeUp({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
@@ -253,6 +254,8 @@ export function RoverCaseStudy() {
             </a>
           </p>
         </FadeUp>
+
+        <ProjectNav slug="rover" />
       </article>
       </div>
 

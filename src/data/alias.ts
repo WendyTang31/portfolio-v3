@@ -310,9 +310,3 @@ export const aliasCredits = {
   exhibited: "Woods-Gerry Gallery, RISD",
   tools: "IBM Plex type system · custom LED animation tool · After Effects · P2.5 LED hardware",
 };
-
-/** Prev/next until Wendy confirms neighbors. Gallery order puts Haven before ALIAS; BURB wraps. */
-export const aliasNeighbors = {
-  prev: { label: "Haven", href: "/projects/haven" },
-  next: { label: "BURB", href: "/projects/birdbot" },
-};

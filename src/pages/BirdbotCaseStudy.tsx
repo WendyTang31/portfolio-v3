@@ -17,6 +17,7 @@ import { ProcessStages } from "../components/birdbot/ProcessStages";
 import { ProjectImage } from "../components/ProjectImage";
 import { ImageLightbox } from "../components/haven/ImageLightbox";
 import { Footer } from "../components/Footer";
+import { ProjectNav } from "../components/case-study/ProjectNav";
 
 function FadeUp({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
@@ -328,6 +329,8 @@ export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean 
             </a>
           </p>
         </FadeUp>
+
+        <ProjectNav slug="birdbot" />
         </article>
       </div>
 

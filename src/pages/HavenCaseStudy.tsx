@@ -21,6 +21,7 @@ import {
 } from "../data/haven";
 import { ProjectImage } from "../components/ProjectImage";
 import { Footer } from "../components/Footer";
+import { ProjectNav } from "../components/case-study/ProjectNav";
 
 function FadeUp({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
@@ -438,6 +439,8 @@ export function HavenCaseStudy() {
             />
           </div>
         </FadeUp>
+
+        <ProjectNav slug="haven" />
       </article>
 
       <Footer />

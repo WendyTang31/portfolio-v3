@@ -16,6 +16,17 @@ export const HERO_VIDEO = "/Work landing page 1/hero video.mp4";
 
 export const works: Work[] = [
   {
+    slug: "alias",
+    title: "ALIAS",
+    subtitle:
+      "A communication language that lets a car express what a horn never could.",
+    tags: ["eHMI", "Interaction", "Research", "Hardware"],
+    accent: "#D97706",
+    heroImage: "/projects/ALIAS/hero1.png",
+    isLive: true,
+    href: "/projects/alias",
+  },
+  {
     slug: "birdbot",
     title: "BURB",
     subtitle:
@@ -30,6 +41,21 @@ export const works: Work[] = [
     ],
     isLive: true,
     href: "/projects/birdbot",
+  },
+  {
+    slug: "haven",
+    title: "Haven",
+    subtitle: "Care monitoring that bonds two generations — without surveillance.",
+    tags: ["Industrial Design", "AI Hardware", "Privacy", "Elder Care"],
+    accent: "#6e7a64",
+    heroImage: upscaledRenderUrl,
+    galleryImages: [
+      "/projects/haven/idea-3.png",
+      "/projects/haven/idea-2.png",
+      "/projects/haven/moodboard.png",
+    ],
+    isLive: true,
+    href: "/projects/haven",
   },
   {
     slug: "rover",
@@ -58,33 +84,32 @@ export const works: Work[] = [
     isLive: true,
     href: "/projects/bird-feet",
   },
-  {
-    slug: "haven",
-    title: "Haven",
-    subtitle: "Care monitoring that bonds two generations — without surveillance.",
-    tags: ["Industrial Design", "AI Hardware", "Privacy", "Elder Care"],
-    accent: "#6e7a64",
-    heroImage: upscaledRenderUrl,
-    galleryImages: [
-      "/projects/haven/idea-3.png",
-      "/projects/haven/idea-2.png",
-      "/projects/haven/moodboard.png",
-    ],
-    isLive: true,
-    href: "/projects/haven",
-  },
-  {
-    slug: "alias",
-    title: "ALIAS",
-    subtitle:
-      "A communication language that lets a car express what a horn never could.",
-    tags: ["eHMI", "Interaction", "Research", "Hardware"],
-    accent: "#D97706",
-    heroImage: "/projects/ALIAS/hero1.png",
-    isLive: true,
-    href: "/projects/alias",
-  },
 ];
+
+export type ProjectNeighbor = {
+  label: string;
+  href: string;
+};
+
+/** Linear prev/next through live gallery projects (wraps at ends). */
+export function getProjectNeighbors(slug: string): {
+  prev: ProjectNeighbor;
+  next: ProjectNeighbor;
+} | null {
+  const liveWorks = works.filter((work): work is Work & { href: string } =>
+    Boolean(work.isLive && work.href),
+  );
+  const index = liveWorks.findIndex((work) => work.slug === slug);
+  if (index === -1) return null;
+
+  const prevWork = liveWorks[(index - 1 + liveWorks.length) % liveWorks.length];
+  const nextWork = liveWorks[(index + 1) % liveWorks.length];
+
+  return {
+    prev: { label: prevWork.title, href: prevWork.href },
+    next: { label: nextWork.title, href: nextWork.href },
+  };
+}
 
 export type Skill = {
   num: string;

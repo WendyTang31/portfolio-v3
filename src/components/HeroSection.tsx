@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Header } from "./Header";
-import { HERO_VIDEO, SITE } from "../data/works";
+import { SITE } from "../data/works";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -9,31 +8,16 @@ const fadeUp = {
 };
 
 export function HeroSection() {
-  const [showVideo, setShowVideo] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowVideo(true), 1200);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <section className="relative flex min-h-screen w-full flex-col overflow-hidden">
-      {showVideo && (
-        <motion.video
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.35 }}
-          transition={{ duration: 0.8 }}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
-          src={HERO_VIDEO}
-        />
-      )}
+    <section className="relative flex min-h-screen w-full flex-col overflow-hidden bg-[#f7f6f3]">
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute -right-[18%] top-[8%] h-[68vh] w-[68vh] rounded-full bg-[#ece7de]/70 blur-3xl" />
+        <div className="absolute -left-[12%] bottom-[0%] h-[52vh] w-[52vh] rounded-full bg-[#e7ece8]/55 blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(17,17,17,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(17,17,17,0.04)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black_15%,transparent_72%)]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-300/80 to-transparent" />
+      </div>
 
       <div className="relative z-20 flex min-h-screen flex-col px-6 pb-10 pt-6 md:px-16 md:pb-12 md:pt-8">
-        {/* Top bar — NY masthead + nav */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,7 +26,6 @@ export function HeroSection() {
           <Header />
         </motion.div>
 
-        {/* Dominant headline zone — full width */}
         <motion.div
           initial="initial"
           animate="animate"
@@ -61,13 +44,12 @@ export function HeroSection() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mt-6 max-w-2xl text-[15px] leading-[1.65] text-gray-700 md:mt-8 md:max-w-3xl md:text-lg"
+            className="text-hero-subline mt-6 max-w-3xl text-[#4a4a48] md:mt-8"
           >
             {SITE.heroDescription}
           </motion.p>
         </motion.div>
 
-        {/* Skills row — left to right */}
         <motion.div
           initial="initial"
           whileInView="animate"
@@ -75,7 +57,7 @@ export function HeroSection() {
           variants={{
             animate: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
           }}
-          className="mt-8 grid grid-cols-2 gap-6 border-t border-gray-200/80 pt-8 md:mt-auto md:grid-cols-4 md:gap-8 md:pt-10"
+          className="mt-8 grid grid-cols-2 gap-6 border-t border-gray-300/70 pt-8 md:mt-auto md:grid-cols-4 md:gap-8 md:pt-10"
         >
           {SITE.skills.map((skill) => (
             <motion.div
@@ -97,20 +79,13 @@ export function HeroSection() {
           ))}
         </motion.div>
 
-        {/* Bottom-right CTA — Zentto proportion */}
         <div className="mt-10 flex flex-col items-start justify-between gap-8 md:mt-8 md:flex-row md:items-end">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-            className="hidden items-center gap-4 md:flex"
+            transition={{ delay: 1, duration: 0.8 }}
+            className="hidden items-center gap-3 md:flex"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-300">
-              <div className="flex gap-1">
-                <span className="h-3 w-px bg-gray-600" />
-                <span className="h-3 w-px bg-gray-600" />
-              </div>
-            </div>
             <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-gray-500">
               Scroll to explore
             </span>

@@ -3,6 +3,12 @@ import { motion } from "motion/react";
 import { works, type Work } from "../data/works";
 import { ProjectImage } from "./ProjectImage";
 
+function workGridClass(index: number) {
+  // Laptop+: 3 wide cards on top, 2 wider cards below
+  if (index < 3) return "md:col-span-1 lg:col-span-2";
+  return "md:col-span-1 lg:col-span-3";
+}
+
 function WorkCard({ work, index }: { work: Work; index: number }) {
   return (
     <motion.article
@@ -10,9 +16,9 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ delay: index * 0.05 }}
-      className="group relative h-full min-h-[150px] overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-[3px_3px_0px_rgba(17,17,17,0.12)]"
+      className="group flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-[3px_3px_0px_rgba(17,17,17,0.12)]"
     >
-      <div className="absolute inset-0">
+      <div className="aspect-[16/10] w-full overflow-hidden bg-[#f3f3f3]">
         <ProjectImage
           src={work.heroImage}
           alt={work.title}
@@ -21,8 +27,9 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
         />
       </div>
-      <div className="absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-[#fcfcfc] via-[#fcfcfc]/95 to-transparent px-4 pb-4 pt-14 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 md:px-5 md:pb-5">
-        <div className="mb-1 flex items-center justify-between gap-3">
+
+      <div className="flex flex-1 flex-col px-4 py-3 md:px-5 md:py-4">
+        <div className="flex items-start justify-between gap-3">
           <h3 className="text-base font-medium tracking-tight text-[#111] md:text-lg">
             {work.title}
           </h3>
@@ -32,7 +39,7 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
             </span>
           )}
         </div>
-        <p className="line-clamp-2 text-xs leading-relaxed text-gray-600 md:text-sm">
+        <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-gray-600 md:text-sm">
           {work.subtitle}
         </p>
         <div className="mt-2 flex flex-wrap gap-1.5">
@@ -66,20 +73,24 @@ export function WorkGallerySection() {
         <span className="font-bold text-gray-900">Selected Work</span>
       </motion.p>
 
-      <div className="grid min-h-0 flex-1 grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-5 lg:grid-rows-1 lg:gap-4">
+      <div className="grid w-full max-w-[1600px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6 lg:gap-5">
         {works.map((work, index) => {
           const card = <WorkCard work={work} index={index} />;
 
           if (work.isLive && work.href) {
             return (
-              <Link key={work.slug} to={work.href} className="block h-full min-h-0">
+              <Link
+                key={work.slug}
+                to={work.href}
+                className={`block h-full ${workGridClass(index)}`}
+              >
                 {card}
               </Link>
             );
           }
 
           return (
-            <div key={work.slug} className="h-full min-h-0">
+            <div key={work.slug} className={`h-full ${workGridClass(index)}`}>
               {card}
             </div>
           );

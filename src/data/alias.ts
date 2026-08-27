@@ -51,37 +51,9 @@ export const aliasNature = {
   image: "Final Presentation (3).png",
   imageAlt:
     "Three-panel nature reference: cuttlefish camouflage, social grooming, and human cave symbols.",
-};
-
-export const aliasPrior = {
-  h2: "Carmakers have tried to give cars a bigger vocabulary",
-  gap: "Most of these speak about the car. ALIAS is built to speak between road users.",
-  cards: [
-    {
-      title: "BMW Vision Dee",
-      line: "E-Ink body panels that change the car's color.",
-      file: "prior-bmw.jpg",
-      alt: "BMW Vision Dee E-Ink body panels.",
-    },
-    {
-      title: "Hyundai Parametric Pixels",
-      line: "Pixel lighting reimagining the turn signal.",
-      file: "prior-hyundai.jpg",
-      alt: "Hyundai Parametric Pixels lighting.",
-    },
-    {
-      title: "Jaguar Virtual Eyes",
-      line: 'Mechanical eyes that tell a pedestrian "I see you."',
-      file: "prior-jaguar.jpg",
-      alt: "Jaguar Virtual Eyes pedestrian signal.",
-    },
-    {
-      title: "Toyota projection",
-      line: "Projected signals telling people it's safe to cross.",
-      file: "prior-toyota.jpg",
-      alt: "Toyota projected crossing signal.",
-    },
-  ],
+  whatIf: "what-if.png",
+  whatIfAlt:
+    "What if a vehicle could express the driver's humanity, conveying a wider range of intentions and emotions beyond headlights and horns?",
 };
 
 export const aliasResearch = {

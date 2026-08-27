@@ -13,7 +13,6 @@ import {
   aliasMask,
   aliasStatement,
   aliasNature,
-  aliasPrior,
   aliasResearch,
   aliasLiquid,
   aliasGrammar,
@@ -187,30 +186,14 @@ export function AliasCaseStudy() {
               fit="contain"
             />
           </FadeUp>
-        </div>
-      </section>
-
-      <section className="alias-section pt-0">
-        <div className="alias-wrap">
-          <FadeUp>
-            <h2 className="alias-h2">{aliasPrior.h2}</h2>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
-              {aliasPrior.cards.map((card) => (
-                <article key={card.title} className="border border-black/10">
-                  <AliasMedia
-                    file={card.file}
-                    caption={card.line}
-                    alt={card.alt}
-                    aspect="aspect-[16/10]"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold">{card.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{card.line}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <p className="alias-h2 mt-14">{aliasPrior.gap}</p>
+          <FadeUp className="mt-10">
+            <AliasMedia
+              file={aliasNature.whatIf}
+              caption={aliasNature.whatIfAlt}
+              alt={aliasNature.whatIfAlt}
+              aspect="w-full"
+              fit="contain"
+            />
           </FadeUp>
         </div>
       </section>

@@ -16,7 +16,6 @@ import {
   roverResult,
 } from "../data/rover";
 import { ConceptCompare } from "../components/rover/ConceptCompare";
-import { MediaSlideCarousel } from "../components/rover/MediaSlideCarousel";
 import { RoverProcessStages } from "../components/rover/RoverProcessStages";
 import { ProjectImage } from "../components/ProjectImage";
 import { Footer } from "../components/Footer";

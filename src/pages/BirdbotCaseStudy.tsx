@@ -209,7 +209,7 @@ export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean 
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-gray-700">
             {gaitResults.body}
           </p>
-          <div className="mt-10 grid items-start gap-10 lg:grid-cols-[max-content_1fr]">
+          <div className="mt-10 flex justify-center">
             <div className="flex items-stretch gap-3">
               <video
                 className="h-auto w-auto max-h-[92vh] max-w-full object-contain"
@@ -232,9 +232,6 @@ export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean 
                 ))}
               </div>
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-gray-700 md:text-base lg:pt-2">
-              {gaitResults.flexibilityNote}
-            </p>
           </div>
         </FadeUp>
 

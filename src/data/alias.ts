@@ -31,7 +31,6 @@ export const aliasMask = {
     { value: "500%", label: "rise in road-rage-related fatalities over 10 years" },
     { value: "18%", label: "spike in U.S. traffic fatalities in 2021" },
   ],
-  sourcesPlaceholder: "[PLACEHOLDER: cite exact sources — Wendy to confirm.]",
 };
 
 export const aliasStatement = {
@@ -218,61 +217,61 @@ export const aliasScenarios = [
     title: "Mild frustration",
     caption:
       "A driver gets cut off; the band shows a restrained flush of frustration instead of a horn blast.",
-    file: "scn-frustration.webm",
-    alt: "ALIAS tail-band animation for mild frustration.",
+    file: "render-animation/mild-frustration.gif",
+    alt: "ALIAS render animation for mild frustration.",
   },
   {
     label: "S1 · EMOTION",
     title: "Apology",
     caption: "The other car answers with a sign for sorry.",
-    file: "scn-apology.webm",
-    alt: "ALIAS tail-band animation for apology.",
+    file: "render-animation/apology.gif",
+    alt: "ALIAS render animation for apology.",
   },
   {
     label: "S1 · EMOTION",
     title: "Happiness / thanks",
     caption: "The moment resolves; the driver leaves easy.",
-    file: "scn-thanks.webm",
-    alt: "ALIAS tail-band animation for thanks.",
+    file: "render-animation/happiness.gif",
+    alt: "ALIAS render animation for thanks.",
   },
   {
     label: "S2 · INTENTION",
     title: "Pay attention",
     caption:
       "Merging into traffic with a runner crossing; the car draws the runner's eye and waves them through.",
-    file: "scn-payattention.webm",
-    alt: "ALIAS tail-band animation for pay attention.",
+    file: "render-animation/pay-attention.gif",
+    alt: "ALIAS render animation for pay attention.",
   },
   {
     label: "S2 · INTENTION",
     title: "Going now",
     caption: "At a four-way standoff, one car simply says going — and goes.",
-    file: "scn-goingnow.webm",
-    alt: "ALIAS tail-band animation for going now.",
+    file: "render-animation/going now.gif",
+    alt: "ALIAS render animation for going now.",
   },
   {
     label: "S3 · STATUS",
     title: "Emergency",
     caption: "A driver racing to a flight signals urgency to everyone around.",
-    file: "scn-emergency.webm",
-    alt: "ALIAS tail-band animation for emergency.",
+    file: "render-animation/emergency.gif",
+    alt: "ALIAS render animation for emergency.",
   },
   {
     label: "S3 · STATUS",
     title: "I see you",
     caption:
       "A nervous motorcyclist filtering past sees the car acknowledge them, and passes reassured; a car holds for an elderly pedestrian still in the crosswalk.",
-    file: "scn-iseeyou.webm",
-    alt: "ALIAS tail-band animation for I see you.",
+    file: "render-animation/i-see-you.gif",
+    alt: "ALIAS render animation for I see you.",
+  },
+  {
+    label: "S3 · STATUS",
+    title: "Human to AV mode",
+    caption: "The band shows the shift from a human driver to autonomous mode.",
+    file: "render-animation/human-av.gif",
+    alt: "ALIAS render animation for human to AV mode.",
   },
 ];
-
-export const aliasFilm = {
-  h2: "The short film.",
-  file: "alias-short-film.mp4",
-  alt: "ALIAS concept short film — a family vehicle driving into the city, running the full vocabulary in context.",
-  embedPlaceholder: "[PLACEHOLDER: Vimeo/YouTube embed id if the file is hosted off-site.]",
-};
 
 export const aliasMaking = {
   h2: "Physical Modle",

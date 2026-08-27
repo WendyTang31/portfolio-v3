@@ -19,7 +19,6 @@ import {
   aliasResearch,
   aliasLiquid,
   aliasScenarios,
-  aliasFilm,
   aliasMaking,
   aliasClose,
   aliasCredits,
@@ -136,7 +135,6 @@ export function AliasCaseStudy() {
             </div>
           ))}
         </div>
-        <p className="alias-wrap alias-caption mt-8">{aliasMask.sourcesPlaceholder}</p>
       </section>
 
       <section className="alias-section">
@@ -349,33 +347,17 @@ export function AliasCaseStudy() {
               <p className="mt-2 max-w-[65ch] text-sm leading-relaxed text-[var(--dark-ink)]/75">
                 {scene.caption}
               </p>
-              <div className="alias-band mt-6 overflow-hidden">
+              <div className="mt-6 overflow-hidden">
                 <AliasMedia
                   file={scene.file}
                   caption={scene.caption}
                   alt={scene.alt}
-                  kind="video"
                   dark
-                  aspect="aspect-[21/6] min-h-[140px]"
+                  aspect="aspect-video"
                 />
               </div>
             </FadeUp>
           ))}
-
-          <FadeUp>
-            <h2 className="alias-h2">{aliasFilm.h2}</h2>
-            <div className="mt-8">
-              <AliasMedia
-                file={aliasFilm.file}
-                caption={aliasFilm.alt}
-                alt={aliasFilm.alt}
-                kind="film"
-                dark
-                aspect="aspect-video"
-              />
-            </div>
-            <p className="alias-caption mt-3">{aliasFilm.embedPlaceholder}</p>
-          </FadeUp>
         </div>
       </section>
 

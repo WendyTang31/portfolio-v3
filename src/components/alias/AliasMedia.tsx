@@ -48,8 +48,10 @@ export function AliasMedia({
   fit = "cover",
 }: AliasMediaProps) {
   const [failed, setFailed] = useState(false);
-  const src = `${ALIAS_ASSET_BASE}/${encodeURIComponent(file)}`;
-  const posterSrc = poster ? `${ALIAS_ASSET_BASE}/${encodeURIComponent(poster)}` : undefined;
+  const src = `${ALIAS_ASSET_BASE}/${file.split("/").map(encodeURIComponent).join("/")}`;
+  const posterSrc = poster
+    ? `${ALIAS_ASSET_BASE}/${poster.split("/").map(encodeURIComponent).join("/")}`
+    : undefined;
   const objectFit = fit === "contain" ? "object-contain bg-white" : "object-cover";
 
   useEffect(() => {

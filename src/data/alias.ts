@@ -48,7 +48,7 @@ export const aliasNature = {
   whatIfImage: "side-render.jpg",
   whatIfAlt: "Side profile of the ALIAS concept car.",
   whatIfCopy:
-    "a vehicle that expresses the driver's humanity, conveying a wider range of intentions and emotions beyond the current method of headlights and horns?",
+    "A vehicle that expresses the driver's humanity, conveying a wider range of intentions and emotions beyond the current method of headlights and horns",
 };
 
 export const aliasMarket = {

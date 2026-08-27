@@ -185,17 +185,20 @@ export function AliasCaseStudy() {
               </article>
             </div>
           </FadeUp>
-          <FadeUp className="mt-10">
-            <figure className="alias-whatif">
-              <img
-                src={`${ALIAS_ASSET_BASE}/${encodeURIComponent(aliasNature.whatIfImage)}`}
-                alt={aliasNature.whatIfAlt}
-              />
-              <div className="alias-whatif-veil" aria-hidden />
-              <p className="alias-whatif-copy">{aliasNature.whatIfCopy}</p>
-            </figure>
-          </FadeUp>
         </div>
+      </section>
+
+      <section className="alias-dark alias-section">
+        <FadeUp className="alias-wrap">
+          <figure className="alias-whatif">
+            <img
+              src={`${ALIAS_ASSET_BASE}/${encodeURIComponent(aliasNature.whatIfImage)}`}
+              alt={aliasNature.whatIfAlt}
+            />
+            <div className="alias-whatif-veil" aria-hidden />
+            <p className="alias-whatif-copy">{aliasNature.whatIfCopy}</p>
+          </figure>
+        </FadeUp>
       </section>
 
       <section className="alias-section">

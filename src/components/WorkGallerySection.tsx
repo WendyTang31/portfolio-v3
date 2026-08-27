@@ -19,7 +19,7 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
       transition={{ delay: index * 0.05 }}
       className="group flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-[3px_3px_0px_rgba(17,17,17,0.12)]"
     >
-      <div className="aspect-[16/10] w-full overflow-hidden bg-[#f3f3f3]">
+      <div className="aspect-[3/2] w-full overflow-hidden bg-[#f3f3f3]">
         <ProjectImage
           src={work.heroImage}
           alt={work.title}
@@ -29,9 +29,9 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
         />
       </div>
 
-      <div className="flex flex-1 flex-col px-4 py-3 md:px-5 md:py-4">
+      <div className="flex flex-1 flex-col px-4 py-3.5 md:px-6 md:py-5">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-base font-medium tracking-tight text-[#111] md:text-lg">
+          <h3 className="text-lg font-medium tracking-tight text-[#111] md:text-xl">
             {work.title}
           </h3>
           {!work.isLive && (
@@ -40,7 +40,7 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
             </span>
           )}
         </div>
-        <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-gray-600 md:text-sm">
+        <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-gray-600 md:text-[15px]">
           {work.subtitle}
         </p>
         <div className="mt-2 flex flex-wrap gap-1.5">
@@ -62,19 +62,19 @@ export function WorkGallerySection() {
   return (
     <section
       id="work"
-      className="relative z-20 flex min-h-[100svh] w-full flex-col items-center bg-[#fcfcfc] px-5 py-8 md:px-10 md:py-10 lg:px-12"
+      className="relative z-20 flex min-h-[100svh] w-full flex-col items-center bg-[#fcfcfc] px-4 py-8 md:px-6 md:py-10 lg:px-8"
     >
       <motion.p
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
-        className="mb-4 w-full max-w-[1600px] mx-auto font-mono text-[10px] uppercase tracking-[0.2em] md:mb-5"
+        className="mb-4 w-full max-w-[min(96vw,1760px)] mx-auto font-mono text-[10px] uppercase tracking-[0.2em] md:mb-5"
       >
         <span className="text-gray-500">[ 02 ]</span>{" "}
         <span className="font-bold text-gray-900">Selected Work</span>
       </motion.p>
 
-      <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6 lg:gap-5">
+      <div className="mx-auto grid w-full max-w-[min(96vw,1760px)] grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-6 lg:gap-6">
         {works.map((work, index) => {
           const card = <WorkCard work={work} index={index} />;
 

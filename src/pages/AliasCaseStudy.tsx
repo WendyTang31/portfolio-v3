@@ -39,10 +39,6 @@ function FadeUp({ children, className = "" }: { children: ReactNode; className?:
   );
 }
 
-function GrowWord({ children }: { children: string }) {
-  return <span className="alias-grow-word font-semibold">{children}</span>;
-}
-
 export function AliasCaseStudy() {
   useEffect(() => {
     const previousTitle = document.title;
@@ -150,26 +146,10 @@ export function AliasCaseStudy() {
 
       <section className="alias-dark alias-section">
         <FadeUp className="alias-wrap text-center">
-          <p className="alias-mono text-[11px] uppercase tracking-[0.18em] text-[var(--glow)]">
+          <p className="alias-mono text-[10px] uppercase tracking-[0.18em] text-[var(--glow)]">
             {aliasStatement.h2}
           </p>
-          <p className="alias-h2 mx-auto mt-8 max-w-4xl leading-snug">
-            {aliasStatement.lead}{" "}
-            {aliasStatement.keywords.map((word, i) => (
-              <span key={word}>
-                <GrowWord>{word}</GrowWord>
-                {i < aliasStatement.keywords.length - 1 ? ", " : " "}
-              </span>
-            ))}
-            {aliasStatement.mid}{" "}
-            {aliasStatement.keywords2.map((word, i) => (
-              <span key={word}>
-                <GrowWord>{word}</GrowWord>
-                {i < aliasStatement.keywords2.length - 1 ? " and " : " "}
-              </span>
-            ))}
-            {aliasStatement.end}
-          </p>
+          <p className="alias-statement-copy mx-auto mt-5 max-w-2xl">{aliasStatement.copy}</p>
         </FadeUp>
       </section>
 
@@ -206,13 +186,14 @@ export function AliasCaseStudy() {
             </div>
           </FadeUp>
           <FadeUp className="mt-10">
-            <AliasMedia
-              file={aliasNature.whatIf}
-              caption={aliasNature.whatIfAlt}
-              alt={aliasNature.whatIfAlt}
-              aspect="w-full"
-              fit="contain"
-            />
+            <figure className="alias-whatif">
+              <img
+                src={`${ALIAS_ASSET_BASE}/${encodeURIComponent(aliasNature.whatIfImage)}`}
+                alt={aliasNature.whatIfAlt}
+              />
+              <div className="alias-whatif-veil" aria-hidden />
+              <p className="alias-whatif-copy">{aliasNature.whatIfCopy}</p>
+            </figure>
           </FadeUp>
         </div>
       </section>
@@ -220,7 +201,7 @@ export function AliasCaseStudy() {
       <section className="alias-section">
         <div className="alias-wrap">
           <FadeUp>
-            <h2 className="alias-h2">{aliasResearch.intro}</h2>
+            <h2 className="text-2xl font-semibold tracking-tight md:text-[1.75rem]">{aliasResearch.intro}</h2>
           </FadeUp>
 
           <FadeUp className="mt-16">
@@ -256,6 +237,15 @@ export function AliasCaseStudy() {
                 fit="contain"
               />
             </div>
+            <div className="mt-6">
+              <AliasMedia
+                file={aliasResearch.test2.photo}
+                caption={aliasResearch.test2.photoAlt}
+                alt={aliasResearch.test2.photoAlt}
+                aspect="w-full"
+                fit="contain"
+              />
+            </div>
             <p className="mt-8 text-lg font-semibold leading-snug">{aliasResearch.test2.finding}</p>
             <blockquote className="mt-6 border-l-2 border-[var(--accent)] pl-5 text-sm leading-relaxed text-[var(--ink-soft)]">
               {aliasResearch.test2.direction}
@@ -267,19 +257,15 @@ export function AliasCaseStudy() {
               {aliasResearch.test3.title}
             </p>
             <p className="alias-body mt-4 text-[var(--ink-soft)]">{aliasResearch.test3.body}</p>
-            <object
-              data={`${ALIAS_ASSET_BASE}/${encodeURIComponent(aliasResearch.test3.systemsMap)}#toolbar=0&navpanes=0`}
-              type="application/pdf"
-              aria-label={aliasResearch.test3.systemsMapAlt}
-              className="mt-8 min-h-[380px] w-full bg-white md:min-h-[480px]"
-            >
-              <a
-                href={`${ALIAS_ASSET_BASE}/${encodeURIComponent(aliasResearch.test3.systemsMap)}`}
-                className="alias-caption underline"
-              >
-                Open systems map PDF
-              </a>
-            </object>
+            <div className="mt-8">
+              <AliasMedia
+                file={aliasResearch.test3.systemsMap}
+                caption={aliasResearch.test3.systemsMapAlt}
+                alt={aliasResearch.test3.systemsMapAlt}
+                aspect="w-full"
+                fit="contain"
+              />
+            </div>
             <div className="mt-8 grid grid-cols-2 gap-3">
               {[
                 {
@@ -322,14 +308,6 @@ export function AliasCaseStudy() {
             </ol>
           </FadeUp>
         </div>
-      </section>
-
-      <section className="alias-dark alias-section">
-        <FadeUp className="alias-wrap">
-          <h2 className="alias-h2 text-[var(--glow)]">{aliasResearch.test3.keyFindingTitle}</h2>
-          <p className="alias-body mt-6 text-[var(--dark-ink)]/80">{aliasResearch.test3.keyFinding}</p>
-          <p className="alias-h2 mt-10 text-[var(--glow)]">{aliasResearch.test3.keyLine}</p>
-        </FadeUp>
       </section>
 
       <section className="alias-dark alias-section">

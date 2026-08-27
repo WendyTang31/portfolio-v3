@@ -36,11 +36,7 @@ export const aliasMask = {
 
 export const aliasStatement = {
   h2: "Design statement",
-  lead: "Create a non-verbal, intuitively understandable external interaction system (eHMI) for road users — communicating",
-  keywords: ["emotion", "intention", "status"] as const,
-  mid: "to increase",
-  keywords2: ["empathy", "safety"] as const,
-  end: "in traffic.",
+  copy: "Create a non-verbal, intuitively understandable external interaction system (eHMI) for road users — communicating emotion, intention, status to increase empathy and safety in traffic.",
 };
 
 export const aliasNature = {
@@ -49,9 +45,10 @@ export const aliasNature = {
   image: "Final Presentation (3).png",
   imageAlt:
     "Three-panel nature reference: cuttlefish camouflage, social grooming, and human cave symbols.",
-  whatIf: "what-if.png",
-  whatIfAlt:
-    "What if a vehicle could express the driver's humanity, conveying a wider range of intentions and emotions beyond headlights and horns?",
+  whatIfImage: "side-render.jpg",
+  whatIfAlt: "Side profile of the ALIAS concept car.",
+  whatIfCopy:
+    "a vehicle that expresses the driver's humanity, conveying a wider range of intentions and emotions beyond the current method of headlights and horns?",
 };
 
 export const aliasMarket = {
@@ -63,8 +60,7 @@ export const aliasMarket = {
 };
 
 export const aliasResearch = {
-  intro:
-    "I ran three rounds of testing to find out what a car actually needs to say — and how.",
+  intro: "Three rounds of user research.",
   test1: {
     title: "Test 1 — Initial understanding",
     body: "A graphics test plus interviews: which messages are essential, and how do people intuitively read a symbol? The clearest need showed up in urban, cross-vehicle moments — driver ↔ pedestrian, cyclist, and biker — where empathy and safety break down most.",
@@ -102,6 +98,8 @@ export const aliasResearch = {
     summary:
       "Test 2: representative imagery (emoji/pictogram) scored highest for clarity and also highest for stimulation. Faces won for emotion; traffic-sign convention won for intention.",
     image: "Final Presentation (1).png",
+    photo: "test-2-web.jpg",
+    photoAlt: "Works-like LED panel mounted on a car hood, showing liquid-pixel rings.",
   },
   test3: {
     title: "Test 3 — Concept evaluation",
@@ -134,7 +132,7 @@ export const aliasResearch = {
     clipAAlt: "Emergency scenario clip A.",
     clipBAlt: "Emergency scenario clip B.",
     abFootnote: "[PLACEHOLDER: A/B test footnote — what A and B are. Wendy to add.]",
-    systemsMap: "system-map-slide.pdf",
+    systemsMap: "system-map-slide.png",
     systemsMapAlt: "Systems map: clarity and empathy build safety; aggression erodes it.",
     summary:
       "Test 3 compared ALIAS to horn, gesture, or nothing. Pay attention improved clarity by 2.5; emergency by 2.4. Frustration and apology did not get clearer but empathy still rose. Yielding was the only case where aggression increased, when the symbol pictured an elderly pedestrian.",

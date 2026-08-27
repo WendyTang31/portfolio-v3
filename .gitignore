@@ -4,7 +4,11 @@ dist-birdbot
 dist-ssr
 *.local
 .DS_Store
+desktop.ini
+Thumbs.db
 *.CR2
+# Too large for GitHub (100MB limit). Keep local only.
+Public/projects/ALIAS/poster.pdf
 Public/projects/rover/Z52A9408.png
 Public/projects/rover/Z52A9483.png
 # Original ALIAS hero film (~84MB). Site uses hero-short.mp4.

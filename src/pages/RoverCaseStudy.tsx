@@ -10,12 +10,8 @@ import {
   roverDecision,
   roverFabrication,
   roverHero,
-  roverMeta,
-  roverProblem,
   roverReference,
   roverResult,
-  roverRole,
-  roverWhatItIs,
   roverWhyDesign,
 } from "../data/rover";
 import { ConceptCompare } from "../components/rover/ConceptCompare";
@@ -94,66 +90,20 @@ export function RoverCaseStudy() {
         </div>
       </section>
 
+      <section className="w-full bg-[#fcfcfc] px-6 py-10 md:px-12 md:py-16">
+        <FadeUp>
+          <ProjectImage
+            src={roverHero.frontRender}
+            alt={roverHero.frontRenderAlt}
+            placeholderLabel="front-render.png"
+            accent={ROVER_ACCENT}
+            className="mx-auto w-full max-w-6xl object-contain"
+          />
+        </FadeUp>
+      </section>
+
       <article className="mx-auto max-w-4xl px-6 pb-20 md:px-8">
-        <FadeUp className="mt-20">
-          <SectionLabel>My role</SectionLabel>
-          <BeatHeadline>What I owned on the team.</BeatHeadline>
-          <ul className="mt-8 space-y-3">
-            {roverRole.map((line) => (
-              <li
-                key={line}
-                className="border-l-2 pl-4 text-sm leading-relaxed text-gray-700"
-                style={{ borderColor: `${ROVER_ACCENT}55` }}
-              >
-                {line}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-12 grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2">
-            {[
-              { label: "Role", value: roverMeta.role },
-              { label: "When", value: roverMeta.when },
-              { label: "Team", value: roverMeta.team },
-              { label: "Tools", value: roverMeta.tools },
-            ].map((item) => (
-              <div key={item.label}>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
-                  {item.label}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-gray-800">
-                  {item.value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </FadeUp>
-
-        <FadeUp className="mt-20">
-          <BeatHeadline>{roverWhatItIs.headline}</BeatHeadline>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
-            {roverWhatItIs.body}
-          </p>
-          <p className="mt-6 border-l-2 pl-4 text-sm leading-relaxed text-gray-600"
-            style={{ borderColor: `${ROVER_ACCENT}44` }}
-          >
-            {roverWhatItIs.competitionNote}
-          </p>
-        </FadeUp>
-
-        <FadeUp className="mt-20">
-          <SectionLabel>{roverProblem.label}</SectionLabel>
-          <BeatHeadline>{roverProblem.headline}</BeatHeadline>
-          <p className="mt-6 text-base leading-relaxed text-gray-700">
-            {roverProblem.body}
-          </p>
-          <blockquote className="mt-10 border-l-2 pl-6 text-xl font-medium leading-snug tracking-tight text-[#111] md:text-2xl"
-            style={{ borderColor: ROVER_ACCENT }}
-          >
-            {roverProblem.question}
-          </blockquote>
-        </FadeUp>
-
-        <FadeUp className="mt-20">
+        <FadeUp className="mt-10">
           <SectionLabel>{roverApproach.label}</SectionLabel>
           <BeatHeadline>{roverApproach.headline}</BeatHeadline>
           <p className="mt-6 text-base leading-relaxed text-gray-700">

@@ -8,6 +8,8 @@ export const roverHero = {
   youtubeVideo:
     "https://www.youtube.com/embed/vxJUGhOyEZM?autoplay=1&mute=1&loop=1&playlist=vxJUGhOyEZM&controls=0&modestbranding=1&rel=0&playsinline=1",
   image: `${ROVER_ASSET_BASE}/hero-rover.webp`,
+  frontRender: `${ROVER_ASSET_BASE}/front-render.png`,
+  frontRenderAlt: "Front CAD render of the NASA HERC rover",
 };
 
 export const roverMeta = {

@@ -88,7 +88,8 @@ export function RoverCaseStudy() {
         </div>
       </section>
 
-      <article className="mx-auto max-w-4xl px-6 pb-20 md:px-8">
+      <div className="px-6 pb-20 md:px-12 lg:px-16">
+      <article className="mx-auto w-full max-w-[1600px]">
         <FadeUp className="mt-20">
           <div className="overflow-hidden rounded-lg border border-gray-200 bg-[#ececec]">
             <ProjectImage
@@ -99,7 +100,7 @@ export function RoverCaseStudy() {
               className="h-auto w-full object-contain"
             />
           </div>
-          <div className="mt-12 grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2 md:grid-cols-4">
+          <div className="mt-12 grid gap-8 border-y border-gray-200 py-8 sm:grid-cols-2 md:grid-cols-4 md:gap-12">
             {[
               { label: "Role", value: roverMeta.role },
               { label: "When", value: roverMeta.when },
@@ -222,6 +223,7 @@ export function RoverCaseStudy() {
           </p>
         </FadeUp>
       </article>
+      </div>
 
       <Footer />
     </div>

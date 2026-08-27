@@ -283,11 +283,13 @@ export function AliasCaseStudy() {
                   file: aliasResearch.test3.clipA,
                   label: aliasResearch.test3.clipALabel,
                   alt: aliasResearch.test3.clipAAlt,
+                  footnote: aliasResearch.test3.clipAFootnote,
                 },
                 {
                   file: aliasResearch.test3.clipB,
                   label: aliasResearch.test3.clipBLabel,
                   alt: aliasResearch.test3.clipBAlt,
+                  footnote: aliasResearch.test3.clipBFootnote,
                 },
               ].map((clip) => (
                 <figure key={clip.file} className="min-w-0">
@@ -302,6 +304,7 @@ export function AliasCaseStudy() {
                     aspect="aspect-video"
                     fit="contain"
                   />
+                  <figcaption className="alias-caption mt-2">{clip.footnote}</figcaption>
                 </figure>
               ))}
             </div>

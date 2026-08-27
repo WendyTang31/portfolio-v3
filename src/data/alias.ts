@@ -132,6 +132,8 @@ export const aliasResearch = {
     clipBLabel: "B",
     clipAAlt: "Emergency scenario clip A.",
     clipBAlt: "Emergency scenario clip B.",
+    clipAFootnote: "control group (existing communication method)",
+    clipBFootnote: "study group (new communication method)",
     systemsMap: "system-map-slide.png",
     systemsMapAlt: "Systems map: clarity and empathy build safety; aggression erodes it.",
     summary:

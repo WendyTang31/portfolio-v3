@@ -1,7 +1,7 @@
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { ArrowLeft, ChevronDown } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import {
   ROVER_ACCENT,
   ROVER_ASSET_BASE,
@@ -10,9 +10,9 @@ import {
   roverDecision,
   roverFabrication,
   roverHero,
+  roverMeta,
   roverReference,
   roverResult,
-  roverWhyDesign,
 } from "../data/rover";
 import { ConceptCompare } from "../components/rover/ConceptCompare";
 import { MediaSlideCarousel } from "../components/rover/MediaSlideCarousel";
@@ -51,8 +51,6 @@ function BeatHeadline({ children }: { children: ReactNode }) {
 }
 
 export function RoverCaseStudy() {
-  const [evaluationOpen, setEvaluationOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-[#fcfcfc]">
       <section className="relative h-[100svh] w-full overflow-hidden bg-black">
@@ -90,20 +88,37 @@ export function RoverCaseStudy() {
         </div>
       </section>
 
-      <section className="w-full bg-[#fcfcfc] px-6 py-10 md:px-12 md:py-16">
-        <FadeUp>
-          <ProjectImage
-            src={roverHero.frontRender}
-            alt={roverHero.frontRenderAlt}
-            placeholderLabel="front-render.png"
-            accent={ROVER_ACCENT}
-            className="mx-auto w-full max-w-6xl object-contain"
-          />
-        </FadeUp>
-      </section>
-
       <article className="mx-auto max-w-4xl px-6 pb-20 md:px-8">
-        <FadeUp className="mt-10">
+        <FadeUp className="mt-20">
+          <div className="overflow-hidden rounded-lg border border-gray-200 bg-[#ececec]">
+            <ProjectImage
+              src={roverHero.frontRender}
+              alt={roverHero.frontRenderAlt}
+              placeholderLabel="front-render.png"
+              accent={ROVER_ACCENT}
+              className="h-auto w-full object-contain"
+            />
+          </div>
+          <div className="mt-12 grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2 md:grid-cols-4">
+            {[
+              { label: "Role", value: roverMeta.role },
+              { label: "When", value: roverMeta.when },
+              { label: "Team", value: roverMeta.team },
+              { label: "Tools", value: roverMeta.tools },
+            ].map((item) => (
+              <div key={item.label}>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
+                  {item.label}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-gray-800">
+                  {item.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </FadeUp>
+
+        <FadeUp className="mt-20">
           <SectionLabel>{roverApproach.label}</SectionLabel>
           <BeatHeadline>{roverApproach.headline}</BeatHeadline>
           <p className="mt-6 text-base leading-relaxed text-gray-700">
@@ -141,6 +156,21 @@ export function RoverCaseStudy() {
         </FadeUp>
 
         <FadeUp className="mt-20">
+          <h2 className="text-2xl font-medium tracking-tight text-[#111] md:text-3xl">
+            Evaluation of the two systems
+          </h2>
+          <div className="mt-8 overflow-hidden rounded-lg border border-gray-200 bg-[#ececec]">
+            <ProjectImage
+              src={`${ROVER_ASSET_BASE}/evaluation.png`}
+              alt="Overall-performance comparison of Indirect Bearing and Crank Four-Bar steering"
+              placeholderLabel="evaluation.png"
+              accent={ROVER_ACCENT}
+              className="h-auto w-full object-contain"
+            />
+          </div>
+        </FadeUp>
+
+        <FadeUp className="mt-20">
           <SectionLabel>{roverDecision.label}</SectionLabel>
           <BeatHeadline>{roverDecision.headline}</BeatHeadline>
           <p className="mt-6 text-base leading-relaxed text-gray-700">
@@ -149,55 +179,12 @@ export function RoverCaseStudy() {
           <p className="mt-6 text-base font-medium leading-relaxed text-[#111]">
             {roverDecision.outcome}
           </p>
-          <button
-            type="button"
-            onClick={() => setEvaluationOpen((open) => !open)}
-            className="mt-8 flex w-full items-center justify-between gap-4 rounded-lg border border-gray-200 bg-white px-6 py-4 text-left transition-colors hover:bg-gray-50"
-            aria-expanded={evaluationOpen}
-          >
-            <span className="font-mono text-[10px] uppercase tracking-widest text-gray-600">
-              {roverDecision.detail.summaryLabel}
-            </span>
-            <ChevronDown
-              size={18}
-              className={`shrink-0 text-gray-500 transition-transform ${evaluationOpen ? "rotate-180" : ""}`}
-            />
-          </button>
-          {evaluationOpen && (
-            <div className="mt-4 space-y-6 rounded-lg border border-gray-200 bg-white p-6">
-              <div className="overflow-hidden rounded-lg border border-gray-200">
-                <ProjectImage
-                  src={`${ROVER_ASSET_BASE}/${roverDecision.detail.image}`}
-                  alt={roverDecision.detail.caption}
-                  placeholderLabel={roverDecision.detail.caption}
-                  accent={ROVER_ACCENT}
-                  className="aspect-[16/10] w-full object-contain"
-                />
-              </div>
-              <p className="text-xs leading-relaxed text-gray-600">
-                {roverDecision.detail.caption}
-              </p>
-              <div>
-                <p className="mb-3 font-mono text-[10px] uppercase tracking-widest text-gray-500">
-                  {roverDecision.detail.ergonomicLabel}
-                </p>
-                <div className="aspect-video overflow-hidden rounded-lg border border-gray-200">
-                  <iframe
-                    title={roverDecision.detail.ergonomicLabel}
-                    src={roverDecision.detail.ergonomicVideo}
-                    className="h-full w-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-            </div>
-          )}
         </FadeUp>
 
         <FadeUp className="mt-20">
-          <SectionLabel>{roverFabrication.label}</SectionLabel>
-          <BeatHeadline>{roverFabrication.headline}</BeatHeadline>
+          <h2 className="text-2xl font-medium tracking-tight text-[#111] md:text-3xl">
+            Fabrication
+          </h2>
           <p className="mt-6 text-base leading-relaxed text-gray-700">
             {roverFabrication.body}
           </p>
@@ -216,24 +203,6 @@ export function RoverCaseStudy() {
             alt="Rover result"
             accent={ROVER_ACCENT}
           />
-        </FadeUp>
-
-        <FadeUp className="mt-20">
-          <SectionLabel>{roverWhyDesign.label}</SectionLabel>
-          <BeatHeadline>{roverWhyDesign.headline}</BeatHeadline>
-          <div className="mt-6 space-y-4">
-            {roverWhyDesign.beats.map((beat) => (
-              <p key={beat} className="text-base leading-relaxed text-gray-700">
-                {beat}
-              </p>
-            ))}
-          </div>
-          <p className="mt-8 font-mono text-[10px] uppercase tracking-widest text-gray-500">
-            Next steps
-          </p>
-          <p className="mt-2 text-base leading-relaxed text-gray-700">
-            {roverWhyDesign.nextSteps}
-          </p>
         </FadeUp>
 
         <FadeUp className="mt-16 border-t border-gray-200 pt-8">

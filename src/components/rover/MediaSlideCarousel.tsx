@@ -54,7 +54,7 @@ export function MediaSlideCarousel({
           >
             {activeSlide.type === "image" ? (
               <ProjectImage
-                src={`${assetBase}/${activeSlide.file}`}
+                src={`${assetBase}/${encodeURIComponent(activeSlide.file)}`}
                 alt={activeSlide.caption ?? alt}
                 placeholderLabel={activeSlide.caption ?? activeSlide.file}
                 accent={accent}

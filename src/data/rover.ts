@@ -67,8 +67,7 @@ export const roverComparison = {
   headline: "Two ways to steer — and a real tradeoff between them.",
   left: {
     name: "Crank · four-bar steering",
-    image: `${ROVER_ASSET_BASE}/crank-arm-iteration.jpg`,
-    video: `${ROVER_ASSET_BASE}/crank-test.mp4`,
+    image: `${ROVER_ASSET_BASE}/result-render.png`,
     points: [
       "Dual-pivot four-bar linkage with more optimal tie-rod geometry.",
       "Larger steering angles and reduced bump steer.",
@@ -77,8 +76,7 @@ export const roverComparison = {
   },
   right: {
     name: "Horizontal · bearing steering",
-    image: `${ROVER_ASSET_BASE}/IMG_8606.JPG`,
-    video: `${ROVER_ASSET_BASE}/horizontal-test.mp4`,
+    image: `${ROVER_ASSET_BASE}/horizontal.png`,
     points: [
       "Centrally pivoted handlebar that mirrors bicycle ergonomics.",
       "Familiar to ride, but constrained by chassis geometry.",
@@ -93,14 +91,6 @@ export const roverDecision = {
   body: "I evaluated both systems on overall performance — comparing the Indirect Bearing (IB) and Crank Four-Bar (C4B) systems — and on ergonomics: how the steering actually felt to ride.",
   outcome:
     "The crank four-bar won. Better steering geometry, and easier to fabricate without the space-packaging problems the horizontal system forced onto the chassis.",
-  detail: {
-    summaryLabel: "See the full evaluation",
-    image: "evaluation-chart.png",
-    caption:
-      "Overall-performance comparison: IB (Indirect Bearing) vs C4B (Crank Four-Bar).",
-    ergonomicLabel: "Ergonomic ride comparison",
-    ergonomicVideo: "https://www.youtube.com/embed/wU6QFYZ07Hs",
-  },
 };
 
 export type RoverProcessStage = {
@@ -111,13 +101,28 @@ export type RoverProcessStage = {
 };
 
 export const roverFabrication = {
-  label: "Fabrication in carbon fiber",
-  headline: "Built light, then tested to failure.",
   body: "I fabricated the crank steering in carbon fiber, iterating the crank-arm shape from strength tests on the joints and connecting points. The method: start from the thinnest possible layup, break it to find the true strength and stiffness limit, then add a layer and run it again.",
   stages: [
     {
       n: "01",
-      title: "Layup & shape iteration",
+      title: "mold design",
+      body: "Molds for the crank arm and end flange — designed so the layup could be thin, repeatable, and strong at the connecting points.",
+      slides: [
+        {
+          type: "image" as const,
+          file: "top mold.1.png",
+          caption: "Mold for the carbon-fiber crank arm.",
+        },
+        {
+          type: "image" as const,
+          file: "end flange.1.png",
+          caption: "End-flange mold for the steering joint.",
+        },
+      ],
+    },
+    {
+      n: "02",
+      title: "carbon fiber layout",
       body: "Each crank-arm generation started thin, then gained layers only after a destructive test revealed where it failed.",
       slides: [
         {
@@ -134,6 +139,18 @@ export const roverFabrication = {
           type: "image" as const,
           file: "strength-test.jpg",
           caption: "Destructive testing — breaking each layup to find its limit.",
+        },
+      ],
+    },
+    {
+      n: "03",
+      title: "joint assembly",
+      body: "The finished carbon parts assembled into the steering joint — the hardware that has to take load and still steer smoothly.",
+      slides: [
+        {
+          type: "image" as const,
+          file: "joint-assembly.png",
+          caption: "Steering joint assembly.",
         },
       ],
     },

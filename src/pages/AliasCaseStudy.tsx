@@ -308,17 +308,7 @@ export function AliasCaseStudy() {
                 </figure>
               ))}
             </div>
-            <ol className="mt-10 space-y-6">
-              {aliasResearch.test3.takeaways.map((item) => (
-                <li key={item.n} className="border-l-2 border-black/10 pl-5">
-                  <p className="alias-mono text-[10px] uppercase tracking-[0.16em] text-[var(--ink-soft)]">
-                    {item.n}
-                  </p>
-                  <p className="mt-2 text-lg font-semibold">{item.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{item.body}</p>
-                </li>
-              ))}
-            </ol>
+            <p className="alias-body mt-10 text-[var(--ink-soft)]">{aliasResearch.test3.finding}</p>
           </FadeUp>
         </div>
       </section>

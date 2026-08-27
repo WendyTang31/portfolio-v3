@@ -105,23 +105,8 @@ export const aliasResearch = {
   test3: {
     title: "Test 3 — Concept evaluation",
     body: "Finally we compared ALIAS against how people communicate today — horn, gesture, or nothing — across seven scenarios, scoring clarity, empathy, and aggression.",
-    takeaways: [
-      {
-        n: "01",
-        title: "Biggest gains where no channel exists.",
-        body: '"Pay attention" +2.5, "Emergency" +2.4 — the horn reads as aggression, and silence says nothing at all.',
-      },
-      {
-        n: "02",
-        title: "Empathy rises even when the message isn't decoded.",
-        body: "For frustration and apology, clarity stayed flat but empathy still rose. People couldn't read the exact message — and it still softened the exchange.",
-      },
-      {
-        n: "03",
-        title: "Depicting the recipient can backfire.",
-        body: 'A "yielding" symbol that pictured an elderly pedestrian read as insulting — the only case where aggression went up.',
-      },
-    ],
+    finding:
+      "Respondents wanted familiar, learned symbols — emotes, instinctive eyebrow shapes, and a green walking-person icon — since abstract ink has no shared referent and has to be read at a glance. But symbols can be taught. And while intent reads clearer than emotion overall, Apologize retained its empathy in high score despite weak clarity — the goodwill landed even when the exact message didn't. So emotion isn't a lost cause; it just needs a learnable vocabulary.",
     keyFindingTitle: "Clarity and empathy come apart.",
     keyFinding:
       "Traffic today isn't mainly suffering a clarity deficit — it's suffering a social-presence deficit. Simply being seen trying to communicate repairs the exchange before the vocabulary is even learned.",

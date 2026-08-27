@@ -97,7 +97,7 @@ export const aliasResearch = {
     ],
     summary:
       "Test 2: representative imagery (emoji/pictogram) scored highest for clarity and also highest for stimulation. Faces won for emotion; traffic-sign convention won for intention.",
-    image: "Final Presentation (1).png",
+    image: "test-2-graphics.png",
     photo: "test-2-web.jpg",
     photoAlt: "Works-like LED panel mounted on a car hood, showing liquid-pixel rings.",
   },
@@ -194,61 +194,20 @@ export const aliasLiquid = {
   h2: "Liquid Pixel",
   intro:
     "HMG's light language is built from separate square pixels. I reimagined them as bubbles of ink: surfaces that meet, merge, swell, and collapse under real physics — light that behaves like a living thing instead of a grid switching on and off.",
-  principleZh: "光不闪烁，光生长",
-  principleEn: "Light doesn't flash. It grows.",
-  triptych: [
+  file: "liquid-pixel.mp4",
+  alt: "Liquid Pixel light language: ink-like pixels growing, merging, and traveling.",
+  studio:
+    "We created the software with AI agent — liquid studio, a local, deterministic editor for designing and controlling dot-matrix/LED morphing animations, combining animation, procedural math, hardware mapping, and research-data generation in one tool.",
+  tools: [
     {
-      title: "Continuity",
-      line: "the division of a cell (mitosis).",
-      file: "liquid-mitosis.mp4",
-      demo: "mitosis" as const,
-      alt: "Looping grow animation of a cell dividing.",
+      file: "2d.png",
+      footnote: "animation editor",
+      alt: "Liquid Studio animation editor, with a bike-rider drawing on the 2D canvas.",
     },
     {
-      title: "Spontaneity",
-      line: "the bleed of ink and calligraphy.",
-      file: "liquid-ink.mp4",
-      demo: "ink" as const,
-      alt: "Looping grow animation of ink bleeding.",
-    },
-    {
-      title: "Motion",
-      line: "the traveling patterns of cuttlefish skin.",
-      file: "liquid-cuttlefish.mp4",
-      demo: "wave" as const,
-      alt: "Looping grow animation of a traveling light pattern.",
-    },
-  ],
-};
-
-export const aliasGrammar = {
-  h2: "Three things a car needs to say",
-  framing:
-    "Expressive signals get to be human and animated. Safety-critical signals stay anchored to convention. That split is the whole grammar.",
-  columns: [
-    {
-      type: "Emotion",
-      mode: "expressive",
-      trigger: "triggered automatically (biometrics, facial expression, the car's vision).",
-      example: "e.g. mild frustration, apology, thanks.",
-      file: "symbol-emotion.svg",
-      alt: "ALIAS emotion symbol.",
-    },
-    {
-      type: "Intention",
-      mode: "imperative",
-      trigger: "triggered manually (interior interface, voice).",
-      example: "e.g. pay attention, going now, yielding.",
-      file: "symbol-intention.svg",
-      alt: "ALIAS intention symbol.",
-    },
-    {
-      type: "Status",
-      mode: "imperative",
-      trigger: "triggered automatically (car sensors).",
-      example: 'e.g. emergency, AV vs. human mode, "I see you."',
-      file: "symbol-status.svg",
-      alt: "ALIAS status symbol.",
+      file: "3d.png",
+      footnote: "UV projection interface",
+      alt: "Liquid Studio 3D preview, projecting the animation onto the car body.",
     },
   ],
 };

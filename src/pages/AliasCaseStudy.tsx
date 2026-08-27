@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import "../alias.css";
 import { Footer } from "../components/Footer";
 import { AliasMedia } from "../components/alias/AliasMedia";
-import { LiquidTriptych, LiquidPrinciple } from "../components/alias/LiquidPixel";
+import { LiquidStudio } from "../components/alias/LiquidPixel";
 import {
   ALIAS_ASSET_BASE,
   aliasMetaDoc,
@@ -16,7 +16,6 @@ import {
   aliasMarket,
   aliasResearch,
   aliasLiquid,
-  aliasGrammar,
   aliasScenarios,
   aliasFilm,
   aliasMaking,
@@ -188,7 +187,7 @@ export function AliasCaseStudy() {
         </div>
       </section>
 
-      <section className="alias-dark alias-section">
+      <section className="alias-dark px-[var(--gutter)]">
         <FadeUp className="alias-wrap">
           <figure className="alias-whatif">
             <img
@@ -320,36 +319,17 @@ export function AliasCaseStudy() {
             <p className="alias-body mt-6 text-[var(--dark-ink)]/80">{aliasLiquid.intro}</p>
           </FadeUp>
           <FadeUp className="mt-12">
-            <LiquidTriptych />
+            <AliasMedia
+              file={aliasLiquid.file}
+              caption={aliasLiquid.alt}
+              alt={aliasLiquid.alt}
+              kind="video"
+              dark
+              aspect="w-full"
+            />
           </FadeUp>
-          <LiquidPrinciple />
-        </div>
-      </section>
-
-      <section className="alias-section">
-        <div className="alias-wrap">
           <FadeUp>
-            <h2 className="alias-h2">{aliasGrammar.h2}</h2>
-            <div className="mt-10 grid gap-8 md:grid-cols-3">
-              {aliasGrammar.columns.map((col) => (
-                <article key={col.type}>
-                  <AliasMedia
-                    file={col.file}
-                    caption={col.alt}
-                    alt={col.alt}
-                    aspect="aspect-square"
-                  />
-                  <p className="alias-mono mt-4 text-[10px] uppercase tracking-[0.18em] text-[var(--accent)]">
-                    {col.type} · {col.mode}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">{col.trigger}</p>
-                  <p className="mt-2 text-sm italic text-[var(--ink)]">{col.example}</p>
-                </article>
-              ))}
-            </div>
-            <p className="mt-12 text-xl font-semibold leading-snug md:text-2xl">
-              {aliasGrammar.framing}
-            </p>
+            <LiquidStudio />
           </FadeUp>
         </div>
       </section>

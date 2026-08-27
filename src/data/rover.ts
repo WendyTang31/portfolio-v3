@@ -132,6 +132,11 @@ export const roverFabrication = {
       slides: [
         {
           type: "image" as const,
+          file: "carbon-layup.jpg",
+          caption: "Carbon-fiber layup of the crank arm.",
+        },
+        {
+          type: "image" as const,
           file: "mold.JPG",
           caption: "Mold ready for carbon-fiber layup.",
         },
@@ -167,7 +172,7 @@ export const roverResult = {
   gallery: [
     { file: "c1.jpg", alt: "RISD Rover at the NASA HERC competition" },
     { file: "c2.jpg", alt: "RISD Rover at the NASA HERC competition" },
-    { file: "c3.png", alt: "RISD Rover at the NASA HERC competition" },
+    { file: "c3.jpg", alt: "RISD Rover at the NASA HERC competition" },
     { file: "c4.jpg", alt: "RISD Rover at the NASA HERC competition" },
     { file: "c5.JPG", alt: "RISD Rover at the NASA HERC competition" },
   ],

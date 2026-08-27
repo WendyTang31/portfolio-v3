@@ -17,7 +17,7 @@ type ConceptCompareProps = {
 function CompareColumn({ side }: { side: CompareSide }) {
   return (
     <div className="flex flex-col">
-      <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-[#ececec]">
+      <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-white">
         {side.video ? (
           <CaseStudyVideo
             src={side.video}

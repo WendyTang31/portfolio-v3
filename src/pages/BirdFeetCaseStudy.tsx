@@ -286,7 +286,7 @@ export function BirdFeetCaseStudy() {
           <MediaSlideCarousel
             slides={birdFeetResult.renders}
             assetBase={BIRD_FEET_ASSET_BASE}
-            alt="Bird Feet result render"
+            alt="Landing Gripper result render"
             accent={BIRD_FEET_ACCENT}
           />
           <div className="mt-8 grid gap-6 md:grid-cols-2">

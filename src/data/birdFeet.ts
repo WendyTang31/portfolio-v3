@@ -4,7 +4,7 @@ export const BIRD_FEET_ACCENT = "#4a5648";
 export const BIRD_FEET_ASSET_BASE = "/projects/bird-feet";
 
 export const birdFeetHero = {
-  title: "Bird Feet",
+  title: "Landing Gripper",
   kicker: "Case Study · Biomimicry · Mechanisms",
   tagline:
     "Bio-inspired landing gear from bird feet — adaptive grip for uneven terrain.",

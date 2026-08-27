@@ -32,20 +32,18 @@ export function DarkFeatureSection() {
             Other things I make
           </motion.h2>
 
-          <div>
-            <p className="mb-4 font-mono text-[9px] uppercase tracking-widest text-gray-400 md:text-[10px]">
-              Not just objects — systems you can read
+          <div className="max-w-md">
+            <p className="text-sm leading-relaxed text-gray-400 md:text-base">
+              See more of my builds, check out this website{" "}
+              <a
+                href="https://wendytangmaking.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white underline decoration-gray-600 underline-offset-4 transition-colors hover:text-gray-200 hover:decoration-white"
+              >
+                wendytangmaking.com
+              </a>
             </p>
-            <div className="flex flex-wrap gap-2">
-              {["Fabrication", "Mechanism", "Iteration"].map((pill) => (
-                <span
-                  key={pill}
-                  className="rounded-full border border-gray-600 px-4 py-2 font-mono text-[9px] uppercase tracking-widest text-gray-300"
-                >
-                  {pill}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

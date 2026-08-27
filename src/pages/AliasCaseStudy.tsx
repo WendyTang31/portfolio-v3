@@ -5,14 +5,15 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import "../alias.css";
 import { Footer } from "../components/Footer";
 import { AliasMedia } from "../components/alias/AliasMedia";
-import { Test3Chart, SystemsMap } from "../components/alias/AliasCharts";
 import { LiquidTriptych, LiquidPrinciple } from "../components/alias/LiquidPixel";
 import {
+  ALIAS_ASSET_BASE,
   aliasMetaDoc,
   aliasHero,
   aliasMask,
   aliasStatement,
   aliasNature,
+  aliasMarket,
   aliasResearch,
   aliasLiquid,
   aliasGrammar,
@@ -175,17 +176,34 @@ export function AliasCaseStudy() {
       <section className="alias-section">
         <div className="alias-wrap">
           <FadeUp>
-            <h2 className="alias-h2">{aliasNature.h2}</h2>
-            <p className="alias-body mt-6 text-[var(--ink-soft)]">{aliasNature.body}</p>
-          </FadeUp>
-          <FadeUp className="mt-10">
-            <AliasMedia
-              file={aliasNature.image}
-              caption={aliasNature.imageAlt}
-              alt={aliasNature.imageAlt}
-              aspect="w-full"
-              fit="contain"
-            />
+            <div className="alias-pair">
+              <article>
+                <h2 className="alias-pair-title">{aliasNature.h2}</h2>
+                <p className="alias-pair-body">{aliasNature.body}</p>
+                <div className="mt-4">
+                  <AliasMedia
+                    file={aliasNature.image}
+                    caption={aliasNature.imageAlt}
+                    alt={aliasNature.imageAlt}
+                    aspect="w-full"
+                    fit="contain"
+                  />
+                </div>
+              </article>
+              <article>
+                <h2 className="alias-pair-title">{aliasMarket.h2}</h2>
+                <p className="alias-pair-body">{aliasMarket.gap}</p>
+                <div className="mt-4">
+                  <AliasMedia
+                    file={aliasMarket.image}
+                    caption={aliasMarket.imageAlt}
+                    alt={aliasMarket.imageAlt}
+                    aspect="w-full"
+                    fit="contain"
+                  />
+                </div>
+              </article>
+            </div>
           </FadeUp>
           <FadeUp className="mt-10">
             <AliasMedia
@@ -249,9 +267,48 @@ export function AliasCaseStudy() {
               {aliasResearch.test3.title}
             </p>
             <p className="alias-body mt-4 text-[var(--ink-soft)]">{aliasResearch.test3.body}</p>
-            <div className="mt-8">
-              <Test3Chart />
+            <object
+              data={`${ALIAS_ASSET_BASE}/${encodeURIComponent(aliasResearch.test3.systemsMap)}#toolbar=0&navpanes=0`}
+              type="application/pdf"
+              aria-label={aliasResearch.test3.systemsMapAlt}
+              className="mt-8 min-h-[380px] w-full bg-white md:min-h-[480px]"
+            >
+              <a
+                href={`${ALIAS_ASSET_BASE}/${encodeURIComponent(aliasResearch.test3.systemsMap)}`}
+                className="alias-caption underline"
+              >
+                Open systems map PDF
+              </a>
+            </object>
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              {[
+                {
+                  file: aliasResearch.test3.clipA,
+                  label: aliasResearch.test3.clipALabel,
+                  alt: aliasResearch.test3.clipAAlt,
+                },
+                {
+                  file: aliasResearch.test3.clipB,
+                  label: aliasResearch.test3.clipBLabel,
+                  alt: aliasResearch.test3.clipBAlt,
+                },
+              ].map((clip) => (
+                <figure key={clip.file} className="min-w-0">
+                  <p className="alias-mono mb-2 text-[10px] uppercase tracking-[0.16em] text-[var(--ink-soft)]">
+                    {clip.label}
+                  </p>
+                  <AliasMedia
+                    file={clip.file}
+                    caption={clip.alt}
+                    alt={clip.alt}
+                    kind="video"
+                    aspect="aspect-video"
+                    fit="contain"
+                  />
+                </figure>
+              ))}
             </div>
+            <p className="alias-caption mt-4">{aliasResearch.test3.abFootnote}</p>
             <ol className="mt-10 space-y-6">
               {aliasResearch.test3.takeaways.map((item) => (
                 <li key={item.n} className="border-l-2 border-black/10 pl-5">
@@ -272,15 +329,6 @@ export function AliasCaseStudy() {
           <h2 className="alias-h2 text-[var(--glow)]">{aliasResearch.test3.keyFindingTitle}</h2>
           <p className="alias-body mt-6 text-[var(--dark-ink)]/80">{aliasResearch.test3.keyFinding}</p>
           <p className="alias-h2 mt-10 text-[var(--glow)]">{aliasResearch.test3.keyLine}</p>
-        </FadeUp>
-      </section>
-
-      <section className="alias-section">
-        <FadeUp className="alias-wrap">
-          <p className="alias-body text-[var(--ink-soft)]">{aliasResearch.systems.body}</p>
-          <div className="mt-10">
-            <SystemsMap />
-          </div>
         </FadeUp>
       </section>
 

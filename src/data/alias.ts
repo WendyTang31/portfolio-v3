@@ -54,6 +54,14 @@ export const aliasNature = {
     "What if a vehicle could express the driver's humanity, conveying a wider range of intentions and emotions beyond headlights and horns?",
 };
 
+export const aliasMarket = {
+  h2: "Carmakers have tried to give cars a bigger vocabulary",
+  gap: "Most of these speak about the car. ALIAS is built to speak between road users.",
+  image: "Final Presentation (2).png",
+  imageAlt:
+    "Prior eHMI examples: color-changing body panels, pixel lighting, expressive virtual eyes, and projected road signals.",
+};
+
 export const aliasResearch = {
   intro:
     "I ran three rounds of testing to find out what a car actually needs to say — and how.",
@@ -119,6 +127,15 @@ export const aliasResearch = {
     keyFinding:
       "Traffic today isn't mainly suffering a clarity deficit — it's suffering a social-presence deficit. Simply being seen trying to communicate repairs the exchange before the vocabulary is even learned.",
     keyLine: "It's the effort that counts.",
+    clipA: "emergencyA.mp4",
+    clipB: "emergencyB.mp4",
+    clipALabel: "A",
+    clipBLabel: "B",
+    clipAAlt: "Emergency scenario clip A.",
+    clipBAlt: "Emergency scenario clip B.",
+    abFootnote: "[PLACEHOLDER: A/B test footnote — what A and B are. Wendy to add.]",
+    systemsMap: "system-map-slide.pdf",
+    systemsMapAlt: "Systems map: clarity and empathy build safety; aggression erodes it.",
     summary:
       "Test 3 compared ALIAS to horn, gesture, or nothing. Pay attention improved clarity by 2.5; emergency by 2.4. Frustration and apology did not get clearer but empathy still rose. Yielding was the only case where aggression increased, when the symbol pictured an elderly pedestrian.",
     rows: [

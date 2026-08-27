@@ -9,3 +9,6 @@ Public/projects/rover/Z52A9408.png
 Public/projects/rover/Z52A9483.png
 # Original ALIAS hero film (~84MB). Site uses hero-short.mp4.
 Public/projects/ALIAS/hero.mp4
+# Original 4K emergency clips. Site uses compressed emergencyA.mp4 / emergencyB.mp4.
+Public/projects/ALIAS/emergencyA.MOV
+Public/projects/ALIAS/emergencyB.MOV

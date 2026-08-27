@@ -64,6 +64,33 @@
   margin-inline: auto;
 }
 
+.alias-pair {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .alias-pair {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.25rem;
+    align-items: start;
+  }
+}
+
+.alias-pair-title {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.alias-pair-body {
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
 .alias-dark .alias-caption {
   color: rgba(245, 245, 242, 0.45);
 }

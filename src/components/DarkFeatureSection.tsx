@@ -17,8 +17,7 @@ export function DarkFeatureSection() {
     return () => clearInterval(interval);
   }, []);
 
-  const displayImage =
-    gallery[activeIndex % Math.max(gallery.length, 1)] ?? activeWork.heroImage;
+  const displayImage = gallery[0] ?? activeWork.heroImage;
 
   return (
     <section className="relative z-30 flex w-full flex-col bg-[#0a0a0a] text-white">

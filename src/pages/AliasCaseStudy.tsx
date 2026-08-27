@@ -305,7 +305,6 @@ export function AliasCaseStudy() {
                 </figure>
               ))}
             </div>
-            <p className="alias-caption mt-4">{aliasResearch.test3.abFootnote}</p>
             <ol className="mt-10 space-y-6">
               {aliasResearch.test3.takeaways.map((item) => (
                 <li key={item.n} className="border-l-2 border-black/10 pl-5">
@@ -436,7 +435,6 @@ export function AliasCaseStudy() {
           <div>
             <p className="alias-mono text-[10px] uppercase tracking-[0.16em]">Role</p>
             <p className="mt-2 text-[var(--ink)]">{aliasCredits.role}</p>
-            <p className="alias-caption mt-2">{aliasCredits.rolePlaceholder}</p>
           </div>
           <div>
             <p className="alias-mono text-[10px] uppercase tracking-[0.16em]">Team</p>
@@ -466,7 +464,6 @@ export function AliasCaseStudy() {
             <ArrowLeft size={14} />
             {aliasNeighbors.prev.label}
           </Link>
-          <p className="alias-caption">{aliasNeighbors.note}</p>
           <Link
             to={aliasNeighbors.next.href}
             className="alias-mono inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-[var(--ink-soft)] hover:text-[var(--ink)]"

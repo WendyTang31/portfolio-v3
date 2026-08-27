@@ -132,7 +132,6 @@ export const aliasResearch = {
     clipBLabel: "B",
     clipAAlt: "Emergency scenario clip A.",
     clipBAlt: "Emergency scenario clip B.",
-    abFootnote: "[PLACEHOLDER: A/B test footnote — what A and B are. Wendy to add.]",
     systemsMap: "system-map-slide.png",
     systemsMapAlt: "Systems map: clarity and empathy build safety; aggression erodes it.",
     summary:
@@ -318,7 +317,6 @@ export const aliasClose = {
 
 export const aliasCredits = {
   role: "Design research · interaction design · custom animation tooling · hardware prototyping",
-  rolePlaceholder: "[PLACEHOLDER: confirm / trim this role wording.]",
   team: "Fangzhuo (Wendy) Tang with Ryan Lee",
   studio: "Hyundai (HMG) Regeneration Studio — RISD · Advisors: Max, Jess",
   year: "2025",
@@ -330,5 +328,4 @@ export const aliasCredits = {
 export const aliasNeighbors = {
   prev: { label: "Haven", href: "/projects/haven" },
   next: { label: "BURB", href: "/projects/birdbot" },
-  note: "[PLACEHOLDER: Wendy to confirm prev/next neighbors.]",
 };

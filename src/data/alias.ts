@@ -40,7 +40,7 @@ export const aliasStatement = {
 
 export const aliasNature = {
   h2: "Communication is a survival skill",
-  body: "Every social animal, humans included, communicates through more than one channel at once — color, rhythm, motion, sound. Nature does it to survive and to bond; humans layered abstract symbols and language on top. I looked to that multi-channel logic — the way cuttlefish skin grows a pattern rather than switching it on — as the model for a light that behaves like a living surface.",
+  body: "Every social animal, humans included, communicates through more than one channel at once — color, rhythm, motion, sound. Nature does it to survive and to bond; humans layered abstract symbols and language on top. We looked to that multi-channel logic — the way cuttlefish skin grows a pattern rather than switching it on — as the model for a light that behaves like a living surface.",
   image: "Final Presentation (3).png",
   imageAlt:
     "Three-panel nature reference: cuttlefish camouflage, social grooming, and human cave symbols.",
@@ -80,7 +80,7 @@ export const aliasResearch = {
   },
   test2: {
     title: "Test 2 — Style understanding",
-    body: "I tested the same eight messages in four styles, from abstract to literal — abstract geometry, traffic-sign iconography, emoji/pictogram, and plain text — scoring each for clarity and for visual stimulation (how much it grabs attention, which for a driver is a cost).",
+    body: "We tested the same eight messages in four styles, from abstract to literal — abstract geometry, traffic-sign iconography, emoji/pictogram, and plain text — scoring each for clarity and for visual stimulation (how much it grabs attention, which for a driver is a cost).",
     finding:
       "Representative imagery reads clearest — but it's also the most stimulating. Faces won for emotion; convention won for intention.",
     direction:
@@ -104,7 +104,7 @@ export const aliasResearch = {
   },
   test3: {
     title: "Test 3 — Concept evaluation",
-    body: "Finally I compared ALIAS against how people communicate today — horn, gesture, or nothing — across seven scenarios, scoring clarity, empathy, and aggression.",
+    body: "Finally we compared ALIAS against how people communicate today — horn, gesture, or nothing — across seven scenarios, scoring clarity, empathy, and aggression.",
     takeaways: [
       {
         n: "01",
@@ -193,7 +193,7 @@ export const aliasResearch = {
 export const aliasLiquid = {
   h2: "Liquid Pixel",
   intro:
-    "HMG's light language is built from separate square pixels. I reimagined them as bubbles of ink: surfaces that meet, merge, swell, and collapse under real physics — light that behaves like a living thing instead of a grid switching on and off.",
+    "HMG's light language is built from separate square pixels. We reimagined them as bubbles of ink: surfaces that meet, merge, swell, and collapse under real physics — light that behaves like a living thing instead of a grid switching on and off.",
   file: "liquid-pixel.mp4",
   alt: "Liquid Pixel light language: ink-like pixels growing, merging, and traveling.",
   studio:

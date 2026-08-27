@@ -379,6 +379,15 @@ export function AliasCaseStudy() {
         <div className="alias-wrap">
           <FadeUp>
             <h2 className="alias-h2">{aliasMaking.h2}</h2>
+            <div className="mt-8">
+              <AliasMedia
+                file={aliasMaking.video}
+                caption={aliasMaking.videoAlt}
+                alt={aliasMaking.videoAlt}
+                kind="video"
+                aspect="w-full"
+              />
+            </div>
             <div className="mt-10 grid gap-10 md:grid-cols-2">
               {[aliasMaking.worksLike, aliasMaking.looksLike].map((proto) => (
                 <article key={proto.title}>

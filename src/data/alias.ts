@@ -275,7 +275,9 @@ export const aliasFilm = {
 };
 
 export const aliasMaking = {
-  h2: "Two prototypes",
+  h2: "Physical Modle",
+  video: "physical.mp4",
+  videoAlt: "Physical prototype of the ALIAS light band.",
   worksLike: {
     title: "Works-like",
     body: "A full-width rear light band on an actual vehicle, driven by flexible P2.5 LED modules and an asynchronous controller, powered off a portable station so it can run curbside.",

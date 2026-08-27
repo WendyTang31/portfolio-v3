@@ -24,10 +24,8 @@ export const aliasMask = {
   p1: "For over a hundred years, a driver's only ways to speak have been the horn, the headlight, and the hand. Sealed in glass and steel, the person disappears into traffic — and the same anonymity that online profiles give us on the internet, the car gives us on the road.",
   p2: "Psychiatrist Adam Stern describes road rage as the product of emotional distance: physical separation plus constant small misreadings. Philip Zimbardo's deindividuation studies found the same thing decades earlier — people hidden behind a mask punish more, and feel less. The car is that mask, worn by everyone at once.",
   wall: "What if the car could unmask the driver instead of hiding them?",
-  image: `${ALIAS_ASSET_BASE}/mask-moodboard.jpg`,
-  imageFile: "mask-moodboard.jpg",
-  imageAlt: "Moodboard of a mask, a driver behind glass, and a still from Lord of the Flies.",
-  imageCaption: "Mask / Lord of the Flies still / driver-in-glass moodboard",
+  imageFile: "hero1.png",
+  imageAlt: "Studio render of the ALIAS concept car with a liquid-pixel front skin.",
   stats: [
     { value: "96%", label: "of drivers admit to aggressive driving behavior" },
     { value: "500%", label: "rise in road-rage-related fatalities over 10 years" },

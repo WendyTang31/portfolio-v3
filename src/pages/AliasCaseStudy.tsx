@@ -111,17 +111,18 @@ export function AliasCaseStudy() {
       <section className="alias-section">
         <div className="alias-wrap">
           <FadeUp>
+            <AliasMedia
+              file={aliasMask.imageFile}
+              caption={aliasMask.imageAlt}
+              alt={aliasMask.imageAlt}
+              aspect="w-full"
+              fit="contain"
+            />
+          </FadeUp>
+          <FadeUp className="mt-10">
             <p className="alias-h2 italic">{aliasMask.epigraph}</p>
             <p className="alias-body mt-8 text-[var(--ink-soft)]">{aliasMask.p1}</p>
             <p className="alias-body mt-5 text-[var(--ink-soft)]">{aliasMask.p2}</p>
-          </FadeUp>
-          <FadeUp className="mt-10">
-            <AliasMedia
-              file={aliasMask.imageFile}
-              caption={aliasMask.imageCaption}
-              alt={aliasMask.imageAlt}
-            />
-            <p className="alias-caption mt-3">{aliasMask.imageCaption}</p>
           </FadeUp>
         </div>
       </section>

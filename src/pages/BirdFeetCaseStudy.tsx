@@ -84,7 +84,7 @@ export function BirdFeetCaseStudy() {
         </div>
       </section>
 
-      <article className="mx-auto max-w-4xl px-6 pb-20 md:px-8">
+      <article className="mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 lg:px-16">
         <FadeUp className="mt-20">
           <div className="grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2 md:grid-cols-4">
             {[

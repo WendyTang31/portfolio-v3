@@ -96,8 +96,8 @@ export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean 
         </div>
       </section>
 
-      <div className="px-[clamp(20px,5vw,80px)] pb-20">
-      <article className="mx-auto w-full max-w-[1100px]">
+      <div className="px-6 pb-20 md:px-12 lg:px-16">
+        <article className="mx-auto w-full max-w-[1600px]">
         <FadeUp className="mt-20">
           <div className="overflow-hidden rounded-lg border border-gray-200 bg-[#ececec]">
             <ProjectImage
@@ -331,7 +331,7 @@ export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean 
             </a>
           </p>
         </FadeUp>
-      </article>
+        </article>
       </div>
 
       <Footer />

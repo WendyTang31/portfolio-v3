@@ -220,6 +220,15 @@ export function AliasCaseStudy() {
                 fit="contain"
               />
             </div>
+            <div className="mt-6">
+              <AliasMedia
+                file={aliasResearch.test1.photo}
+                caption={aliasResearch.test1.photoAlt}
+                alt={aliasResearch.test1.photoAlt}
+                aspect="w-full"
+                fit="contain"
+              />
+            </div>
             <p className="alias-mono mt-6 text-sm leading-relaxed text-[var(--ink-soft)]">
               {aliasResearch.test1.quote}
             </p>

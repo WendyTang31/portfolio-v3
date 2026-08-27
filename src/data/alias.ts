@@ -68,6 +68,8 @@ export const aliasResearch = {
     summary:
       "Test 1 graphics test: eight messages with abstract symbol sketches — sorry, going, thank you, stressed, happy, yield, frustration, emergency.",
     image: "Final Presentation.png",
+    photo: "user-test1.jpg",
+    photoAlt: "Test 1 user research session.",
     bars: [
       { scenario: "Driver ↔ pedestrian", highlight: true },
       { scenario: "Driver ↔ cyclist", highlight: true },

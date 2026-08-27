@@ -93,6 +93,11 @@ export const roverDecision = {
     "The crank four-bar won. Better steering geometry, and easier to fabricate without the space-packaging problems the horizontal system forced onto the chassis.",
 };
 
+export const roverErgonomic = {
+  label: "Ergonomic ride comparison",
+  video: "https://www.youtube.com/embed/wU6QFYZ07Hs",
+};
+
 export type RoverProcessStage = {
   n: string;
   title: string;

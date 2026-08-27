@@ -8,6 +8,7 @@ import {
   roverApproach,
   roverComparison,
   roverDecision,
+  roverErgonomic,
   roverFabrication,
   roverHero,
   roverMeta,
@@ -167,6 +168,18 @@ export function RoverCaseStudy() {
               placeholderLabel="evaluation.png"
               accent={ROVER_ACCENT}
               className="h-auto w-full object-contain"
+            />
+          </div>
+          <p className="mt-10 font-mono text-[10px] uppercase tracking-widest text-gray-500">
+            {roverErgonomic.label}
+          </p>
+          <div className="mt-4 aspect-video overflow-hidden rounded-lg border border-gray-200">
+            <iframe
+              title={roverErgonomic.label}
+              src={roverErgonomic.video}
+              className="h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
           </div>
         </FadeUp>

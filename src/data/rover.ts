@@ -152,26 +152,24 @@ export const roverFabrication = {
           file: "joint-assembly.png",
           caption: "Steering joint assembly.",
         },
+        {
+          type: "image" as const,
+          file: "joint2.JPG",
+          caption: "Physical joint assembly.",
+        },
       ],
     },
   ] satisfies RoverProcessStage[],
 };
 
 export const roverResult = {
-  label: "Result",
-  headline: "Mounted, and steering smoothly.",
-  body: "Temporarily mounted on the chassis, the steering operated smoothly and is ready for the next stage. Once the full rover is assembled, the team moves to real-world terrain testing.",
-  slides: [
-    {
-      type: "image" as const,
-      file: "result-mounted.jpg",
-      caption: "Steering system temporarily mounted on the chassis.",
-    },
-    {
-      type: "image" as const,
-      file: "result-render.png",
-      caption: "CAD render of the final crank steering assembly.",
-    },
+  headline: "Competition & Second Place",
+  gallery: [
+    { file: "c1.jpg", alt: "RISD Rover at the NASA HERC competition" },
+    { file: "c2.jpg", alt: "RISD Rover at the NASA HERC competition" },
+    { file: "c3.png", alt: "RISD Rover at the NASA HERC competition" },
+    { file: "c4.jpg", alt: "RISD Rover at the NASA HERC competition" },
+    { file: "c5.JPG", alt: "RISD Rover at the NASA HERC competition" },
   ],
 };
 

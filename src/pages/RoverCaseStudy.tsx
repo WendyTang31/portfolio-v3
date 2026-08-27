@@ -206,17 +206,36 @@ export function RoverCaseStudy() {
         </FadeUp>
 
         <FadeUp className="mt-20">
-          <SectionLabel>{roverResult.label}</SectionLabel>
-          <BeatHeadline>{roverResult.headline}</BeatHeadline>
-          <p className="mt-6 text-base leading-relaxed text-gray-700">
-            {roverResult.body}
-          </p>
-          <MediaSlideCarousel
-            slides={roverResult.slides}
-            assetBase={ROVER_ASSET_BASE}
-            alt="Rover result"
-            accent={ROVER_ACCENT}
-          />
+          <h2 className="text-2xl font-medium tracking-tight text-[#111] md:text-3xl">
+            {roverResult.headline}
+          </h2>
+          <div className="mt-8 grid gap-3">
+            <div className="overflow-hidden rounded-lg border border-gray-200 bg-[#ececec]">
+              <ProjectImage
+                src={`${ROVER_ASSET_BASE}/${roverResult.gallery[0].file}`}
+                alt={roverResult.gallery[0].alt}
+                placeholderLabel={roverResult.gallery[0].file}
+                accent={ROVER_ACCENT}
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {roverResult.gallery.slice(1).map((item) => (
+                <div
+                  key={item.file}
+                  className="overflow-hidden rounded-lg border border-gray-200 bg-[#ececec]"
+                >
+                  <ProjectImage
+                    src={`${ROVER_ASSET_BASE}/${item.file}`}
+                    alt={item.alt}
+                    placeholderLabel={item.file}
+                    accent={ROVER_ACCENT}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </FadeUp>
 
         <FadeUp className="mt-16 border-t border-gray-200 pt-8">

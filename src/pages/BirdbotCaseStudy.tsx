@@ -1,20 +1,21 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import {
   birdbotHero,
   birdbotMeta,
-  birdbotPillars,
   theInsight,
   theProblem,
   whatItDoesNow,
   birdbotCitation,
   gaitResults,
-  whatItIs,
+  birdbotGallery,
   whereItsGoing,
 } from "../data/birdbot";
 import { ProcessStages } from "../components/birdbot/ProcessStages";
+import { ProjectImage } from "../components/ProjectImage";
+import { ImageLightbox } from "../components/haven/ImageLightbox";
 import { Footer } from "../components/Footer";
 
 function FadeUp({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -48,6 +49,10 @@ function BeatHeadline({ children }: { children: ReactNode }) {
 }
 
 export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean }) {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(
+    null,
+  );
+
   return (
     <div className="min-h-screen bg-[#fcfcfc]">
       <section className="relative h-[100svh] w-full overflow-hidden">
@@ -93,20 +98,14 @@ export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean 
 
       <article className="mx-auto max-w-4xl px-6 pb-20 md:px-8">
         <FadeUp className="mt-20">
-          <BeatHeadline>{whatItIs.headline}</BeatHeadline>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg">
-            {whatItIs.body}
-          </p>
-          <ul className="mt-8 space-y-3">
-            {birdbotPillars.map((pillar) => (
-              <li
-                key={pillar}
-                className="border-l-2 border-gray-200 pl-4 text-sm leading-relaxed text-gray-700"
-              >
-                {pillar}
-              </li>
-            ))}
-          </ul>
+          <div className="overflow-hidden rounded-lg border border-gray-200 bg-[#ececec]">
+            <ProjectImage
+              src={birdbotHero.frontRender}
+              alt="BURB bipedal robotic leg, front CAD render"
+              placeholderLabel="front.png"
+              className="w-full h-auto object-contain"
+            />
+          </div>
           <div className="mt-12 grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2 md:grid-cols-4">
             {[
               { label: "Role", value: birdbotMeta.role },
@@ -239,6 +238,56 @@ export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean 
         </FadeUp>
 
         <FadeUp className="mt-20">
+          <SectionLabel>{birdbotGallery.label}</SectionLabel>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div>
+              <p className="mb-3 font-mono text-[10px] uppercase tracking-widest text-gray-500">
+                {birdbotGallery.leftLabel}
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {birdbotGallery.left.map((item, index) => (
+                  <button
+                    key={item.file}
+                    type="button"
+                    onClick={() => setLightbox({ src: item.file, alt: item.alt })}
+                    className="overflow-hidden rounded-lg border border-gray-200 bg-[#111] text-left"
+                  >
+                    <ProjectImage
+                      src={item.file}
+                      alt={item.alt}
+                      placeholderLabel={item.alt}
+                      className={`w-full object-cover ${index < 2 ? "aspect-[3/4]" : "aspect-[3/2]"}`}
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="mb-3 font-mono text-[10px] uppercase tracking-widest text-gray-500">
+                {birdbotGallery.rightLabel}
+              </p>
+              <div className="flex flex-col gap-3">
+                {birdbotGallery.right.map((item) => (
+                  <button
+                    key={item.file}
+                    type="button"
+                    onClick={() => setLightbox({ src: item.file, alt: item.alt })}
+                    className="overflow-hidden rounded-lg border border-gray-200 bg-[#ececec] text-left"
+                  >
+                    <ProjectImage
+                      src={item.file}
+                      alt={item.alt}
+                      placeholderLabel={item.alt}
+                      className="h-auto w-full object-contain"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </FadeUp>
+
+        <FadeUp className="mt-20">
           <SectionLabel>{whereItsGoing.label}</SectionLabel>
           <BeatHeadline>{whereItsGoing.headline}</BeatHeadline>
           <div className="mt-6 space-y-4">
@@ -284,6 +333,14 @@ export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean 
       </article>
 
       <Footer />
+
+      {lightbox && (
+        <ImageLightbox
+          src={lightbox.src}
+          alt={lightbox.alt}
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </div>
   );
 }

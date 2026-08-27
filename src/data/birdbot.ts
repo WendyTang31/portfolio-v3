@@ -4,6 +4,7 @@ export const birdbotHero = {
     "A emu-tendon inspired walking bipedal leg that stores its intelligence in structure.",
   video: "/projects/birdbot/hero-loop.mp4",
   poster: "/projects/birdbot/hero-birdbot-assembly.webp",
+  frontRender: "/projects/birdbot/render/front.png",
 };
 
 export const birdbotMeta = {
@@ -146,6 +147,40 @@ export const whatItDoesNow = {
   ],
   assemblyNote:
     "Across hip, knee, ankle, and digit — labeled on the assembly render.",
+};
+
+export const birdbotGallery = {
+  label: "Physical / render",
+  leftLabel: "Physical",
+  rightLabel: "Render",
+  left: [
+    {
+      file: "/projects/birdbot/pp1.jpg",
+      alt: "BURB physical prototype, standing on the test rig",
+    },
+    {
+      file: "/projects/birdbot/pp2.jpg",
+      alt: "BURB physical prototype, side view of the tendon-driven leg",
+    },
+    {
+      file: "/projects/birdbot/p1.JPG",
+      alt: "BURB physical build, assembled biped on the bench",
+    },
+    {
+      file: "/projects/birdbot/p2.JPG",
+      alt: "BURB physical build, close view of the assembled legs",
+    },
+  ],
+  right: [
+    {
+      file: "/projects/birdbot/render/1010.png",
+      alt: "BURB CAD render, tendon and pulley detail",
+    },
+    {
+      file: "/projects/birdbot/exploded.png",
+      alt: "BURB exploded assembly diagram",
+    },
+  ],
 };
 
 export const whereItsGoing = {

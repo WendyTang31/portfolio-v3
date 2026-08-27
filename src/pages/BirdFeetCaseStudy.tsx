@@ -120,7 +120,7 @@ export function BirdFeetCaseStudy() {
               </div>
             ))}
           </div>
-          <div className="mt-10 overflow-hidden rounded-lg border border-gray-200">
+          <div className="mt-10 overflow-hidden rounded-lg border border-gray-200 bg-black">
             {birdFeetFieldChallenges.images.map((file) => (
               <ProjectImage
                 key={file}
@@ -128,7 +128,7 @@ export function BirdFeetCaseStudy() {
                 alt={birdFeetFieldChallenges.imageCaption}
                 placeholderLabel={file}
                 accent={BIRD_FEET_ACCENT}
-                className="aspect-[16/10] w-full object-cover"
+                className="h-auto w-full object-contain"
               />
             ))}
           </div>
@@ -159,13 +159,13 @@ export function BirdFeetCaseStudy() {
           <SectionLabel>{birdFeetNature.label}</SectionLabel>
           <BeatHeadline>{birdFeetNature.headline}</BeatHeadline>
           <p className="mt-6 text-base leading-relaxed text-gray-700">{birdFeetNature.body}</p>
-          <div className="mt-8 overflow-hidden rounded-lg border border-gray-200">
+          <div className="mt-8 overflow-hidden rounded-lg border border-gray-200 bg-black">
             <ProjectImage
               src={`${BIRD_FEET_ASSET_BASE}/${birdFeetNature.image}`}
               alt={birdFeetNature.imageCaption}
               placeholderLabel={birdFeetNature.image}
               accent={BIRD_FEET_ACCENT}
-              className="aspect-[16/10] w-full object-cover"
+              className="h-auto w-full object-contain"
             />
           </div>
           <p className="mt-3 text-xs leading-relaxed text-gray-600">

@@ -230,7 +230,7 @@ export function HavenCaseStudy() {
         </div>
       </section>
 
-      <article className="mx-auto max-w-5xl px-6 pb-20 md:px-8">
+      <article className="mx-auto w-full max-w-7xl px-6 pb-20 md:px-10 lg:px-14">
         <FadeUp className="mt-16 grid gap-6 border-b border-gray-200 pb-10 sm:grid-cols-2 md:grid-cols-4">
           {[
             { label: "Role", value: havenMeta.role },

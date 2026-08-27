@@ -1,0 +1,13 @@
+---
+description: Push portfolio edits to GitHub after each change session
+alwaysApply: true
+---
+
+# Auto-push to GitHub
+
+After making portfolio website edits for Fangzhuo, commit and push to GitHub when the work is complete — unless the user explicitly says not to push.
+
+- Only commit files related to the current task.
+- Do not commit secrets, `.env`, or `desktop.ini`.
+- Use clear commit messages focused on why the change was made.
+- Run `git push` after a successful commit so `main` stays in sync with Vercel.

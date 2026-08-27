@@ -97,8 +97,6 @@ export const SITE = {
   heroHeadline: "Designing technology that feels alive.",
   heroDescription:
     "Industrial designer in human–robot interaction: communicate empathy, stories, and future vision across the physical and the digital.",
-  ctaBlurb:
-    "Industrial designer building robots and future AI hardware — from HRI to physical prototypes.",
   skills: [
     {
       num: "01",

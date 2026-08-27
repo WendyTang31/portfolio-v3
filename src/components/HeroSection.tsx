@@ -122,14 +122,8 @@ export function HeroSection() {
             variants={{
               animate: { transition: { staggerChildren: 0.1, delayChildren: 0.6 } },
             }}
-            className="ml-auto max-w-xs text-right md:max-w-sm"
+            className="ml-auto text-right"
           >
-            <motion.p
-              variants={fadeUp}
-              className="text-[13px] leading-[1.6] text-gray-600 md:text-[14px]"
-            >
-              {SITE.ctaBlurb}
-            </motion.p>
             <motion.a
               variants={fadeUp}
               href="#work"

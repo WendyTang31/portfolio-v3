@@ -374,22 +374,21 @@ export function AliasCaseStudy() {
                 aspect="w-full"
               />
             </div>
-            <div className="mt-10 grid gap-10 md:grid-cols-2">
-              {[aliasMaking.worksLike, aliasMaking.looksLike].map((proto) => (
-                <article key={proto.title}>
-                  <AliasMedia
-                    file={proto.file}
-                    caption={proto.alt}
-                    alt={proto.alt}
-                    kind={proto.kind}
-                    aspect="aspect-[4/3]"
-                  />
-                  <p className="alias-mono mt-4 text-[10px] uppercase tracking-[0.16em] text-[var(--accent)]">
-                    {proto.title}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">{proto.body}</p>
-                </article>
-              ))}
+            <div className="mt-10 grid items-start gap-10 md:grid-cols-2">
+              <AliasMedia
+                file={aliasMaking.worksLike.file}
+                caption={aliasMaking.worksLike.alt}
+                alt={aliasMaking.worksLike.alt}
+                kind="video"
+                aspect="w-full"
+              />
+              <AliasMedia
+                file={aliasMaking.looksLike.file}
+                caption={aliasMaking.looksLike.alt}
+                alt={aliasMaking.looksLike.alt}
+                aspect="w-full"
+                fit="contain"
+              />
             </div>
             <h2 className="alias-h2 mt-16">{aliasMaking.process.h2}</h2>
             <div className="mt-8 grid gap-6 md:grid-cols-2">

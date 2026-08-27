@@ -206,35 +206,35 @@ export function BirdbotCaseStudy({ standalone = false }: { standalone?: boolean 
         <FadeUp className="mt-20">
           <SectionLabel>{gaitResults.label}</SectionLabel>
           <BeatHeadline>{gaitResults.headline}</BeatHeadline>
-          <p className="mt-6 text-base leading-relaxed text-gray-700">
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-gray-700">
             {gaitResults.body}
           </p>
-          <p className="mt-6 text-base leading-relaxed text-gray-700">
-            {gaitResults.flexibilityNote}
-          </p>
-          <div className="mt-8 grid overflow-hidden rounded-lg border border-gray-200 md:grid-cols-[minmax(0,1fr)_11rem] lg:grid-cols-[minmax(0,1fr)_13rem]">
-            <div className="flex min-h-[360px] items-center justify-center md:min-h-[560px]">
+          <div className="mt-10 grid items-start gap-10 lg:grid-cols-[max-content_1fr]">
+            <div className="flex items-stretch gap-3">
               <video
-                className="max-h-[70vh] w-full object-contain"
+                className="h-auto w-auto max-h-[92vh] max-w-full object-contain"
                 src={gaitResults.video}
                 autoPlay
                 muted
                 loop
                 playsInline
               />
+              <div className="flex w-[6.5rem] shrink-0 flex-col justify-around py-[3%]">
+                {gaitResults.gaitLabels.map((label, index) => (
+                  <div key={label} className="flex flex-col gap-0.5">
+                    <span className="font-mono text-[8px] uppercase tracking-widest text-gray-400">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[11px] font-medium leading-snug tracking-tight text-[#111]">
+                      {label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-col justify-between gap-8 border-t border-gray-200 px-6 py-10 md:border-l md:border-t-0 md:py-14">
-              {gaitResults.gaitLabels.map((label, index) => (
-                <div key={label} className="flex flex-col gap-1">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-base font-medium leading-snug tracking-tight text-[#111] md:text-lg">
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <p className="max-w-md text-sm leading-relaxed text-gray-700 md:text-base lg:pt-2">
+              {gaitResults.flexibilityNote}
+            </p>
           </div>
         </FadeUp>
 

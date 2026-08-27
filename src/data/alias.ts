@@ -280,15 +280,15 @@ export const aliasMaking = {
   worksLike: {
     title: "Works-like",
     body: "A full-width rear light band on an actual vehicle, driven by flexible P2.5 LED modules and an asynchronous controller, powered off a portable station so it can run curbside.",
-    file: "proto-workslike.jpg",
-    video: "proto-workslike.mp4",
+    file: "physical-video2.mp4",
+    kind: "video" as const,
     alt: "Works-like prototype: full-width LED tail band lit on a real vehicle.",
   },
   looksLike: {
     title: "Looks-like",
     body: "A quarter-scale model with the same modules inside a 3D-printed body, plus three arcade buttons so anyone can trigger the vocabulary by hand.",
-    file: "proto-lookslike.jpg",
-    video: "proto-lookslike.mp4",
+    file: "physical-photo3.jpg",
+    kind: "image" as const,
     alt: "Looks-like quarter-scale model with arcade-button pedestal.",
   },
   process: {

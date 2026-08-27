@@ -381,6 +381,7 @@ export function AliasCaseStudy() {
                     file={proto.file}
                     caption={proto.alt}
                     alt={proto.alt}
+                    kind={proto.kind}
                     aspect="aspect-[4/3]"
                   />
                   <p className="alias-mono mt-4 text-[10px] uppercase tracking-[0.16em] text-[var(--accent)]">

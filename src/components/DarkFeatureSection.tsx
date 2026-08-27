@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Bone, Dna, Leaf } from "lucide-react";
 import { exploreWorks } from "../data/exploreWorks";
 import { ProjectImage } from "./ProjectImage";
 
@@ -31,18 +30,7 @@ export function DarkFeatureSection() {
             viewport={{ once: true }}
             className="max-w-3xl text-[1.8rem] font-medium leading-[1.15] tracking-tight md:text-[3rem] lg:text-[3.5rem]"
           >
-            Other work
-            <span className="mx-2 inline-flex gap-2 align-middle md:mx-4">
-              {[Bone, Dna, Leaf].map((Icon, i) => (
-                <span
-                  key={i}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-600 bg-black text-gray-400 md:h-12 md:w-12"
-                >
-                  <Icon size={18} />
-                </span>
-              ))}
-            </span>
-            to explore.
+            Other things I make
           </motion.h2>
 
           <div>

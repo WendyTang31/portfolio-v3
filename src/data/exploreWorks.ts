@@ -1,37 +1,39 @@
 import type { Work } from "./works";
 
+/** Images for this section live in Public/projects/explore/ */
+export const EXPLORE_ASSET_BASE = "/projects/explore";
+
 /**
- * Section 3 (dark band) — preview-only projects, separate from the gallery in works.ts.
- * Add/remove entries freely; the carousel adapts to array length.
+ * Landing page dark band — preview-only projects, separate from the main gallery.
  */
 export const exploreWorks: Work[] = [
   {
-    slug: "explore-01",
-    title: "Taxidermy Community",
+    slug: "3d-printer",
+    title: "3D Printer",
     subtitle: "Short description — replace when you upload this project.",
-    tags: ["Experiment"],
+    tags: ["Fabrication"],
     accent: "#2a2a2a",
-    heroImage: null,
+    heroImage: `${EXPLORE_ASSET_BASE}/3d-printer.png`,
     isLive: false,
     href: null,
   },
   {
-    slug: "explore-02",
-    title: "ROUCH",
+    slug: "hardwares",
+    title: "Hardwares",
     subtitle: "Short description — replace when you upload this project.",
-    tags: ["Sketch"],
+    tags: ["Mechanism"],
     accent: "#3a3a3a",
-    heroImage: null,
+    heroImage: `${EXPLORE_ASSET_BASE}/hardwares.png`,
     isLive: false,
     href: null,
   },
   {
-    slug: "explore-03",
-    title: "Regain Nature Experience",
+    slug: "taxidermy",
+    title: "Taxidermy",
     subtitle: "Short description — replace when you upload this project.",
     tags: ["Side project"],
     accent: "#4a4a4a",
-    heroImage: null,
+    heroImage: `${EXPLORE_ASSET_BASE}/taxidermy.png`,
     isLive: false,
     href: null,
   },

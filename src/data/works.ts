@@ -94,9 +94,9 @@ export type Skill = {
 
 export const SITE = {
   name: "FANGZHUO TANG",
-  heroHeadline: "Infuse humanity into technology by design.",
+  heroHeadline: "Designing technology that feels alive.",
   heroDescription:
-    "My design practice communicates empathy, stories, and future vision across the physical and digital.",
+    "Industrial designer in human–robot interaction: communicate empathy, stories, and future vision across the physical and the digital.",
   ctaBlurb:
     "Industrial designer building robots and future AI hardware — from HRI to physical prototypes.",
   skills: [

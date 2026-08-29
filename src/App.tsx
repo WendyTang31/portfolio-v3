@@ -8,6 +8,7 @@ import { RoverCaseStudy } from "./pages/RoverCaseStudy";
 import { HavenCaseStudy } from "./pages/HavenCaseStudy";
 import { BirdFeetCaseStudy } from "./pages/BirdFeetCaseStudy";
 import { AliasCaseStudy } from "./pages/AliasCaseStudy";
+import { AliasGate } from "./components/alias/AliasGate";
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -37,7 +38,14 @@ export default function App() {
         <Route path="/projects/rover" element={<RoverCaseStudy />} />
         <Route path="/projects/haven" element={<HavenCaseStudy />} />
         <Route path="/projects/bird-feet" element={<BirdFeetCaseStudy />} />
-        <Route path="/projects/alias" element={<AliasCaseStudy />} />
+        <Route
+          path="/projects/alias"
+          element={
+            <AliasGate>
+              <AliasCaseStudy />
+            </AliasGate>
+          }
+        />
       </Routes>
       <Analytics />
     </BrowserRouter>

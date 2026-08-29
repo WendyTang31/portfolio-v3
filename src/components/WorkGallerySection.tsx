@@ -3,7 +3,8 @@ import { motion } from "motion/react";
 import { works, type Work } from "../data/works";
 import { ProjectImage } from "./ProjectImage";
 
-const [featuredWork, ...otherWorks] = works;
+const listedWorks = works.filter((work) => work.listed !== false);
+const [featuredWork, ...otherWorks] = listedWorks;
 
 function WorkCardLink({
   work,
@@ -100,6 +101,8 @@ function WorkCard({
 }
 
 export function WorkGallerySection() {
+  if (!featuredWork) return null;
+
   return (
     <section
       id="work"
@@ -120,7 +123,7 @@ export function WorkGallerySection() {
           <WorkCard work={featuredWork} index={0} featured />
         </WorkCardLink>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5 lg:gap-6">
           {otherWorks.map((work, index) => (
             <WorkCardLink key={work.slug} work={work}>
               <WorkCard work={work} index={index + 1} />

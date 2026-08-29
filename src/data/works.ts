@@ -10,6 +10,8 @@ export type Work = {
   galleryImages?: string[];
   isLive: boolean;
   href: string | null;
+  /** When false, the project stays off the homepage and out of prev/next. */
+  listed?: boolean;
 };
 
 export const HERO_VIDEO = "/Work landing page 1/hero video.mp4";
@@ -25,6 +27,7 @@ export const works: Work[] = [
     heroImage: "/projects/ALIAS/hero1.png",
     isLive: true,
     href: "/projects/alias",
+    listed: false,
   },
   {
     slug: "birdbot",
@@ -97,10 +100,18 @@ export function getProjectNeighbors(slug: string): {
   next: ProjectNeighbor;
 } | null {
   const liveWorks = works.filter((work): work is Work & { href: string } =>
-    Boolean(work.isLive && work.href),
+    Boolean(work.isLive && work.href && work.listed !== false),
   );
   const index = liveWorks.findIndex((work) => work.slug === slug);
-  if (index === -1) return null;
+  if (index === -1) {
+    if (liveWorks.length === 0) return null;
+    const last = liveWorks[liveWorks.length - 1];
+    const first = liveWorks[0];
+    return {
+      prev: { label: last.title, href: last.href },
+      next: { label: first.title, href: first.href },
+    };
+  }
 
   const prevWork = liveWorks[(index - 1 + liveWorks.length) % liveWorks.length];
   const nextWork = liveWorks[(index + 1) % liveWorks.length];

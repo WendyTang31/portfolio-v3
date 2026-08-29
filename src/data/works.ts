@@ -10,8 +10,8 @@ export type Work = {
   galleryImages?: string[];
   isLive: boolean;
   href: string | null;
-  /** When false, the project stays off the homepage and out of prev/next. */
-  listed?: boolean;
+  /** Shown on the homepage, but the case study still asks for a password. */
+  locked?: boolean;
 };
 
 export const HERO_VIDEO = "/Work landing page 1/hero video.mp4";
@@ -27,7 +27,7 @@ export const works: Work[] = [
     heroImage: "/projects/ALIAS/hero1.png",
     isLive: true,
     href: "/projects/alias",
-    listed: false,
+    locked: true,
   },
   {
     slug: "birdbot",
@@ -100,7 +100,7 @@ export function getProjectNeighbors(slug: string): {
   next: ProjectNeighbor;
 } | null {
   const liveWorks = works.filter((work): work is Work & { href: string } =>
-    Boolean(work.isLive && work.href && work.listed !== false),
+    Boolean(work.isLive && work.href && !work.locked),
   );
   const index = liveWorks.findIndex((work) => work.slug === slug);
   if (index === -1) {

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { Lock } from "lucide-react";
 import { works, type Work } from "../data/works";
 import { ProjectImage } from "./ProjectImage";
 
-const listedWorks = works.filter((work) => work.listed !== false);
-const [featuredWork, ...otherWorks] = listedWorks;
+const [featuredWork, ...otherWorks] = works;
 
 function WorkCardLink({
   work,
@@ -70,10 +70,17 @@ function WorkCard({
           >
             {work.title}
           </h3>
-          {!work.isLive && (
-            <span className="shrink-0 font-mono text-[8px] uppercase tracking-widest text-gray-400">
-              Soon
+          {work.locked ? (
+            <span className="inline-flex shrink-0 items-center gap-1 font-mono text-[8px] uppercase tracking-widest text-gray-400">
+              <Lock size={10} strokeWidth={1.75} />
+              Locked
             </span>
+          ) : (
+            !work.isLive && (
+              <span className="shrink-0 font-mono text-[8px] uppercase tracking-widest text-gray-400">
+                Soon
+              </span>
+            )
           )}
         </div>
         <p
@@ -123,7 +130,7 @@ export function WorkGallerySection() {
           <WorkCard work={featuredWork} index={0} featured />
         </WorkCardLink>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-5 lg:gap-6">
           {otherWorks.map((work, index) => (
             <WorkCardLink key={work.slug} work={work}>
               <WorkCard work={work} index={index + 1} />

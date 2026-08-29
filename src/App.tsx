@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { HomePage } from "./pages/HomePage";
 import { ContactPage } from "./pages/ContactPage";
 import { BirdbotCaseStudy } from "./pages/BirdbotCaseStudy";
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/projects/bird-feet" element={<BirdFeetCaseStudy />} />
         <Route path="/projects/alias" element={<AliasCaseStudy />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }

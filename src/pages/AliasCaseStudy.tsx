@@ -435,7 +435,19 @@ export function AliasCaseStudy() {
           </div>
           <div>
             <p className="alias-mono text-[10px] uppercase tracking-[0.16em]">Studio</p>
-            <p className="mt-2 text-[var(--ink)]">{aliasCredits.studio}</p>
+            <p className="mt-2 text-[var(--ink)]">
+              <a
+                href={aliasCredits.studioHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="alias-link"
+              >
+                {aliasCredits.studioName}
+              </a>
+            </p>
+            <p className="mt-2 text-[var(--ink)]">
+              Advisors: {aliasCredits.advisors}
+            </p>
           </div>
           <div>
             <p className="alias-mono text-[10px] uppercase tracking-[0.16em]">Year · Exhibited</p>

@@ -183,8 +183,12 @@ export const aliasLiquid = {
     "HMG's light language is built from separate square pixels. We reimagined them as bubbles of ink: surfaces that meet, merge, swell, and collapse under real physics — light that behaves like a living thing instead of a grid switching on and off.",
   file: "liquid-pixel.mp4",
   alt: "Liquid Pixel light language: ink-like pixels growing, merging, and traveling.",
-  studio:
-    "We created the software with AI agent — liquid studio, a local, deterministic editor for designing and controlling dot-matrix/LED morphing animations, combining animation, procedural math, hardware mapping, and research-data generation in one tool.",
+  studioBefore: "We created the software with ",
+  studioEmphasis: "AI AGENT",
+  studioAfter:
+    " — liquid studio, a local, deterministic editor for designing and controlling dot-matrix/LED morphing animations, combining animation, procedural math, hardware mapping, and research-data generation in one tool.",
+  liveLabel: "The tool is live in the browser.",
+  liveHref: "https://wendytang31.github.io/Liquid-Pixel-studio/",
   tools: [
     {
       file: "2d.png",
@@ -305,7 +309,10 @@ export const aliasClose = {
 export const aliasCredits = {
   role: "Design research · interaction design · custom animation tooling · hardware prototyping",
   team: "Fangzhuo (Wendy) Tang with Ryan Lee",
-  studio: "Hyundai (HMG) Regeneration Studio — RISD · Advisors: Max, Jess",
+  studioName: "Hyundai (HMG) Regeneration Studio — RISD",
+  studioHref:
+    "https://www.risd.edu/academics/industrial-design/courses?viewsreference%5Bcompressed%5D=eJxdkMEKwjAMhl9Fct5BmUzZ2YtPUeqajWCWSZtNZOzdzSg68VDS5P_-P5AZglcP9Qw-dmOPolDDVcKYNJLn3QUTdQIFMPVkmozMBQxtm_DbPXyH0WxGKSljni8FoPgbY3DGKkmX_tZ8v1tErss6iKY4e6Qvp6-HpcKNh-bumkH04_qFKBhyOJ_KapNaQg5OfL_aczMRPpOL2KIRDW5sxIkSDZKDqvJwXIOyiRR7F5DXU-2XN5kDbHQ&page=2",
+  advisors: "Eliza Squibb, Jessica Smith, Max Pratt",
   year: "2025",
   exhibited: "Woods-Gerry Gallery, RISD",
   tools: "IBM Plex type system · custom LED animation tool · After Effects · P2.5 LED hardware",

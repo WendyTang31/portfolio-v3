@@ -1,4 +1,4 @@
-import { Linkedin } from "lucide-react";
+import { FileDown, Linkedin } from "lucide-react";
 import { SITE } from "../data/works";
 
 export function Footer() {
@@ -8,15 +8,25 @@ export function Footer() {
         <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500">
           {SITE.name} © 2026
         </p>
-        <a
-          href={SITE.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-md border border-gray-300 px-5 py-2.5 font-mono text-[10px] uppercase tracking-widest text-gray-800 transition-all hover:border-black hover:bg-black hover:text-white"
-        >
-          <Linkedin size={14} strokeWidth={1.5} />
-          LinkedIn
-        </a>
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href={SITE.resume}
+            download={SITE.resumeFilename}
+            className="inline-flex items-center gap-2 rounded-md border border-gray-300 px-5 py-2.5 font-mono text-[10px] uppercase tracking-widest text-gray-800 transition-all hover:border-black hover:bg-black hover:text-white"
+          >
+            <FileDown size={14} strokeWidth={1.5} />
+            Resume
+          </a>
+          <a
+            href={SITE.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md border border-gray-300 px-5 py-2.5 font-mono text-[10px] uppercase tracking-widest text-gray-800 transition-all hover:border-black hover:bg-black hover:text-white"
+          >
+            <Linkedin size={14} strokeWidth={1.5} />
+            LinkedIn
+          </a>
+        </div>
       </div>
     </footer>
   );

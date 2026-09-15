@@ -157,4 +157,6 @@ export const SITE = {
   ] as Skill[],
   linkedin: "https://linkedin.com/in/wendyid",
   email: "ftangwendy@gmail.com",
+  resume: "/Wendy-Tang-Resume-2026.pdf",
+  resumeFilename: "Wendy-Tang-Resume-2026.pdf",
 };

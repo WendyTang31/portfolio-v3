@@ -3,11 +3,19 @@ import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { SITE } from "../data/works";
 
-const navLinks = [
+type NavLink =
+  | { label: string; to: string }
+  | { label: string; href: string; download: string };
+
+const navLinks: NavLink[] = [
   { label: "Home", to: "/" },
   { label: "Work", to: "/#work" },
+  { label: "Resume", href: SITE.resume, download: SITE.resumeFilename },
   { label: "Contact", to: "/contact" },
 ];
+
+const desktopNavClass =
+  "font-mono text-[10px] uppercase tracking-[0.2em] text-gray-800 transition-colors hover:text-black hover:underline md:text-[11px]";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -21,6 +29,46 @@ export function Header() {
     document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const renderLink = (link: NavLink, className: string, onNavigate?: () => void) => {
+    if ("href" in link) {
+      return (
+        <a
+          key={link.label}
+          href={link.href}
+          download={link.download}
+          onClick={onNavigate}
+          className={className}
+        >
+          {link.label}
+        </a>
+      );
+    }
+
+    if (link.label === "Work") {
+      return (
+        <a
+          key={link.label}
+          href="/#work"
+          onClick={handleWorkClick}
+          className={className}
+        >
+          {link.label}
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        key={link.label}
+        to={link.to}
+        onClick={onNavigate}
+        className={className}
+      >
+        {link.label}
+      </Link>
+    );
+  };
+
   return (
     <header className="relative z-50 w-full">
       <div className="flex items-center justify-between">
@@ -32,26 +80,7 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) =>
-            link.label === "Work" ? (
-              <a
-                key={link.label}
-                href="/#work"
-                onClick={handleWorkClick}
-                className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-800 transition-colors hover:text-black hover:underline md:text-[11px]"
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.label}
-                to={link.to}
-                className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-800 transition-colors hover:text-black hover:underline md:text-[11px]"
-              >
-                {link.label}
-              </Link>
-            ),
-          )}
+          {navLinks.map((link) => renderLink(link, desktopNavClass))}
         </nav>
 
         <button
@@ -79,25 +108,7 @@ export function Header() {
           >
             <div className="flex flex-col gap-6 font-mono text-sm uppercase tracking-[0.2em]">
               {navLinks.map((link) =>
-                link.label === "Work" ? (
-                  <a
-                    key={link.label}
-                    href="/#work"
-                    onClick={handleWorkClick}
-                    className="text-gray-800"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.label}
-                    to={link.to}
-                    onClick={() => setOpen(false)}
-                    className="text-gray-800"
-                  >
-                    {link.label}
-                  </Link>
-                ),
+                renderLink(link, "text-gray-800", () => setOpen(false)),
               )}
             </div>
           </motion.div>

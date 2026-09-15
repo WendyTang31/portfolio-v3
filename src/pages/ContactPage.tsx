@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { ArrowLeft, Linkedin, Mail } from "lucide-react";
+import { ArrowLeft, FileDown, Linkedin, Mail } from "lucide-react";
 import { Footer } from "../components/Footer";
 import { SITE } from "../data/works";
 
@@ -34,13 +34,21 @@ export function ContactPage() {
             Graduated RISD 2026.
           </p>
 
-          <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a
               href={`mailto:${SITE.email}`}
               className="inline-flex items-center justify-center gap-2 rounded-md border border-[#1a1a1a] bg-[#1a1a1a] px-6 py-3.5 text-sm font-medium text-white transition-transform hover:-translate-y-px"
             >
               <Mail size={16} />
               {SITE.email}
+            </a>
+            <a
+              href={SITE.resume}
+              download={SITE.resumeFilename}
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-gray-300 px-6 py-3.5 text-sm font-medium text-gray-800 transition-colors hover:border-black"
+            >
+              <FileDown size={16} />
+              Download resume
             </a>
             <a
               href={SITE.linkedin}

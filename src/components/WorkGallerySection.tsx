@@ -113,7 +113,7 @@ export function WorkGallerySection() {
   return (
     <section
       id="work"
-      className="relative z-20 flex min-h-[100svh] w-full flex-col items-center bg-[#fcfcfc] px-4 py-8 md:px-6 md:py-10 lg:px-8"
+      className="relative z-20 flex w-full flex-col items-center bg-[#fcfcfc] px-4 pb-8 pt-6 md:px-6 md:pb-10 md:pt-7 lg:px-8"
     >
       <motion.p
         initial={{ opacity: 0, y: 16 }}

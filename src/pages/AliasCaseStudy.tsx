@@ -19,6 +19,7 @@ import {
   aliasMarket,
   aliasResearch,
   aliasLiquid,
+  aliasTech,
   aliasScenarios,
   aliasMaking,
   aliasClose,
@@ -334,31 +335,66 @@ export function AliasCaseStudy() {
           <FadeUp>
             <LiquidStudio />
           </FadeUp>
-        </div>
-      </section>
-
-      <section className="alias-dark alias-section">
-        <div className="alias-wrap space-y-16">
-          {aliasScenarios.map((scene) => (
-            <FadeUp key={scene.file}>
-              <p className="alias-mono text-[10px] uppercase tracking-[0.18em] text-[var(--glow)]">
-                {scene.label}
-              </p>
-              <h3 className="mt-3 text-2xl font-semibold md:text-3xl">{scene.title}</h3>
-              <p className="mt-2 max-w-[65ch] text-sm leading-relaxed text-[var(--dark-ink)]/75">
-                {scene.caption}
-              </p>
-              <div className="mt-6 overflow-hidden">
-                <AliasMedia
-                  file={scene.file}
-                  caption={scene.caption}
-                  alt={scene.alt}
-                  dark
-                  aspect="aspect-video"
-                />
-              </div>
-            </FadeUp>
-          ))}
+          <FadeUp className="mt-16">
+            <h2 className="text-xl font-semibold tracking-tight text-[var(--glow)] md:text-2xl">
+              {aliasTech.h2}
+            </h2>
+            <p className="alias-body mt-4 text-[var(--dark-ink)]/80">{aliasTech.body}</p>
+            <div className="mt-6 grid grid-cols-3 gap-2 md:gap-3">
+              {aliasTech.images.map((image) => (
+                <figure key={image.file}>
+                  <AliasMedia
+                    file={image.file}
+                    caption={image.caption}
+                    alt={image.alt}
+                    dark
+                    aspect="aspect-[4/3]"
+                  />
+                  <figcaption className="alias-caption mt-2 text-[10px] text-[var(--dark-ink)]/40">
+                    {image.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <p className="alias-caption mt-3 text-[10px] leading-relaxed text-[var(--dark-ink)]/35">
+              Sources:{" "}
+              {aliasTech.sources.map((source, index) => (
+                <span key={source.href}>
+                  {index > 0 && " · "}
+                  <a
+                    href={source.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="alias-link"
+                  >
+                    {source.label}
+                  </a>
+                </span>
+              ))}
+            </p>
+          </FadeUp>
+          <div className="mt-16 space-y-16">
+            {aliasScenarios.map((scene) => (
+              <FadeUp key={scene.file}>
+                <p className="alias-mono text-[10px] uppercase tracking-[0.18em] text-[var(--glow)]">
+                  {scene.label}
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold md:text-3xl">{scene.title}</h3>
+                <p className="mt-2 max-w-[65ch] text-sm leading-relaxed text-[var(--dark-ink)]/75">
+                  {scene.caption}
+                </p>
+                <div className="mt-6 overflow-hidden">
+                  <AliasMedia
+                    file={scene.file}
+                    caption={scene.caption}
+                    alt={scene.alt}
+                    dark
+                    aspect="aspect-video"
+                  />
+                </div>
+              </FadeUp>
+            ))}
+          </div>
         </div>
       </section>
 

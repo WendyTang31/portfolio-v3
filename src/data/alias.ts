@@ -203,6 +203,38 @@ export const aliasLiquid = {
   ],
 };
 
+export const aliasTech = {
+  h2: "A display that behaves like material",
+  body: "We looked into e-ink displays, as applied on the BMW i Vision Dee concept car: they don't emit light but reflect it, recreating a less stimulating effect. OLED can be covered by a diffusion shell to reduce visual noise. A third path is a bistable electromechanical reflective display.",
+  images: [
+    {
+      file: "tech1.png",
+      caption: "E-ink pigment cells",
+      alt: "Micrograph of e-ink pigment cells.",
+    },
+    {
+      file: "tech2.png",
+      caption: "E Ink film",
+      alt: "E Ink film sheets being handled in a lab.",
+    },
+    {
+      file: "tech3.png",
+      caption: "Electromechanical pixels",
+      alt: "Bistable electromechanical reflective display pixels.",
+    },
+  ],
+  sources: [
+    {
+      label: "E Ink × BMW i Vision Dee",
+      href: "https://www.youtube.com/watch?v=43soXcwChFE&t=164s",
+    },
+    {
+      label: "Electronic paper",
+      href: "https://www.youtube.com/watch?v=1qIHCUWAgh4",
+    },
+  ],
+};
+
 export const aliasScenarios = [
   {
     label: "S1 · EMOTION",

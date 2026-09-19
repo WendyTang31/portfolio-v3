@@ -8,7 +8,7 @@ export const birdFeetHero = {
   kicker: "Case Study · Biomimicry · Mechanisms",
   tagline:
     "Bio-inspired landing gear from bird feet — adaptive grip for uneven terrain.",
-  image: `${BIRD_FEET_ASSET_BASE}/ps-scene.png`,
+  image: `${BIRD_FEET_ASSET_BASE}/head-scene.png`,
 };
 
 export const birdFeetMeta = {

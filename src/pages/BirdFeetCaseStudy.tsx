@@ -56,7 +56,7 @@ export function BirdFeetCaseStudy() {
         <ProjectImage
           src={birdFeetHero.image}
           alt={birdFeetHero.title}
-          placeholderLabel="ps-scene.png"
+          placeholderLabel="head-scene.png"
           accent={BIRD_FEET_ACCENT}
           className="absolute inset-0 h-full w-full object-cover"
         />

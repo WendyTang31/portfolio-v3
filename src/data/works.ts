@@ -27,7 +27,6 @@ export const works: Work[] = [
     heroImage: "/projects/ALIAS/hero1.png",
     isLive: true,
     href: "/projects/alias",
-    locked: true,
   },
   {
     slug: "birdbot",

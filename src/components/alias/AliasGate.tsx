@@ -1,7 +1,11 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import "../../alias.css";
-import { ALIAS_ACCESS_CODE, ALIAS_SESSION_KEY } from "../../data/aliasGate";
+import {
+  ALIAS_ACCESS_CODE,
+  ALIAS_OPEN_WITHOUT_PASSWORD,
+  ALIAS_SESSION_KEY,
+} from "../../data/aliasGate";
 
 function isUnlocked(): boolean {
   try {
@@ -41,7 +45,9 @@ function useNoIndex() {
 
 export function AliasGate({ children }: { children: ReactNode }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [unlocked, setUnlocked] = useState(isUnlocked);
+  const [unlocked, setUnlocked] = useState(
+    () => ALIAS_OPEN_WITHOUT_PASSWORD || isUnlocked(),
+  );
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
 

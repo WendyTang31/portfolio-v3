@@ -8,7 +8,7 @@ export const aliasMetaDoc = {
 };
 
 export const aliasHero = {
-  eyebrow: "HYUNDAI REGENERATION STUDIO · eHMI · 2025",
+  eyebrow: "HYUNDAI REGENERATION STUDIO · eHMI · 2026",
   h1: "Unmasking the Driver",
   subline: "A communication language that lets a car express what a horn never could.",
   meta: "ALIAS  ·  Design research + interaction + hardware  ·  Fangzhuo Tang with Ryan Lee",
@@ -345,7 +345,7 @@ export const aliasCredits = {
   studioHref:
     "https://www.risd.edu/academics/industrial-design/courses?viewsreference%5Bcompressed%5D=eJxdkMEKwjAMhl9Fct5BmUzZ2YtPUeqajWCWSZtNZOzdzSg68VDS5P_-P5AZglcP9Qw-dmOPolDDVcKYNJLn3QUTdQIFMPVkmozMBQxtm_DbPXyH0WxGKSljni8FoPgbY3DGKkmX_tZ8v1tErss6iKY4e6Qvp6-HpcKNh-bumkH04_qFKBhyOJ_KapNaQg5OfL_aczMRPpOL2KIRDW5sxIkSDZKDqvJwXIOyiRR7F5DXU-2XN5kDbHQ&page=2",
   advisors: "Eliza Squibb, Jessica Smith, Max Pratt",
-  year: "2025",
+  year: "2026",
   exhibited: "Woods-Gerry Gallery, RISD",
   tools: "IBM Plex type system · custom LED animation tool · After Effects · P2.5 LED hardware",
 };

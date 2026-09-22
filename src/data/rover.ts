@@ -14,7 +14,7 @@ export const roverHero = {
 
 export const roverMeta = {
   role: "Steering system — concept, testing & carbon-fiber fabrication",
-  when: "2025, ongoing",
+  when: "2025 – March 2026",
   team: "RISD Rover — NASA Human Exploration Rover Challenge (HERC)",
   tools: "Fusion 360, cardboard prototyping, carbon-fiber layup, physical testing",
 };

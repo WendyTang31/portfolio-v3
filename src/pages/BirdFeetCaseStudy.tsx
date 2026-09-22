@@ -87,9 +87,10 @@ export function BirdFeetCaseStudy() {
 
       <article className="mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 lg:px-16">
         <FadeUp className="mt-20">
-          <div className="grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid gap-6 border-y border-gray-200 py-8 sm:grid-cols-2 lg:grid-cols-5">
             {[
               { label: "Role", value: birdFeetMeta.role },
+              { label: "Collaborator", value: birdFeetMeta.collaborator },
               { label: "When", value: birdFeetMeta.when },
               { label: "Tools", value: birdFeetMeta.tools },
               { label: "Context", value: birdFeetMeta.context },

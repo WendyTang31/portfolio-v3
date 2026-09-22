@@ -13,6 +13,7 @@ export const birdFeetHero = {
 
 export const birdFeetMeta = {
   role: "Design lead — mechanism, bio translation & prototyping",
+  collaborator: "Aryan Gupta",
   when: "2025",
   tools: "Biomechanics study, cardboard, TPU / PLA / resin print, silicone, fishing-wire tendon",
   context: "Urban air mobility · adaptive landing systems",
